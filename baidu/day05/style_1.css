@@ -1,0 +1,11 @@
+.basic td{
+   width: 190px;
+   font-weight: 550;
+}
+.conjunction td{
+    width: 260px;
+    font-weight: 550;
+}
+.conjunction td a{
+    font-size: 12px;
+}

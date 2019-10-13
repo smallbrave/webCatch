@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 1200px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-bottom: none;
+}
+h1{
+    font-size: 18px;
+    padding: 20px;
+    color: white;
+    background-color: #858585;
+}
+.basis h2{
+    display: inline-block;
+    margin-bottom: 2px;
+    width: 80px;
+    height: 90px;
+    line-height: 90px;
+    font-size: 12px;
+    text-align: center;
+    background-color: #ccc;
+}
+.basis table{
+    display: inline-block;
+    border-bottom: 1px solid #ccc;
+    width: 1110px;
+    vertical-align: bottom;
+}
+.basic td{
+    width: 190px;
+    font-weight: 550;
+ }
+ .conjunction td{
+     width: 260px;
+     font-weight: 550;
+ }
+ .conjunction td a{
+     font-size: 12px;
+ }
+ 
+.content h2{
+    float: left;
+    width: 80px;
+    height: 90px;
+    line-height: 90px;
+    font-size: 12px;
+    text-align: center;
+    background-color: #ccc;
+}
+.content p{
+    margin-bottom: 3px;
+}
+.content p:nth-child(5n){
+    border-bottom: 1px solid #ccc;
+}

@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    float: left;
+    text-align: center;
+    padding-top: 80px;
+    margin: 0 20px 0 0;
+    width: 200px;
+    height: 760px;
+    background-color: #65a5fa; 
+    color: white;
+}
+.basis h2{
+    padding: 40px;
+    font-size: 32px;
+}
+.basic td{
+    width: 190px;
+}
+.conjunction td{
+    width: 260px;
+ }
+ td span{
+     font-weight: bold;
+ }
+.conjunction td a{
+    font-size: 12px;
+}
+.content h2{
+    margin: 20px;
+}
+.content h4{
+    margin-top: 16px;
+}
