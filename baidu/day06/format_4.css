@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/*
+.left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 300px;
+    height: 800px;
+    background-color: #ccc;
+}
+.middle {
+    position: absolute;
+    left: 300px;
+    top: 0;
+    width: 500px;
+    height: 800px;
+    background-color: aqua;
+}
+.right {
+    position: absolute;
+    right: 0;
+    width: calc(100% - 800px);
+    height: 800px;
+    background-color: #ccc;
+}
+*/
+/* flexbox */
+
+.container{
+    display: flex;
+    flex-direction: row;
+}
+.left,
+.right{
+    width: 300px;
+    height: 800px;
+    background-color: #ccc;
+}
+.middle{
+    width: 500px;
+    height: 800px;
+    background-color: aqua; 
+}
+.right{
+    width: calc(100% - 800px);
+}

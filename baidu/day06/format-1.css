@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    margin: 0 auto;
+    width: 1200px;
+    height: 800px;
+}
+.left{
+    float: left;;
+    width: 30%;
+    height: 800px;
+    background-color: #ccc;
+   
+}
+.right{
+    float: left;
+    width: 70%;
+    height: 800px;
+    background-color: aqua;
+}
+/* 两个元素同时设置display：inline-block时 中间还是会出现间距 */
