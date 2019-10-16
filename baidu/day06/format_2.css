@@ -1,3 +1,4 @@
+/* 左固定，右自适应 */
 *{
     margin: 0;
     padding: 0;
@@ -10,7 +11,8 @@
 }
 .right{
     float: left;
-    width: calc(100% - 300px);
+    width: calc(100% - 300px);  
     height: 800px;
     background-color: aqua;
 }
+/* calc() 计算函数的使用*/
