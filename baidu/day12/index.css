@@ -1,0 +1,513 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html , body{
+    height: 100%;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+.tags{
+    position: fixed;
+    width: 100px;
+    height: 100%;
+    background-color: #1d2531;
+}
+.tags span{
+    display: block;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #2b9ff6;
+    background-image: url(../images/day12/icon.png);
+}
+.tags span:nth-child(2){
+    background-color: #9581e4;
+    background-position: 0 50%;
+}
+.tags span:nth-child(3){
+    background-color: #ee4c30;
+    background-position: 0 100%;
+}
+.tags span:nth-child(4){
+    border: 2px solid #2d3848;
+    background: url(../images/day12/plus.png) no-repeat center;
+    background-color: #1d2531;
+}
+.tags icon,
+.tags icon:last-child{
+     position: fixed;
+     left: 20px;
+     bottom: 10px;
+     height: 20px;
+     width: 20px;
+     background: url(../images/day12/menuSet.png) no-repeat ;
+}
+.tags icon:last-child{
+    left: 60px;
+    background: url(../images/day12/menuSet.png) no-repeat left 128%; 
+}
+/* 左边图标部分 */
+.list{
+    margin-left: 100px;
+    padding: 0 0 0 32px;
+    overflow: hidden;
+    width: 252px;
+    height: auto;
+    color: #fff;
+    background-color: #222c3c;
+}
+.list ul{
+    position: relative;
+    padding: 20px 0;
+    width: 80%;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #475364;
+}
+.list ul:nth-child(2){
+    border-top: 1px solid #2a3547;
+    border-bottom: 1px solid #2a3547;
+}
+.list ul:nth-child(2) li{
+    position: relative;
+    margin-left: 28px;
+}
+.product li::before{
+    content: "";
+    position: absolute;
+    left: -28px;
+    height: 20px;
+    width: 20px;
+    background-image: url(../images/day12/ulIcon.png);
+}
+.product li:nth-child(3)::before{
+    background-position: left 34%;
+}
+.product li:nth-child(4)::before{
+    background-position: left 66%;
+}
+.product li:nth-child(5)::before{
+    background-position: left bottom;
+}
+.list ul icon {
+    position: absolute;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: url(../images/day12/menuSet.png) no-repeat left 110%;
+}
+.list ul li{
+    margin-top: 16px;
+    color: #b7c0cd;
+    list-style: none;
+}
+.list .goals{
+    position: fixed;
+    bottom: 20px;
+    font-size: 12px;
+}
+.goals > span{
+    padding-right: 20px;
+}
+.goals p{
+    position: relative;
+    margin-top: 10px;
+    width: 200px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #2d3848;
+}
+.goals p span{
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #937ee4;
+
+}
+/* 列表信息栏 */
+.message{
+    width: calc(100% - 252px - 100px);
+    height: 100%;
+    color: #000;
+    background-color: #fff;
+}
+.message .nav{
+    position: fixed;
+    top: 0;
+    z-index: 999999;
+    width: calc(100% - 252px - 100px);
+    height: 96px;
+    background-color: #fff;
+    border-bottom: 2px solid #e6e9ec;
+    overflow: hidden;
+}
+.message .nav h2{
+    float: left;
+    padding: 32px;
+}
+.message .info{
+    position: relative;
+    float: right;
+    margin: 20px 30px 0;
+}
+.info icon{
+    position: absolute;
+    left: -70px;
+    top: -2px;
+    width: 50px;
+    height: 50px;
+    background-image: url(../images/day12/pic.png);
+}
+.info::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 12px;
+    width: 14px;
+    height: 10px;
+    background: url(../images/day12/down.png) no-repeat left center;
+}
+.info span{
+    display: block;
+    margin-right: 40px;
+}
+.message .nav::after{
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.message .searchBtn{
+    display: flex;
+    flex-direction: row;
+    margin-top: 96px;
+    height: 72px;
+    border-bottom: 2px solid #e6e9ec;
+}
+.searchBtn div{
+    position: relative;
+    width: 400px;
+    height: 72px;
+    border-right: 2px solid #e6e9ec;
+}
+.searchBtn p{
+    width: calc(100% - 400px);
+    overflow: hidden;
+}
+.searchBtn p span{
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 32px;
+    margin-left: 28px;
+    margin-right: 40%;
+    vertical-align: bottom;
+    line-height: 32px;
+    color: #56688a;
+}
+.searchBtn p span:nth-child(5){
+    margin: 0 14px 0 44px;
+    width: auto;   
+}
+.searchBtn p button{
+    width: 36px;
+    height: 32px;
+    margin: -3px;
+    margin-top: 20px;
+    border: 1px solid #e6e9ec;
+    background-color: #fcfcfd;
+    background: url(../images/day12/tools.png) no-repeat center -10%;
+}
+.searchBtn p button:nth-child(2){
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.searchBtn p button:nth-child(3){
+    background-position: center;
+}
+.searchBtn p button:nth-child(4){
+    background-position: center 110%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: none;
+}
+.searchBtn p button:nth-child(6),
+.searchBtn p button:nth-child(7){
+    background: url(../images/day12/arrows.png) no-repeat 45% -55%;
+}
+.searchBtn p button:nth-child(6){
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #fcfcfd ; 
+}
+.searchBtn p button:nth-child(7){
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #fcfcfd ;  
+    background-position: 45% 155%;
+}
+.personal span:nth-child(1)::after{
+    content: "";
+    position: absolute;
+    top: 12px;
+    right: -16px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #1bb934;
+}
+
+.searchBtn div input{
+    margin: 16px 30px;
+    width: 338px;
+    height: 36px;
+    text-indent: 1em;
+    border-radius: 4px;
+    border: 2px solid #e6e9ec;
+}
+.searchBtn div icon{
+    position: absolute;
+    top: 26px;
+    right: 44px;
+    width: 16px;
+    height: 16px;
+    background: url(../images/day12/search.png) no-repeat left center;
+}
+/* 白色区域 顶部栏以及搜索栏 */
+.content {
+    display: flex;
+    flex-direction: row;
+    height: calc(100% - 170px);
+}
+.content .messageList{
+    width: 400px;
+    border-right: 2px solid #e6e9ec;
+    overflow: scroll;
+}
+.messageList div{
+    position: relative;
+    padding: 16px 0  0 30px;
+    height: 130px;
+    border-bottom: 2px solid #e6e9ec;
+}
+.messageList div icon {
+    float: left;
+    width: 46px;
+    height: 46px;
+    margin-right: 22px;
+    vertical-align: middle;
+    border-radius: 50%;
+    background: url(../images/day12/avatars.png) no-repeat left top;
+}
+.messageList div:nth-child(2) icon{
+    background-position: left 16%;
+}
+.messageList div:nth-child(3) icon{
+    background-position: left 32%;
+}
+.messageList div:nth-child(4) icon{
+    background-position: left 49%;
+}
+.messageList div:nth-child(5) icon{
+    background-position: left 84%;
+}
+.messageList div:nth-child(6) icon{
+    background-position: left 100%;
+}
+.messageList div .getTime{
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    color: #b5b5b5;;
+}
+.messageList div span{
+    display: block;
+    padding-top: 8px;
+}
+.messageList div span:nth-child(2){
+    color: #585d68;
+}
+.messageList div span:nth-child(3){
+    font-size: 12px;
+    color: #b5b5b5;
+}
+.messageList .checkedOne{
+    border-left: 2px solid #2399f1;
+}
+.messageList .checkedOne .theChecked{
+    position: relative;
+    margin-left: 80px;
+    color: #2399f1;
+}
+.theChecked::before{
+   content: " ";
+   position: absolute;
+   top: 50%;
+   left: -14px;
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+   background-color: #2399f1;
+}
+.messageList div p:nth-child(2){
+    color: #b5b5b5;
+}
+.checkedOne p:nth-child(2){
+    width: 310px;
+}
+.messageList .checkedOne .mCount{
+    position: absolute;
+    bottom: 38px;
+    right: 18px;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 2;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #2b9ff6;
+}
+/* 白色区域左边栏 */
+.content .detail{
+    width: calc(100% - 400px);
+    overflow: scroll;
+}
+.detail div{
+    margin-left: 30px;
+    position: relative;
+    padding: 27px 56px 0 66px;
+    color: #585d68;
+}
+.detail div icon{
+    position: absolute;
+    top: 26px;
+    left: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: url(../images/day12/avatars.png) no-repeat left top;
+}
+.detail div:nth-child(2) icon{
+    background: url(../images/day12/avatar.png) no-repeat left top;
+}
+.detail div:nth-child(5) icon{
+    background: url(../images/day12/avatar.png) no-repeat left top;
+}
+.detail div span:nth-child(2){
+    font-size: 16px;
+    font-weight: 600;
+}
+.detail div span:nth-child(3){
+    margin-left: 8px;
+    color: #7f8fa4;
+}
+.detail div p{
+    margin-top: 14px;
+    font-size: 14px;
+    color: #858890;
+}
+.detail .time{
+    position: relative;
+    text-align: center;
+}
+.detail .time::before{
+    content: "";
+    position: absolute;
+    top: 78%;
+    left: -30px;
+    width: 44%;
+    height: 0;
+    border: 1px solid #ccc;
+
+}
+.detail .time::after{
+    content: "";
+    position: absolute;
+    top: 78%;
+    right: 0;
+    width: 40%;
+    height: 0;
+    border: 1px solid #ccc;
+}
+.detail .new::after{
+    border-color: #a7d6f9;
+}
+.detail .new::before{
+    border-color: #a7d6f9;
+}
+.detail .new{
+    color: #a7d6f9;
+}
+.detail .newMessage p span{
+    display: inline-block;
+    margin: 16px 14px 0 0;
+    width: 156px;
+    height: 100px;
+    background: url(../images/day12/footer.png) no-repeat left 2%;
+}
+.newMessage p span:nth-child(3){
+    position: relative;
+    background-position: left 96%;
+}
+.newMessage span i{
+    position: absolute;
+    top: 24px;
+    left: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: url(../images/day12/search.png) no-repeat center #6c6c72;
+}
+.detail footer{
+    display: flex;
+    flex-direction: row;
+    margin: 32px 30px 0 30px ; 
+    height: 50px;
+    border: 1px solid #e6e9ec;
+    overflow: hidden;
+}
+.detail footer button{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: #f6f7fa;
+    background: url(../images/day12/add.png) no-repeat center;
+    border: 1px solid #e6e9ec;
+    border-right-width: 2px;
+}
+.detail footer p{
+    line-height: 50px;
+    text-indent: 2em;
+    color: #636872;
+}
+
+
+ /* 定义滚动条样式 */
+
+::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+    background-color:pink;
+}
+  
+  /*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0px rgba(240, 240, 240, .5);
+    border-radius: 10px;
+    background-color: rgba(240, 240, 240, .5);  
+}  
+  /*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: lightblue;
+  
+}
