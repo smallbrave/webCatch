@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>        
+    <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+    <input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
+    <button id="trans-btn">转化为二进制</button>
+    <p id="result">运算结果</p>
+    <script>
+//十进制转二进制
+function dec2bin(decNumber) {
+    // 在这里实现你的转化方法，注意需要判断输入必须为一个非负整数
+    try{
+        if(decNumber<0 || parseInt(binBit.value) < 0){
+            throw "所输数字为负";
+        }
+        if(decNumber.toString().indexOf('.')>0 || binBit.value.indexOf('.')>0){
+            
+            throw "请输入一个整数";
+        }
+        var arr = [];
+        while(true){
+            arr.push(decNumber%2);
+            decNumber = Math.floor(decNumber / 2);
+            if(decNumber<1){
+                break;
+            }
+        }
+        arr.reverse()   //会对原数组产生影响如：[1,2,3,4] =>(原数组变为)[4,3,2,1]
+        if(arr.length > parseInt(binBit.value)){
+            console.log("显示个数与bin-bit值不匹配");   
+            return arr.join("");
+        }else{
+            for(var i = arr.length;i<=parseInt(binBit.value);i++){
+                arr.unshift(0);        
+            }
+            return arr.join("");
+        } 
+        
+    }catch(err){
+         console.log(err);
+    }finally{
+        document.getElementById("dec-number").value = "";
+        document.getElementById("bin-bit").value = "";
+    }
+}
+/* 用除2取余的算法将十进制转化为二进制： 例子{
+    25 / 2 = 12.....1;
+    12 / 2 = 6 .....0;
+    6  / 2 = 3 .....0;
+    3  / 2 = 1 .....1;
+    1  / 2 = 0 .....1;
+    最后，将余数从后到前连起来：11001  
+
+}*/
+// 实现d当点击转化按钮时，将输入的十进制数字转化为二进制，并显示在result的p标签内
+// Some coding
+     var transBtn = document.getElementById("trans-btn");
+     var decNumber = document.getElementById("dec-number");
+     var binBit = document.getElementById("bin-bit");
+     var result = document.getElementById("result");
+    
+     transBtn.onclick = function(){
+         var val = decNumber.value;
+         result.innerText = dec2bin(val); 
+     }
+
+    </script>
+</body>
+</html>

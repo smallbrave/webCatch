@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>        
+    <input id="first-number" type="number" value="0" placeholder="第一个数字">
+    <input id="second-number" type="number" value="0" placeholder="第二个数字">
+    <button id="add-btn" onclick="getResult('add')">加</button>
+    <button id="minus-btn" onclick="getResult('minus')">减</button>
+    <button id="times-btn" onclick="getResult('times')">乘</button>
+    <button id="divide-btn" onclick="getResult('divide')">除</button>
+    <p id="result">运算结果:</p>
+    <script>
+          var firstNumber = getItem("first-number");
+          var sencondNumber = getItem("second-number");
+          var add = getItem("add-btn");
+          var minus = getItem("minus-btn");
+          var times =  getItem("times-btn");
+          var divide =  getItem("divide-btn");
+          var result =  getItem("result");
+          
+    // add.onclick = function(){
+    //     var valOne = firstNumber.value;
+    //     var valTwo = sencondNumber.value;
+    //     result.innerText = "运算结果："
+    //     console.log(parseInt(valOne)  + parseInt(valTwo));
+    //     result.innerText += ( parseInt(valOne)  + parseInt(valTwo));
+    // }
+    // minus.onclick = function(){
+    //     var valOne = firstNumber.value;
+    //     var valTwo = sencondNumber.value;
+    //     result.innerText = "运算结果："
+    //     console.log(parseInt(valOne) - parseInt(valTwo));
+    //     result.innerText += ( parseInt(valOne)  - parseInt(valTwo));
+    // }
+    // times.onclick = function(){
+    //     var valOne = firstNumber.value;
+    //     var valTwo = sencondNumber.value;
+    //     result.innerText = "运算结果："
+    //     console.log(parseInt(valOne)  * parseInt(valTwo));
+    //     result.innerText += ( parseInt(valOne)  * parseInt(valTwo));
+    // }
+    // divide.onclick = function(){
+    //     var valOne = firstNumber.value;
+    //     var valTwo = sencondNumber.value;
+    //     result.innerText = "运算结果："
+    //     console.log(parseInt(valOne)  / parseInt(valTwo));
+    //     result.innerText += ( parseInt(valOne)  / parseInt(valTwo));
+    // }
+
+
+    //第一节
+    function getResult(val){
+        var valOne = firstNumber.value;
+        var valTwo = sencondNumber.value;
+        try{
+            if(isNaN(valOne) || isNaN(valTwo)){
+                throw "所输入的数据并非数字"
+            }
+            if(parseInt(valTwo) == 0){
+                throw "除数不能为0"
+            }
+        }catch(err){
+            console.log(err)
+        }finally{
+            firstNumber.value = "";
+            sencondNumber.value = "";
+        }
+       if(val == 'add'){
+         result.innerText = parseInt(valOne) + parseInt(valTwo);  
+       }else if(val == 'minus'){
+        result.innerText = parseInt(valOne) - parseInt(valTwo);  
+       }else if(val == 'times'){
+        result.innerText = parseInt(valOne) * parseInt(valTwo);  
+       }else{
+        result.innerText = parseInt(valOne) / parseInt(valTwo);  
+       }
+
+    }
+    function getItem(text){
+     return document.getElementById(text);
+    }    
+
+    console.log("//////////////////3的小游戏///////////////////////////");
+    //第三节 3的小游戏
+     for(var i = 1;i <= 100;i++){
+        if(i % 3 == 0 || (i.toString().indexOf('3') > 0)){
+            console.log("PA");
+        }else{
+            console.log(i);
+        } 
+     }   
+    </script>
+</body>
+</html>

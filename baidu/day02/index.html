@@ -50,6 +50,22 @@
         </div>
     </diV>
     <script>
+        window.onload = function(){
+            var date = new Date();
+        if(date.getHours() < 9){
+            alert("早上好");
+        }else if(date.getHours() >11 && date.getHours() < 13){
+            alert("中午好");
+        }else if(date.getHours() >19){
+            alert("晚上好");
+        } 
+            console.log(date.getDate());
+        }
+        /* 关于前端的时间获取： 
+           首先需要new一个Date对象；
+           然后，根据 .getHours()/.getMinutes()/.getSeconds() 获取 时 分 秒
+           还有 .getFullYear()/.getMonth + 1(月份从0开始)/.getDate()  获取 年 月 日
+        */
        var exp = document.getElementById("experience");
        var study = document.getElementById("study");
        exp.onclick = function(){
