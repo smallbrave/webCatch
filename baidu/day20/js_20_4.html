@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title> js动画 </title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    </head>
+    <body>
+    <style>
+    span{
+        display: inline-block;
+        width: 426px;
+        height: 470px;
+        border: 1px solid #ccc;
+        background: url(../images/day20/erik_ce204002.jpg) no-repeat center 0px;
+    }
+    </style>    
+        <span></span>
+    </body>
+    <script>
+       var span = document.getElementsByTagName("span")[0];
+      function begin(){
+        var num = 0;
+      var timer = setInterval(() => {
+        num -= 480 ;
+           span.style.backgroundPosition = "center "+ num + "px"; 
+           if(num<=-7680){
+               num = 0;
+           }
+       }, 100);  
+    }
+    begin();
+    </script>
+</html>

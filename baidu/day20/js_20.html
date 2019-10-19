@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>day20</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+    </head>
+    <body>
+        <div class="container">
+            <!-- <input id="name" type="text">   第一小节   
+            <button id="submit-btn">Submit</button>         -->
+            <div id="fade-obj" style="width:300px;height:300px;background:#000;"></div>
+            <button id="fade-btn">淡出</button>
+        </div>
+
+    <script>
+/*        var submit = document.getElementById("submit-btn");
+        var input = document.getElementById("name");
+//以上两行代码，请注意，不要将新建的变量名与class或者id取做一样        
+        submit.onclick = function(){
+            console.log(input.value);
+        }
+        input.onkeyup = function(e){
+            console.log(e);
+           if(e.code == "Enter"){
+               console.log(input.value);
+           }
+
+
+    //注意一下，在全屏模式下，无法直接监听到ESC     
+           if(e.code == "Escape"){
+              input.value = "";
+           }     
+        }*/
+       
+      var obj = document.getElementById("fade-obj");
+      var btn = document.getElementById("fade-btn");
+
+      btn.onclick = function(){
+        btn.disabled = true;
+        if(btn.innerText == "淡出"){
+            fadeOut(obj);
+        setTimeout(function(){
+            btn.disabled = false;
+        },700)
+        }else{
+            fadeIn(obj)
+        setTimeout(function(){
+            btn.disabled = false;
+        },700)
+        }
+      } 
+
+      function fadeOut(obj){
+          var num = 10;
+        var timer =  setInterval(function(){
+            num--;
+            obj.style.opacity = num/10;
+            if(obj.style.opacity <= 0){
+                clearInterval(timer);
+            }
+         },60)
+         btn.innerText = "淡入";
+      }
+      function fadeIn(obj){
+          var num = 0;
+        var timerB =  setInterval(function(){
+            num++;
+            obj.style.opacity =  num/10;
+            if(obj.style.opacity >= 1){
+                clearInterval(timerB);
+            }
+         },60)
+         btn.innerText = "淡出";
+      }
+
+//原生js实现“淡入”/“淡出”，引入一个变量 num 用来量化opacity（透明度）的变化。      
+    </script>
+    </body>
+</html>
