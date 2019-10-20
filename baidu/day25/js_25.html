@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Date </title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    </head>
+    <body>
+        <span></span>
+    <script>
+      window.onload = function(){
+        setInterval(startTime,1000);
+      }
+      function startTime(){
+          var date = new Date();
+          var y = date.getFullYear();
+          var m = date.getMonth() + 1;
+          var d = date.getDate();
+          var h = date.getHours();
+          var minutes = date.getMinutes();
+          var s = date.getSeconds();
+          var holiday = date.getDay();
+          m = check(m);
+          d = check(d);
+          holiday = getHolidays(holiday); 
+          h = check(h);
+          minutes = check(minutes);
+          s = check(s);
+          together(y,m,d,holiday,h,minutes,s);
+      }
+      function getHolidays(val){
+            var day;
+            switch(val){
+                case 1:{
+                    day = "星期一";
+                    break;
+                }
+                case 2:{
+                    day = "星期二";
+                    break;
+                }
+                case 3:{
+                    day = "星期三";
+                    break;
+                }
+                case 4:{
+                    day = "星期四";
+                    break;
+                }
+                case 5:{
+                    day = "星期五";
+                    break;
+                }
+                case 6:{
+                    day = "星期六";
+                    break;
+                }
+                default:{
+                    day = "星期天";
+                }
+            }
+            return day;  
+        }
+      function check(val){
+          if(val.toString().length<2){
+            val = "0" + val;
+          }
+          return val;
+      } 
+
+      function together(y,m,d,holiday,h,minutes,s){
+        document.getElementsByTagName("span")[0].innerText = y+"年"+m+"月"+d+"日"+holiday+"  "+h+":"+minutes+":"+s;
+      }
+    </script>    
+    </body>
+</html>

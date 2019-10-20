@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="uft-8">
+        <title> day25_2 </title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+    </head>
+    <body>
+        <div class="container">
+                <select id="year-select">
+                        <option value="2000">2000</option>
+                        <option value="2001">2001</option>
+                        <option value="2002">2002</option>
+                        <option value="2032">2032</option>
+                    </select>
+                    
+                    <select id="month-select">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        
+                        <option value="12">12</option>
+                    </select>
+                    
+                    <select id="day-select">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        
+                        <option value="31">31</option>
+                    </select>
+                    
+                    <select id="hour-select">
+                        <option value="0">00</option>
+                        <option value="1">01</option>        
+                        
+                        <option value="23">23</option>
+                    </select>
+                    
+                    <select id="minite-select">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        
+                        <option>59</option>
+                    </select>
+                    
+                    <select id="second-select">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        
+                        <option>59</option>
+                    </select>
+                    <p id="result-wrapper">现在距离 2001年1月1日星期X HH:MM:SS 还有 X 天 X 小时 X 分 X 秒</p>
+        </div>
+        <script>
+            var result = document.getElementById("result-wrapper");
+            var y = document.getElementById("year-select");
+            var m = document.getElementById("month-select");
+            var d = document.getElementById("day-select");
+            var h = document.getElementById("hour-select");
+            var mini = document.getElementById("minite-select");
+            var s = document.getElementById("second-select");
+            var selectArray = [];
+            selectArray.push(y,m,d,h,mini,s);     
+        for(var i = 0;i < selectArray.length;i++){
+            selectArray[i].onchange = function(){
+                var dateString = getVal();
+                 result.innerText ="现在距离所选时间 " + dateString + distance();
+            }
+        }    
+
+        function distance(time){      
+            var dateBegin =new Date(getVal());
+            var holiday = getWeek(dateBegin);
+            var dateEnd = new Date();//获取当前时间
+            console.log(dateEnd);
+            var dateDiff = dateEnd.getTime() - dateBegin.getTime();//时间差的毫秒数
+            var dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000));//计算出相差天数
+            var leave1=dateDiff%(24*3600*1000)    //计算天数后剩余的毫秒数
+            var hours=Math.floor(leave1/(3600*1000))//计算出小时数
+            //计算相差分钟数
+            var leave2=leave1%(3600*1000)    //计算小时数后剩余的毫秒数
+            var minutes=Math.floor(leave2/(60*1000))//计算相差分钟数
+            //计算相差秒数
+            var leave3=leave2%(60*1000)      //计算分钟数后剩余的毫秒数
+            var seconds=Math.round(leave3/1000)
+            if(dateDiff<0){
+                dayDiff = -dayDiff;
+                hours = -hours;
+                minutes = -minutes;
+                seconds = -seconds; 
+                return " 还有 "+dayDiff+"天 "+hours+"小时 "+minutes+" 分钟"+seconds+" 秒";
+            }else{
+                return " 已经过去 "+dayDiff+"天 "+hours+"小时 "+minutes+" 分钟"+seconds+" 秒";
+            }
+        }
+        function getVal(){
+            var year   = getSelect("year-select");
+            var month  = getSelect("month-select");
+            var day    = getSelect("day-select");
+            var hour   = getSelect("hour-select");
+            var minute = getSelect("minite-select");
+            var second = getSelect("second-select");
+            var y = year.value;
+            var m = month.value;
+            var d = day.value;
+            var h = hour.value;
+            var minu = minute.value;
+            var s = second.value;
+            return y+"/"+m+"/"+d+" "+h+":"+minu+":"+s;
+        }
+        getVal();
+        
+        function getSelect(val){
+            var myselect = document.getElementById(val);
+            var index = myselect.selectedIndex;
+            return myselect.options[index];
+        }
+        function getWeek(date) {
+            var week;
+            if(date.getDay() == 0) week = "星期日"
+            if(date.getDay() == 1) week = "星期一"
+            if(date.getDay() == 2) week = "星期二"
+            if(date.getDay() == 3) week = "星期三"
+            if(date.getDay() == 4) week = "星期四"
+            if(date.getDay() == 5) week = "星期五"
+            if(date.getDay() == 6) week = "星期六"
+            return week;
+        }
+        </script>
+    </body>
+</html>
