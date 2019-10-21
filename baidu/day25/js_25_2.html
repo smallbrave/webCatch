@@ -63,8 +63,12 @@
             selectArray.push(y,m,d,h,mini,s);     
         for(var i = 0;i < selectArray.length;i++){
             selectArray[i].onchange = function(){
+                var dateBegin =new Date(getVal());
+                var holiday = getWeek(dateBegin);
                 var dateString = getVal();
-                 result.innerText ="现在距离所选时间 " + dateString + distance();
+                var start =dateString.slice(0,10);
+                var end = dateString.slice(10);
+                 result.innerText ="现在距离所选时间 " + start+holiday+end+ distance();
             }
         }    
 
@@ -88,9 +92,9 @@
                 hours = -hours;
                 minutes = -minutes;
                 seconds = -seconds; 
-                return " 还有 "+dayDiff+"天 "+hours+"小时 "+minutes+" 分钟"+seconds+" 秒";
+                return holiday+" 还有 "+dayDiff+"天 "+hours+"小时 "+minutes+" 分钟"+seconds+" 秒";
             }else{
-                return " 已经过去 "+dayDiff+"天 "+hours+"小时 "+minutes+" 分钟"+seconds+" 秒";
+                return holiday+" 已经过去 "+dayDiff+"天 "+hours+"小时 "+minutes+" 分钟"+seconds+" 秒";
             }
         }
         function getVal(){
@@ -100,21 +104,21 @@
             var hour   = getSelect("hour-select");
             var minute = getSelect("minite-select");
             var second = getSelect("second-select");
-            var y = year.value;
-            var m = month.value;
-            var d = day.value;
-            var h = hour.value;
-            var minu = minute.value;
-            var s = second.value;
+            var y = check(year.value);
+            var m = check(month.value);
+            var d = check(day.value);
+            var h = check(hour.value);
+            var minu = check(minute.value);
+            var s = check(second.value);
             return y+"/"+m+"/"+d+" "+h+":"+minu+":"+s;
         }
-        getVal();
-        
+        //获取select的值
         function getSelect(val){
             var myselect = document.getElementById(val);
             var index = myselect.selectedIndex;
             return myselect.options[index];
         }
+        //获取星期几
         function getWeek(date) {
             var week;
             if(date.getDay() == 0) week = "星期日"
@@ -126,6 +130,13 @@
             if(date.getDay() == 6) week = "星期六"
             return week;
         }
+        //格式化处理
+        function check(val){
+          if(val.toString().length<2){
+            val = "0" + val;
+          }
+          return val;
+      }
         </script>
     </body>
 </html>
