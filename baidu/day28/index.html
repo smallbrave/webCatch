@@ -49,7 +49,7 @@
         var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
         
         //input输入事件
-        email.addEventListener('keyup' , function(e){
+        email.addEventListener('input' , function(e){
             if(email.value.length<=0 || email.value == " "){
                 removeAll();
                 toShow.style.display = "none";
@@ -60,7 +60,7 @@
                 if(toShow.children.length <= 0 ){
                     for(var i = 1;i < arrayList.length;i++){
                     var li = document.createElement("li");
-                    li.setAttribute("index",i);
+                    
                     li.innerText = val + "@"  + arrayList[i];
                     toShow.appendChild(li);
                     }
@@ -76,28 +76,23 @@
                     //         toShow.removeChild(toShow.children[l]);
                     //     }
                     // }
-                    if(arrayList.length < toShow.children.length){
-                        removeAll();
-                        for(var i = 1;i < arrayList.length;i++){
+                    if(arrayList.length-1 > toShow.children.length){
+                            removeAll();
+                            for(var i = 1;i < arrayList.length;i++){
                             var li = document.createElement("li");
-                            li.setAttribute("index",i);
                             li.innerText = val + "@"  + arrayList[i];
                             toShow.appendChild(li);
-                    }
-                    }else if(arrayList.length-1 > toShow.children.length){
-                        for(var i = toShow.children.length - 1;i < arrayList.length;i++){
+                            }
+                    }else if(arrayList.length < toShow.children.length){
+                            removeAll();
+                            for(var i = 1;i < arrayList.length;i++){
                             var li = document.createElement("li");
-                            li.setAttribute("index",i);
                             li.innerText = val + "@"  + arrayList[i];
                             toShow.appendChild(li);
-                            console.log("93行：" + val);
                         }
                     }else{
                         for(var k = 0;k < toShow.children.length;k++){
                             toShow.children[k].innerText = val + "@"  + arrayList[k+1];
-                            console.log(toShow.children.length);
-                            console.log(toShow.children[k]);
-                            console.log(val + "@"  + arrayList[k+1]);
                         }
                     }
                 }
@@ -130,6 +125,7 @@
                     array[0] = email.value.trim();
                     array = array.concat(postfixList);
                 }   
+                    console.log(array);
                     return array;
            }
            //鼠标滑动导致的样式变化
@@ -146,8 +142,9 @@
                 //点击事件
                 toShow.children[i].onclick = function(e){
                     email.value = e.target.innerText;
-                    removeAll();
                     e.target.parentElement.style.display = "none";
+                    removeAll();
+                    
                 }
                 
             }
