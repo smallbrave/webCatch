@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> day28 </title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    </head>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .wrapper{
+        margin: 20px auto;
+        width: 220px;
+        text-align: center;
+    }
+    #email-input{
+        display: inline-block;
+        width: 200px;
+    }
+    #email-sug-wrapper{
+        display: none;
+        width: 200px;
+        border: 2px solid #ccc;
+        list-style: none;
+    }
+    #email-sug-wrapper li{
+        height: 20px;
+        border-bottom: 1px solid #ccc;
+    }
+    .checked{
+        background-color: lightblue;
+    }
+    </style>
+    <body>
+
+        <div class="container">
+                <div class="wrapper">
+                        <input id="email-input" type="text" name="inputVal" autofocus="autofocus">
+                        <ul id="email-sug-wrapper" class="email-sug">
+                        </ul>
+                </div>
+        </div>
+    <script>
+        var email = document.getElementById("email-input");
+        var toShow = document.getElementById("email-sug-wrapper");
+        var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
+        
+        //input输入事件
+        email.addEventListener('keyup' , function(e){
+            if(email.value.length<=0 || email.value == " "){
+                removeAll();
+                toShow.style.display = "none";
+            }else{
+                toShow.style.display = "inline-block";
+                var arrayList = check(email.value);
+                var val = arrayList[0];
+                if(toShow.children.length <= 0 ){
+                    for(var i = 1;i < arrayList.length;i++){
+                    var li = document.createElement("li");
+                    li.setAttribute("index",i);
+                    li.innerText = val + "@"  + arrayList[i];
+                    toShow.appendChild(li);
+                    }
+                }else{
+                    // for(var k = 1;k < arrayList.length;k++){
+                    //     toShow.children[k-1].innerText = val + "@"  + arrayList[k];
+                    //     console.log(val + "@"  + arrayList[k]);
+                    // }
+                    // console.log(k);
+                    // if( k-1 < toShow.children.length){
+                    //     console.log(toShow.children.length);
+                    //     for(var l = k-1;l < toShow.children.length;l++){
+                    //         toShow.removeChild(toShow.children[l]);
+                    //     }
+                    // }
+                    if(arrayList.length < toShow.children.length){
+                        removeAll();
+                        for(var i = 1;i < arrayList.length;i++){
+                            var li = document.createElement("li");
+                            li.setAttribute("index",i);
+                            li.innerText = val + "@"  + arrayList[i];
+                            toShow.appendChild(li);
+                    }
+                    }else if(arrayList.length-1 > toShow.children.length){
+                        for(var i = toShow.children.length - 1;i < arrayList.length;i++){
+                            var li = document.createElement("li");
+                            li.setAttribute("index",i);
+                            li.innerText = val + "@"  + arrayList[i];
+                            toShow.appendChild(li);
+                            console.log("93行：" + val);
+                        }
+                    }else{
+                        for(var k = 0;k < toShow.children.length;k++){
+                            toShow.children[k].innerText = val + "@"  + arrayList[k+1];
+                            console.log(toShow.children.length);
+                            console.log(toShow.children[k]);
+                            console.log(val + "@"  + arrayList[k+1]);
+                        }
+                    }
+                }
+                if(e.code != "ArrowDown" && e.code != "ArrowUp" && e.code != "Enter"){
+                    toShow.children[0].className = "checked";
+                }
+                mouseAndClick(); 
+            }
+        });
+        listenKey();
+        function removeAll(){
+            for(var j = toShow.children.length-1 ;j >= 0;j--){
+                toShow.removeChild(toShow.children[j]);
+            }
+        }
+        //对输入的字符串进行一定的处理：有@和无@符
+        function check(val){
+            var array = [];          
+           if(val.indexOf("@") > -1){
+                var start = val.search("@");
+                var before = val.slice(0,start);
+                var after = val.slice(start+1);
+                array.push(before);
+                   for(var oneVal of postfixList){
+                       if(oneVal.indexOf(after)>-1){
+                           array.push(oneVal);
+                       }
+                    }
+                }else{
+                    array[0] = email.value.trim();
+                    array = array.concat(postfixList);
+                }   
+                    return array;
+           }
+           //鼠标滑动导致的样式变化
+        function mouseAndClick(){
+            for(var i = 0;i<toShow.children.length;i++){
+                //鼠标移入事件
+                    toShow.children[i].onmouseover = function(e){
+                    e.target.style.backgroundColor = "pink";
+                }
+                //鼠标移出事件
+                toShow.children[i].onmouseout = function(e){
+                    e.target.style.backgroundColor = "";
+                }
+                //点击事件
+                toShow.children[i].onclick = function(e){
+                    email.value = e.target.innerText;
+                    removeAll();
+                    e.target.parentElement.style.display = "none";
+                }
+                
+            }
+        }
+        //键盘监听事件：↑，↓ enter
+        function listenKey(){
+            email.addEventListener('keyup',function(e){
+                if(e.code == "ArrowDown"){
+                    var chosen = document.getElementsByClassName("checked")[0];
+                    chosen.className = " ";    
+                    if(!chosen.nextSibling){
+                        toShow.children[0].className = "checked";
+                    }else{
+                    chosen.nextSibling.className = "checked";
+                    }
+                }else if(e.code == "ArrowUp"){
+                    var chosen = document.getElementsByClassName("checked")[0];
+                    chosen.className = "";   
+                    console.log(chosen.previousSibling); 
+                    if(chosen == toShow.children[0]){
+                        toShow.children[4].className = "checked";
+                    }else{
+                        chosen.previousSibling.className = "checked";
+                    }
+                }else if(e.code == "Enter"){
+                    email.value = document.getElementsByClassName("checked")[0].innerText;
+                    removeAll();
+                    toShow.style.display = "none";
+                }
+            })
+        }
+    </script>    
+    </body>
+</html>
