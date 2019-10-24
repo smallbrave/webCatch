@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title> saleMan </title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+    table{
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+    }
+    table td{
+        border: 1px solid #ccc;
+    }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <div id="region-radio-wrapper"></div>
+            <div id="product-radio-wrapper"></div>
+            <div id="table-wrapper"></div>
+        </div>
+        <script src="./ife31data.js"></script>
+        <script>
+            var regions =document.getElementById("region-radio-wrapper");
+            regions.name = "region";
+            var products =document.getElementById("product-radio-wrapper");
+            products.name = "product";
+            var myTable = document.getElementById("table-wrapper");
+            function creatCheck(obj,array){
+                var outside =document.createElement("label");
+                var checkBox = document.createElement("input");
+                checkBox.type = "checkbox";
+                checkBox.value = "全选";
+                outside.innerText = "全选";
+                checkBox.setAttribute('checkbox-type',"all");
+                outside.appendChild(checkBox);
+                obj.appendChild(outside);
+                for(var val of array){
+                    var outside =document.createElement("label");
+                    var radio = document.createElement("input");
+                    radio.type = "checkbox";
+                    radio.name = obj.name;;
+                    radio.value = val ;
+                    outside.innerText = val;
+                    outside.appendChild(radio);
+                    obj.appendChild(outside);
+                }  
+            }
+            creatCheck(regions,["华东","华北","华南"]); 
+            creatCheck(products,["手机","笔记本","智能音箱"]);
+            getItem(regions);
+            getItem(products);
+            //处理选择的显示情况
+           function getItem(obj){
+                var arrayVal = obj.getElementsByTagName("input");
+                for(var i = 0;i < arrayVal.length;i++){
+                    arrayVal[i].onclick = function(e){
+                        getChecked(obj,e);
+                        myTable.innerHTML = "";
+                        createTable(getValue()); 
+                    }
+                }
+           }
+           function getChecked(obj,e){
+               if(e.target.getAttribute("checkbox-type")){
+                    if(!e.target.checked){
+                        cancleAll(e.target);
+                        }else{
+                            makeAll(e.target);
+                        }
+                }else if(makeSure(e.target)>2){
+                    makeAll(e.target);
+                }else if(makeSure(e.target)<=2){
+                    obj.getElementsByTagName("input")[0].checked = false;
+                }
+           }
+           //全选
+           function makeAll(obj){
+               var divBox = obj.parentElement.parentElement; 
+               var inputArray = divBox.getElementsByTagName("input");
+               for(var val of inputArray){
+                   val.checked = true;
+               }
+           }
+           //取消全选
+           function cancleAll(obj){
+            var divBox = obj.parentElement.parentElement; 
+               var inputArray = divBox.getElementsByTagName("input");
+               for(var val of inputArray){
+                   val.checked = false;
+               }
+           }
+           //获取选择的数目是否有满足全选
+           function makeSure(obj){
+               var count = 0;
+               var divBox = obj.parentElement.parentElement; 
+               var inputArray = divBox.getElementsByTagName("input");
+               for(var val of inputArray){
+                   if(val.checked == true && !val.getAttribute("checkbox-type")){
+                       count++;
+                   }
+               }
+               return count;
+           }
+           //获取选中的数据
+           function getValue(){
+               var regionsArray = regions.getElementsByTagName("input");
+               var productsArray = products.getElementsByTagName("input");
+               var arrayR = [];
+               var arrayP = [];
+               var array  = []
+               for(var val of getCheckedVal(regionsArray)){
+                   for(var message of sourceData){
+                       if(val == message.region){  
+                           arrayR.push(message);
+                        }
+                   }
+               }
+               for(var val of getCheckedVal(productsArray)){
+                   for(var message of sourceData){
+                       if(val == message.product){
+                           arrayP.push(message);
+                       }
+                   }
+               }
+               if(arrayR.length<=0){
+                   return arrayP;
+               }else if(arrayP.length<=0){
+                   return arrayR;
+               }else{
+                for(var val of arrayR){
+                    for(var message of arrayP){
+                        if(val.product == message.product){
+                           array.push(val);
+                           break;
+                    }
+                   }
+               }
+               return array;
+               }
+
+           }
+           function getCheckedVal(arrayList){
+               var array = [];
+               for(var val of arrayList){
+                    if(val.checked){
+                    array.push(val.parentElement.innerText);
+                   }
+                }
+                return array;
+           }
+           //创建表格
+           function createTable(data){
+               var table = document.createElement("table");
+                var thead = document.createElement("thead");
+                var tbody = document.createElement("tbody");
+                var myTdOne = document.createElement("td");
+                myTdOne.innerText = "商品";
+                thead.appendChild(myTdOne);
+                var myTdTwo = document.createElement("td");
+                myTdTwo.innerText = "地区";
+                thead.appendChild(myTdTwo);
+                for(var i = 1;i <= 12;i++){
+                var td = document.createElement("td");
+                td.innerText = i + "月销量";
+                thead.appendChild(td);
+                }
+                table.appendChild(thead);
+                for(var j = 0;j<data.length;j++){
+                    var tr = document.createElement("tr");
+                    var myTdOne = document.createElement("td");
+                    myTdOne.innerText = data[j].product;
+                    tr.appendChild(myTdOne);
+                    var myTdTwo = document.createElement("td");
+                    myTdTwo.innerText = data[j].region;
+                    tr.appendChild(myTdTwo);
+                    for(var i = 0;i < 12;i++){
+                        var td = document.createElement("td");
+                        td.innerText = data[j].sale[i];
+                        tr.appendChild(td);
+                    }
+                    tbody.appendChild(tr);
+                }  
+                table.appendChild(tbody);
+                myTable.appendChild(table);
+
+           }
+        </script>
+    </body>
+</html>

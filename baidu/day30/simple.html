@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title> 我是精明小卖家 </title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+        table{
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+        td{
+            border: 1px solid #ccc;
+        }
+    
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <select id="region">
+                <option> 请选择地区 </option>
+                <option value="华东">华东</option>
+                <option value="华北">华北</option>
+                <option value="华南">华南</option>
+            </select>
+            <select id="product">
+                <option> 请选择商品 </option>
+                <option value="手机">手机</option>
+                <option value="笔记本">笔记本</option>
+                <option value="智能音箱">智能音箱</option>
+
+            </select>
+            <button id="makesure"> 确认选择 </button>
+            <div id="table-wrapper">
+                <!-- <table id="address-table">
+                    <thead>
+
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table> -->
+            </div>
+        </div>
+        <script src="./ife31data.js"></script>
+        <script>
+            var btn = document.getElementById("makesure");
+            var myRegion = document.getElementById("region");
+            var myProduct = document.getElementById("product");
+            var myTable = document.getElementById("table-wrapper"); 
+            btn.onclick = function(){
+                drawTable(getValue());
+            }
+            function getValue(){
+                var array = [];
+                var arrayR = [];
+                var arrayP = [];
+                var regionVal = getSelectVal(myRegion);
+                var productVal = getSelectVal(myProduct);
+                return findNeed(regionVal,productVal);
+            }
+            function drawTable(data){
+                var table = document.createElement("table");
+                var thead = document.createElement("thead");
+                var tbody = document.createElement("tbody");
+                var myTdOne = document.createElement("td");
+                myTdOne.innerText = "商品";
+                thead.appendChild(myTdOne);
+                var myTdTwo = document.createElement("td");
+                myTdTwo.innerText = "地区";
+                thead.appendChild(myTdTwo);
+                for(var i = 1;i <= 12;i++){
+                   var td = document.createElement("td");
+                   td.innerText = i + "月销量";
+                   thead.appendChild(td);
+                }
+                table.appendChild(thead);
+                for(var j = 0;j<data.length;j++){
+                    var tr = document.createElement("tr");
+                    var myTdOne = document.createElement("td");
+                    myTdOne.innerText = data[j].product;
+                    tr.appendChild(myTdOne);
+                    var myTdTwo = document.createElement("td");
+                    myTdTwo.innerText = data[j].region;
+                    tr.appendChild(myTdTwo);
+                    for(var i = 0;i < 12;i++){
+                        var td = document.createElement("td");
+                        td.innerText = data[j].sale[i];
+                        tr.appendChild(td);
+                    }
+                    tbody.appendChild(tr);
+                }  
+                table.appendChild(tbody);
+                myTable.appendChild(table);
+
+            }
+            function getSelectVal(obj){
+                var indexSelect = obj.selectedIndex;
+                var selectVal = obj.options[indexSelect].value;
+                return selectVal;
+            }
+            function findNeed(regionVal,productVal){
+                var array = [];
+                var arrayR = [];
+                var arrayP = [];
+                for(var value of sourceData){
+                    if(value.region == regionVal){
+                        arrayR.push(value);
+                    }
+                }
+                for(var value of sourceData){
+                    if(value.product == productVal){
+                        arrayP.push(value);
+                    }
+                }
+                for(var value of arrayP){
+                    if(value.region == regionVal){
+                        array.push(value);
+                    }
+                }
+                return array;
+            }
+        </script>
+    </body>
+</html>
