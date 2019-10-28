@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title> Canvas </title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    </head>
+    <body>
+        <canvas id="line"></canvas>
+        <canvas id="rectangle"></canvas>
+        <canvas id="circle"></canvas>
+        <canvas id="text"></canvas>
+        <canvas id="clock"></canvas>
+        <canvas id="cloud"></canvas>
+        <script>
+            //线
+            var lineC = line.getContext("2d");
+            lineC.beginPath();
+            lineC.moveTo(20,20);
+            lineC.lineTo(100,100);
+            lineC.stroke();
+            //矩形
+            var rect = rectangle.getContext("2d");
+            rect.beginPath();
+            rect.rect(20,10,100,120);
+            rect.stroke();        
+            //圆形
+            var circleC = circle.getContext("2d");
+            circleC.beginPath();
+            circleC.arc(60,60,40,0,2*Math.PI);
+            circleC.stroke();
+            //文字
+            var textC = text.getContext("2d");
+            textC.beginPath();
+            textC.font = "40px Arial";
+            textC.fillText("niaho",10,50);
+            //时钟
+            var clockC = clock.getContext("2d");
+            clockC.beginPath();
+            clockC.arc(60,60,50,0,2*Math.PI);
+            clockC.stroke();
+            clockC.moveTo(60,60);
+            clockC.lineTo(80,96);
+            clockC.stroke();
+            clockC.moveTo(60,60);
+            clockC.lineTo(80,80);
+            clockC.stroke();
+            //云
+            var cloudC =cloud.getContext("2d");
+            cloudC.beginPath();
+            cloudC.moveTo(0,100);
+            cloudC.lineTo(200,100);
+            cloudC.stroke();
+            cloudC.moveTo(0,100);
+            cloudC.quadraticCurveTo(40,10,80,60);
+            cloudC.stroke();
+            cloudC.moveTo(80,60);
+            cloudC.quadraticCurveTo(100,0,140,80);
+            cloudC.stroke();
+            cloudC.moveTo(140,80);
+            cloudC.quadraticCurveTo(200,0,200,100);
+            cloudC.stroke();
+
+        </script>
+    </body>
+</html>
