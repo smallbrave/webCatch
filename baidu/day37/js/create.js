@@ -1,3 +1,4 @@
+//关于全选的功能
 function creatCheck(obj,array){
     var outside =document.createElement("label");
     var checkBox = document.createElement("input");

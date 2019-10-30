@@ -11,11 +11,27 @@
         border-collapse: collapse;
     }
     table td{
+        font-size: 20px;
         border: 1px solid #ccc;
+        position: relative;
     }
     td input{
+        width: 80px;
+    }
+    td span{
+        display: none;
+    }
+    table td:hover span{
+        content: "编辑";
         display: inline-block;
-        width: 79px;
+        font-size: 9px;
+        vertical-align: top; 
+    }
+    td button{
+        position: relative;
+        font-size: 9px;
+        width: 36px;
+        border: none;
     }
     </style>
     </head>

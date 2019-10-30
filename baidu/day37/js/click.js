@@ -8,10 +8,11 @@
                         createTable(getValue());
                         effectList.innerHTML = "";
                         drawGraph(getValue());
-                        //清空画布
-                        var heigthP = 700 - Math.random();
-                        lineChart.setAttribute('heigth',heigthP); 
                         drawChart(getValue());
+                        //表格内容监控
+                        var tableWrapper = document.getElementById("table-wrapper");
+                        inputList = tableWrapper.getElementsByTagName("input");
+                        
                     }
                 }
                 return getValue();

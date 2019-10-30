@@ -25,13 +25,29 @@
                  tr.appendChild(myTdTwo);
                  for(var i = 0;i < 12;i++){
                      var td = document.createElement("td");
-                     var inpt = document.createElement("input");
-                     inpt.value = data[j].sale[i];
-                     td.appendChild(inpt);
+                     var span = document.createElement("span");
+                     td.innerText = data[j].sale[i];
+                     span.innerText = "编辑";
+                     td.appendChild(span);
                      tr.appendChild(td);
+                     tdClick(td);
                  }
                  tbody.appendChild(tr);
              }  
              table.appendChild(tbody);
              myTable.appendChild(table);
+        }
+
+        function tdClick(obj){
+            obj.onclick = function(e){
+                if(e.target.localName == "td"){
+                    var local = e.target.innerText.slice(0,-2);
+                    e.target.innerHTML = `<input type='text' value='' />
+                                          <button class='cancel'> 取消 </button>
+                                          <button class='confirm'> 确定 </button>`;
+                                          judge(local);
+                                          tableInput(local);
+                }
+                e.stopPropagation();
+            }   
         }

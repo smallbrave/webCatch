@@ -1,8 +1,8 @@
  //折线图 
  function drawChart(data){
      var line = lineChart.getContext("2d");
-     lineChart.width = "700";
-     lineChart.height = "500";
+     lineChart.width = 700;
+     lineChart.height = 500;
      line.beginPath();
      line.moveTo(50,100);
      line.lineTo(50,450);
