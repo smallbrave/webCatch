@@ -39,15 +39,29 @@
         }
 
         function tdClick(obj){
+            var value = obj.innerText.slice(0,-2);
+            obj.setAttribute("tabindex","1");
             obj.onclick = function(e){
-                if(e.target.localName == "td"){
-                    var local = e.target.innerText.slice(0,-2);
-                    e.target.innerHTML = `<input type='text' value='' />
+                if(e.target.localName == "span"){
+                var local = e.target.parentElement.innerText.slice(0,-2);
+                    e.target.parentElement.innerHTML = `<input type='text' value='' />
                                           <button class='cancel'> 取消 </button>
                                           <button class='confirm'> 确定 </button>`;
                                           judge(local);
                                           tableInput(local);
                 }
                 e.stopPropagation();
-            }   
+            }
+            obj.onblur = function(e){
+            try{
+                if(e.relatedTarget.localName && (e.relatedTarget.localName == "input" 
+                || e.relatedTarget.localName == "button")){
+                    console.log(e.relatedTarget);
+                }else{
+                    obj.innerHTML = value + "<span>编辑</span>";
+                }
+            }catch(error){
+                console.log(error);
+            }
+            }
         }

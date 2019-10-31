@@ -38,7 +38,7 @@ function checkIn(data){
  function tableInput(val){
      var value = val;
     for(var val of inputList){
-        val.onkeyup = function(e){
+        val.onchange = function(e){
             console.log(e);
             if(e.code == "Enter"){
                 var inputVal = e.target.value;
@@ -49,6 +49,7 @@ function checkIn(data){
             if(e.code == "Escape"){
                 e.target.parentElement.innerHTML = value + "<span>编辑</span>";
             }
+            e.target.parentElement.focus();
         }       
     }
     //点击input外的事件
@@ -77,6 +78,7 @@ function checkIn(data){
      //点击确定时
      btnConfirm.onclick = function(e){
          var inputVal = e.target.parentElement.children[0].value;
+         e.target.parentElement.focus();
          if(checkIn(inputVal)){
             e.target.parentElement.innerHTML = inputVal + "<span>编辑</span>";
          }
