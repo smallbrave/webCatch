@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title> 复杂一点儿 </title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    </head>
+    <body>
+        <button id="a">A</button>
+        <button id="b">B</button>
+        <button id="c">C</button>
+            
+        <button id="d">D</button>
+        <button id="e">E</button>
+        <button id="f">F</button>
+            
+            
+        <div id="contABC"></div>
+        <div id="contDEF"></div>
+        <script>
+            var btns = document.getElementsByTagName("button");
+            function checkHash(){
+                var hashValue = window.location.hash;
+                if(hashValue.length > 2){
+                //当window.location.hash中有多条语句（因为后点击加在window.location.hash后面）
+                //所以，通过substr对window.location.hash进行截取。
+                    return [hashValue.substr(1,1),hashValue.substr(hashValue.length-1,1)];
+                }else{
+                    return hashValue.substr(1.1);
+                }
+            }
+            function show(){
+                var value = checkHash();
+                console.log("length: "+value.length);
+            //对window.location.hash 内容进行一定处理
+            //当window.location.hash中只有一条语句（即只含有A,B,C）中的一个    
+                if(value.length < 1){
+                    console.log("<1");
+                    contABC.innerText = "";
+                    contDEF.innerText = "";
+                }else if(value.length == 1){
+                    console.log("=1");
+                    if(value >= "A" && value <= "C"){
+                        contABC.innerText = value;
+                    }else{
+                        contDEF.innerText = value;
+                    }
+                }else{
+                    console.log(">1");  
+            //当window.location.hash中有多条语句（即含有A/B/C,F,E,D）
+            //通过if将内容分发。
+                    for(var val of value){
+                        if(val >= "A" && val <= "C"){
+                            contABC.innerText = val;
+                        }else{
+                            contDEF.innerText = val;
+                        }
+                    }
+                }
+
+            }
+            for(var val of btns){
+                val.onclick = function(e){
+                    if(e.target.innerText >= "A" && e.target.innerText <= "C"){
+                        window.location.hash = e.target.innerText + window.location.hash;
+                    }else{
+                        window.location.hash += "#" + e.target.innerText;
+                    }
+                    checkHash();
+                }
+            }
+            window.onhashchange = function(){
+                show();
+            }    
+            show();
+        </script>
+    </body>
+</html>

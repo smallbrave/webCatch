@@ -1,0 +1,2360 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>挑战杯</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <!-----------------------------------------------------------例子------------------------------------------------->
+    <!--这里添加css文件-->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/part3/part-3.css" />
+    <!--这里添加css文件-->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/part1/1.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/part2/2.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/part3/3-6.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/part4/part4.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/part5/part5.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/part-6.css" />
+    <!---------------------------------------------------------------------------------------------------------------->
+    <script src="./js/jquery-2.2.4.min.js"></script>
+    <script src="js/echarts.min.js"></script>
+</head>
+<body>
+    <div id="shadow">
+    </div>
+    <div id="aside">
+        <img id="logo" src="./image/ALL/icon.png" alt="icon"/>
+        <div id="aside-menu">
+            <img id="menu-icon" src="./image/ALL/aside-icon.png" alt="menu-icon"/>
+           
+            <div class="menu-first" id="data-collection">
+                <div class="menu-name">数据采集</div>
+                <img src="image/ALL/双箭头.png" alt="jiantou">
+            </div>
+            <div class="menu-second" id="data-collection-box">
+                 <span id="content-part-2">
+                    数据输入
+                </span>
+            </div>
+            <div class="menu-first" id="data-analysis">
+                <div class="menu-name">数据分析</div>
+                <img src="image/ALL/双箭头.png" alt="jiantou">
+            </div>
+            <div class="menu-second" id="data-analysis-box">
+                 <span id="content-part-3-1">
+                    模型训练
+                </span>
+                <span id="content-part-3-4">
+                    查看已有模型
+                </span>
+                 <span id="content-part-3-6">
+                    数据综合
+                </span>
+            </div>
+            <div class="menu-first" id="online-monitor">
+                <div class="menu-name">在线监测</div>
+                <img src="image/ALL/双箭头.png" alt="jiantou">
+            </div>
+            <div class="menu-second" id="online-monitor-box">
+                <span id="content-part-4" ><a class="zxjc" href="part4-zxjc.html">在线监测</a></span>
+            </div>
+            <div class="menu-first" id="hot-prediction">
+                <div class="menu-name">过热度预测</div>
+                <img src="image/ALL/双箭头.png" alt="jiantou">
+            </div>
+            <div class="menu-second" id="hot-prediction-box">
+                 <span id="content-part-5-2">
+                    选择电解槽
+                 </span>
+                <span id="content-part-5-3">
+                    预测结果
+                 </span>
+                <span id="content-part-5-1">
+                    单个电解槽
+                 </span>
+            </div>
+             <div class="menu-first" id="user-management">
+                 <div class="menu-name">用户管理</div>
+                 <img src="image/ALL/双箭头.png" alt="jiantou">
+            </div>
+            <div class="menu-second" id="user-management-box">
+                <span id="content-part-1-1">
+                    日志管理
+                </span>
+                <span id="content-part-1-2">
+                    用户信息
+                </span>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <div id="content-top">
+           <div id="content-top-user">
+                <img id="user" src="./image/ALL/user.png" alt="user"/>
+                <span id="user-name">Alex</span>
+                <img id="bell" style=" width: 1.5vw;height: 1.5vw;" src="./image/ALL/bell.png" alt="user"/>
+                <img id="more" style=" width: 1.5vw;height: 1.5vw;" src="./image/ALL/more.png" alt="user"/>
+                <img id="share" style=" width: 1.5vw;height: 1.5vw;" src="./image/ALL/share.png" alt="user"/>
+           </div>
+           <div id="content-top-nav">
+               <ul>
+                   <li class="top-nav"><span>数据采集</span></li>
+                   <li class="top-nav"><span>数据分析</span></li>
+                   <li class="top-nav"><span>在线监测</span></li>
+                   <li class="top-nav"><span>过热度预测</span></li>
+                   <li class="top-nav"><span>用户管理</span></li>
+               </ul>
+           </div>
+        </div>
+        <!--请在此添加新页面-->
+        <div class="content-body" id="show-content-part-1-1"><!--6-1及6-2-->
+            <div class="model-training">
+                <img src="./image/ALL/left-arrow.png"/>
+                <span>日志管理  Log management </span>
+            </div>
+            <div id="con-61residues-middle-one"><!-- 日志管理界面内容两层中上面一层-->
+                <div  class="con-61residues-middle-pc1"><!--上面一层左边第一个框-->
+                    <p class="con-61-first-box-top">数据记录</p><!--标题-->
+                    <div class="con-61-first-box-content" id="style-1"><!--内容-->
+                        <div class="con-61-first-box-content-1" id="con-61-first-box-content-1"><!--内容1-->
+                            <span class="con-61-first-box-content-1-words1" id="con-61-first-box-content-1-top1"style="margin-top: 2vw;"></span><br/><!--显示当前年月日-->
+                            <span class="con-61-first-box-content-1-words1">数据输入量：</span> <input class="con-61-first-box-content-1-words2" type="text"  value="10086"><br/>
+                            <span class="con-61-first-box-content-1-words1">所用时间：</span><input class="con-61-first-box-content-1-words2" type="text"  value="10086"> <br/>
+                            <span class="con-61-first-box-content-1-words1">图表：</span>
+                            <div id="con-61-first-box-pic1"></div><!--echarts图形-->
+                        </div>
+                        <div class="con-61-first-box-content-1" id="con-61-first-box-content-2"><!--内容2-->
+                        <span class="con-61-first-box-content-1-words1" id="con-61-first-box-content-1-top2" style="margin-top: 2vw;"></span><!--显示当前年月日-->
+                        <br/>
+                        <span class="con-61-first-box-content-1-words1">数据输入量：</span> <input class="con-61-first-box-content-1-words2" type="text"  value="10086"><br/>
+                        <span class="con-61-first-box-content-1-words1">所用时间：</span><input class="con-61-first-box-content-1-words2" type="text" value="10086"> <br/>
+                        <span class="con-61-first-box-content-1-words1">图表：</span><!--echarts图形-->
+                        <div id="con-61-first-box-pic2"></div>
+                        </div>
+                        <div class="con-61-first-box-content-1" id="con-61-first-box-content-3"><!--内容3-->
+                            <span class="con-61-first-box-content-1-words1" id="con-61-first-box-content-1-top3"style="margin-top: 2vw;"></span><br/><!--显示当前年月日-->
+                            <span class="con-61-first-box-content-1-words1">数据输入量：</span> <input class="con-61-first-box-content-1-words2" type="text" value="10086"><br/>
+                            <span class="con-61-first-box-content-1-words1">所用时间：</span><input class="con-61-first-box-content-1-words2" type="text"  value="10086"> <br/>
+                            <span class="con-61-first-box-content-1-words1">图表：</span><!--echarts图形-->
+                            <div id="con-61-first-box-pic3"></div>
+                        </div>
+                        <script type="text/javascript">  
+                        // 实现echarts图形代码
+                            // 基于准备好的dom，初始化echarts实例
+                            var myChart2 = echarts.init(document.getElementById('con-61-first-box-pic2'));
+                            var myChart1 = echarts.init(document.getElementById('con-61-first-box-pic1'));
+                            var myChart3 = echarts.init(document.getElementById('con-61-first-box-pic3'));
+
+                            // 指定图表的配置项和数据
+                            option = {
+                                xAxis: {
+                                    type : 'value',
+                                },
+                                yAxis: {
+                                    type : 'value',
+                                },
+                                grid:{
+                                    x:'5%',    //左上角x轴距盒子边框的距离
+                                    y:60,        //左上角Y轴距盒子边框的距离
+                                    x2:'5%',    //右下角x轴距盒子边框的距离
+                                    y2:30,     //右下角Y轴距盒子边框的距离
+                                    borderWidth:1
+                                },
+                                series: [{
+                                    data: [5, 10, 1, 8],
+                                    type: 'line'
+                                }]
+                            };
+                             //使用刚指定的配置项和数据显示图表。
+                            myChart2.setOption(option);
+                            myChart1.setOption(option);
+                            myChart3.setOption(option);
+                        </script>
+                    </div>
+                </div>
+                <div  class="con-61residues-middle-pc1"><!--第一层中间框-->
+                    <p class="con-61-first-box-top">模型记录</p><!--标题-->
+                    <div class="con-61-first-box-content" id="style-2"><!--内容-->
+                        <div class="con-61-first-box-content-1" id="con-61-second-box-content-1"><!--内容1-->
+                            <span class="con-61-first-box-content-1-words1" id="con-61-second-box-content-1-top1"style="margin-top: 2vw;"></span><br/><!--显示当前年月日-->
+                            <span class="con-61-first-box-content-1-words1">模型生成量：</span> <input class="con-61-first-box-content-1-words2"  value="200"><br/>
+                            <span class="con-61-first-box-content-1-words1">所用时间：</span><input class="con-61-first-box-content-1-words2" type="text"  value="200"> <br/>
+                            <span class="con-61-first-box-content-1-words1">方法：</span><input class="con-61-first-box-content-1-words2" type="text"  value="未知方法"> <br/>
+                            <span class="con-61-first-box-content-1-words1">模型图：</span>
+                            <div id="con-61-second-box-pic1"></div><!--模型图-->
+                        </div>
+                        <div class="con-61-first-box-content-1" id="con-61-second-box-content-2"><!--内容2-->
+                        <span class="con-61-first-box-content-1-words1" id="con-61-second-box-content-1-top2" style="margin-top: 2vw;"></span><br/><!--显示当前年月日-->
+                            < <span class="con-61-first-box-content-1-words1">模型生成量：</span> <input class="con-61-first-box-content-1-words2" type="text" value="200"><br/>
+                            <span class="con-61-first-box-content-1-words1">所用时间：</span><input class="con-61-first-box-content-1-words2" type="text"  value="200"> <br/>
+                            <span class="con-61-first-box-content-1-words1">方法：</span><input class="con-61-first-box-content-1-words2" type="text"  value="未知方法"> <br/>
+                            <span class="con-61-first-box-content-1-words1">模型图：</span><!--模型图-->
+                            <div id="con-61-second-box-pic2"></div>
+                        </div>
+                        <div class="con-61-first-box-content-1" id="con-61-second-box-content-3"><!--内容3-->
+                            <span class="con-61-first-box-content-1-words1" id="con-61-second-box-content-1-top3"style="margin-top: 2vw;"></span><br/><!--显示当前年月日-->
+                            <span class="con-61-first-box-content-1-words1">模型生成量：</span> <input class="con-61-first-box-content-1-words2" type="text"  value="200"><br/>
+                            <span class="con-61-first-box-content-1-words1">所用时间：</span><input class="con-61-first-box-content-1-words2" type="text"  value="200"> <br/>
+                            <span class="con-61-first-box-content-1-words1">方法：</span><input class="con-61-first-box-content-1-words2" type="text"  value="未知方法"> <br/>
+                            <span class="con-61-first-box-content-1-words1">模型图：</span><!--模型图-->
+                            <div id="con-61-second-box-pic3"></div>
+                        </div>
+                    </div>
+                </div>
+                <div  class="con-61residues-middle-pc2"><!--第一层右边的框-->
+                    <p class="con-61-third-box-top">登陆历史</p><!--标题-->
+                    <div class="con-61-third-box-content" id="style-3">
+                        <!--内容显示模型记录+数据记录登陆时间-->
+                        <p class="con-61-third-box-content-1-words1" id="denglulishi1-1" ></p>
+                        <p class="con-61-third-box-content-1-words1" id="denglulishi1-2"></p>
+                        <p class="con-61-third-box-content-1-words1" id="denglulishi1-3"></p>
+                        <p class="con-61-third-box-content-1-words1" id="denglulishi1-4"></p>
+                        <p class="con-61-third-box-content-1-words1" id="denglulishi1-5"></p>
+                        <p class="con-61-third-box-content-1-words1" id="denglulishi1-6"></p>
+                </div>
+            </div>
+            </div>
+            <div id="con-61residues-middle-two"><!--6-1第二层-->
+                <div  class="con-61residues-bottom-pc1"><!--第二层第一个框-->
+                    <p class="con-61-fourth-box-top">过热度预测记录</p><!--标题-->
+                    <div class="con-61-fourth-box-content" ><!--内容1-->
+                        <div class="con-61-fourth-box-content-1" id="con-61-fourth-box-content-1"><!--显示当前年月日-->
+                            <span class="con-61-first-box-content-1-words1" id="con-61-fourth-box-content-1-top1"style="margin-top: 2vw;"></span><br/>
+                            <span class="con-61-first-box-content-1-words1">原铝质量：</span> <input class="con-61-first-box-content-1-words2" type="text" style="width:3vw;" value="xkg"><br/>
+                            <span class="con-61-first-box-content-1-words1">电解质水平：</span><input class="con-61-first-box-content-1-words2" type="text" style="width:3vw;" value="x%"><br/>
+                            <span class="con-61-first-box-content-1-words1">析出铝质量：</span><input class="con-61-first-box-content-1-words2" type="text" style="width:3vw;" value="xkg"><br/>
+                        </div>
+                        <div class="con-61-fourth-box-content-1" id="con-61-fourth-box-content-2"><!--内容2-->
+                            <span class="con-61-first-box-content-1-words1" id="con-61-fourth-box-content-2-top1"style="margin-top: 2vw;"></span><br/><!--显示当前年月日-->
+                            <span class="con-61-first-box-content-1-words1">原铝质量：</span> <input class="con-61-first-box-content-1-words2" type="text" style="width:3vw;" value="xkg"><br/>
+                            <span class="con-61-first-box-content-1-words1">电解质水平：</span><input class="con-61-first-box-content-1-words2" type="text" style="width:3vw;" value="x%"><br/>
+                            <span class="con-61-first-box-content-1-words1">析出铝质量：</span><input class="con-61-first-box-content-1-words2" type="text" style="width:3vw;" value="xkg"><br/>
+                        </div>
+                        <div class="con-61-fourth-box-content-1" id="con-61-fourth-box-content-3"><!--内容3-->
+                            <span class="con-61-first-box-content-1-words1" id="con-61-fourth-box-content-3-top1"style="margin-top: 2vw;"></span><br/><!--显示当前年月日-->
+                            <span class="con-61-first-box-content-1-words1">原铝质量：</span> <input class="con-61-first-box-content-1-words2" type="text" style="width:3vw" value="xkg"><br/>
+                            <span class="con-61-first-box-content-1-words1">电解质水平：</span><input class="con-61-first-box-content-1-words2" type="text" style="width:3vw" value="x%"><br/>
+                            <span class="con-61-first-box-content-1-words1">析出铝质量：</span><input class="con-61-first-box-content-1-words2" type="text" style="width:3vw;" value="xkg"><br/>
+                        </div>
+                        <div class="con-61-fourth-box-content-1" id="con-61-fourth-box-content-4"><!--内容4-->
+                            <span class="con-61-first-box-content-1-words1" id="con-61-fourth-box-content-4-top1"style="margin-top: 2vw;"></span><br/><!--显示当前年月日-->
+                            <span class="con-61-first-box-content-1-words1">原铝质量：</span> <input class="con-61-first-box-content-1-words2" type="text" style="width:3vw;" value="xkg"><br/>
+                            <span class="con-61-first-box-content-1-words1">电解质水平：</span><input class="con-61-first-box-content-1-words2" type="text" style="width:3vw;" value="x%"><br/>
+                            <span class="con-61-first-box-content-1-words1">析出铝质量：</span><input class="con-61-first-box-content-1-words2" type="text" style="width:3vw;" value="xkg"><br/>
+                        </div>
+                </div>
+                </div>
+                <div  class="con-61residues-bottom-pc2"><!--第二层第二个框-->
+                    <p class="con-61-third-box-top">登陆历史</p><!--标题-->
+                    <div class="con-61-third-box-content" id="style-4">
+                        <!--内容显示过热度预测记录登陆时间-->
+                        <p class="con-61-third-box-content-1-words1" id="denglulishi2-1" ></p>
+                        <p class="con-61-third-box-content-1-words1" id="denglulishi2-2"></p>
+                        <p class="con-61-third-box-content-1-words1" id="denglulishi2-3"></p>
+                        <p class="con-61-third-box-content-1-words1" id="denglulishi2-4"></p>
+                        <p class="con-61-third-box-content-1-words1" id="denglulishi2-5"></p>
+                        <p class="con-61-third-box-content-1-words1" id="denglulishi2-6"></p>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="content-body" id="show-content-part-1-2">
+            <div class="model-training">
+                <img src="./image/ALL/left-arrow.png"/>
+                <span>用户信息  User information </span>
+            </div>
+            <div id="con-62residues-middle"><!--6-2整个框架-->
+                <div class="con-62residues-pc1"><!--6-2左边的框-->
+                    <div class="con-62residues-pc1-content"><!--内容1-->
+                        <p class="con-61-first-box-content-1-words1" id="con-62-first-box-content-1-top1"style="margin-top: 2vw;"></p><!--显示当前年月日-->
+                        <span class="con-61-first-box-content-1-words1">信息类别：</span> <input class="con-61-first-box-content-1-words2" type="text" style="width:3vw;" value="预警"><br/>
+                        <p class="con-61-first-box-content-1-words1"style="margin-top: 0.5vw">信息内容：</p>
+                    </div>
+                    <div class="con-62residues-pc1-content"><!--内容2-->
+                        <p class="con-61-first-box-content-1-words1" id="con-62-first-box-content-2-top1"style="margin-top: 2vw;"></p><!--显示当前年月日-->
+                        <span class="con-61-first-box-content-1-words1">信息类别：</span> <input class="con-61-first-box-content-1-words2" type="text" style="width:3vw;" value="预警"><br/>
+                        <p class="con-61-first-box-content-1-words1"style="margin-top: 0.5vw">信息内容：</p>
+                    </div>
+                </div>
+                <div class="con-62residues-pc2"><!--6-2中间的框-->
+                    <div class="con-62residues-pc2-content"><!--表单内容div-->
+                        <form action=""  onsubmit="return fun1()"  name="myform" id="formone"><!--表单内容-->
+                            <div class="con-62residues-pc2-content-form" style="margin-top: 2.5vw;"><!--第一层姓名+身份证 号-->
+                                <div class="con-62residues-pc2-content-form-content"><!--姓名-->
+                                    <span class="con-62residues-pc2-content-form-words">姓名:</span><input type="text" class="con-62residues-pc2-content-form-input" id="Fname" style="width:6vw;">
+                                </div>
+                                <div class="con-62residues-pc2-content-form-content"><!--身份证号-->
+                                    <span class="con-62residues-pc2-content-form-words "style="margin-left: 0vw">身份证号:</span><input type="text" id="card"class="con-62residues-pc2-content-form-input" style="width:9.5vw;">
+                                </div>
+                            </div>
+                            <div class="con-62residues-pc2-content-form"> <!--第一层性别+手机号-->
+                                <div class="con-62residues-pc2-content-form-content"><!--性别-->
+                                    <span class="con-62residues-pc2-content-form-words">性别:</span>
+                                    <!--男性及女性单选钮-->
+                                    <input type="radio" name="sex" value="male" style="width: 1.5vw;height:1.5vh;"><span class="con-62residues-pc2-content-form-words" style="margin-left: 0vw">男</span>
+                                    <input type="radio" name="sex" value="female"style="width: 1.5vw;height:1.5vh;"><span class="con-62residues-pc2-content-form-words" style="margin-left: 0vw">女</span>
+                                </div>
+                                <div class="con-62residues-pc2-content-form-content"><!--手机号-->
+                                    <span class="con-62residues-pc2-content-form-words "style="margin-left: 0vw">手机号:</span><input type="text" id="phone"class="con-62residues-pc2-content-form-input" style="width:10.6vw;">
+                                </div>
+                            </div>
+                            <div class="con-62residues-pc2-content-form"><!--第三层所属省及所属市选择-->
+                                <div class="con-62residues-pc2-content-form-content"><!--所属省-->
+                                    <span class="con-62residues-pc2-content-form-words">所属省份:</span>
+                                    <select id="province" name="province "  style="width:7vw;height:2vh;"><option class="option-62" ></option></select>
+                                </div>
+                                <div class="con-62residues-pc2-content-form-content"><!--所属市-->
+                                    <span class="con-62residues-pc2-content-form-words "style="margin-left:0vw;">所属市区:</span>
+                                    <select id="city" name="city" style="width:7vw;height:2vh; "><option class="option-62"></option></select>
+                                </div>
+                            </div>
+                            <div class="con-62residues-pc2-content-form"><!--第四层所属县及电子邮箱-->
+                                <div class="con-62residues-pc2-content-form-content"><!--所属县-->
+                                    <span class="con-62residues-pc2-content-form-words">所属县城:</span>
+                                    <select id="area" name="area" style="width:7vw;height:2vh;"><option class="option-62"></option></select>
+                                </div>
+                                <div class="con-62residues-pc2-content-form-content"><!--电子邮箱-->
+                                    <span class="con-62residues-pc2-content-form-words "style="margin-left: 0vw">电子邮箱:</span><input type="text" id="email"class="con-62residues-pc2-content-form-input" style="width:9.5vw;">
+                                </div>
+                            </div>
+                            <div class="con-62residues-pc2-content-form"><!--第五层工作单位填写-->
+                                <span class="con-62residues-pc2-content-form-words">工作单位:</span><input type="text" class="con-62residues-pc2-content-form-input" style="width:21vw;">
+                            </div>
+                            <div class="con-62residues-pc2-content-form"><!--第六层家庭地址填写-->
+                                <span class="con-62residues-pc2-content-form-words">家庭地址:</span><input type="text" class="con-62residues-pc2-content-form-input" style="width:21vw;">
+                            </div>
+                            <div class="con-62residues-pc2-content-form"><!--第七层提交按钮-->
+                                <input type="submit" value="提交" id="submit-62">
+                            </div>
+                            <div class="con-62residues-pc2-content-form"><!--第八层通过js验证表单填写是否成功来显示相应内容-->
+                                <p id="yanzheng"></p>
+                            </div>
+                        </form>
+                        <!--表单的验证-->
+                        <script >/*是否带有小数*/
+                        function    isDecimal(strValue )  {
+                            var  objRegExp= /^\d+\.\d+$/;
+                            return  objRegExp.test(strValue);
+                        }
+
+                        /*校验是否中文名称组成 */
+                        function ischina(str) {
+                            var reg=/^[\u4E00-\u9FA5]{2,4}$/;   /*定义验证表达式*/
+                            return reg.test(str);     /*进行验证*/
+                        }
+
+                        /*校验身份证是否正确 */
+                        function isStudentNo(str) {
+                            var reg=/^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/; /*定义验证表达式*/
+                            return reg.test(str);     /*进行验证*/
+                        }
+
+                        /*校验电话码格式 */
+                        function isTelCode(str) {
+                            var reg= /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/;
+                            return reg.test(str);
+                        }
+
+                        /*校验邮件地址是否合法 */
+                        function IsEmail(str) {
+                            var reg=/^\w+@[a-zA-Z0-9]{2,10}(?:\.[a-z]{2,4}){1,3}$/;
+                            return reg.test(str);
+                        }
+
+
+                        function  fun1(){
+                            if(!ischina(document.getElementById("Fname").value)){
+                                document.getElementById("yanzheng").innerHTML="姓名必须中文";
+                                document.getElementById("Fname").focus();
+                                return false;
+                            }
+                            if(!isStudentNo(document.getElementById("card").value)){
+                                document.getElementById("yanzheng").innerHTML="身份证输入错误";
+                                document.getElementById("card").focus();
+                                return false;
+                            }
+                            if(!isTelCode(document.getElementById("phone").value)){
+                                document.getElementById("yanzheng").innerHTML="电话号码错误";
+                                document.getElementById("phone").focus();
+                                return false;
+                            }
+                            if(!IsEmail(document.getElementById("email").value)){
+                                document.getElementById("yanzheng").innerHTML="邮箱地址错误";
+                                document.getElementById("email").focus();
+                                return false;
+                            }
+                            /*运行到这里说明验证通过返回true    submit提交按钮起作用提交表单*/
+                            document.getElementById("yanzheng").innerHTML="提交成功";
+                            return false;   // 这边设置禁止提交，项目需要改为 true
+                        }</script>
+                    </div>
+                    <p class="con-61-first-box-top" style="margin-top:-3vw;margin-left: 0.1vw">用户信息修改</p><!--最底下标题-->
+                </div>
+                <div id="con-62residues-middle-bottom"><!--右边框的总体框架-->
+                    <div class="con-62residues-pc3"><!--右面框的上面一个框-->
+                        <!--内容-->
+                        <div class="con-62residues-pc3-cotent"><span class="con-61-first-box-content-1-words1" style="margin-left:1vw ">姓名：</span> <input class="con-61-first-box-content-1-words2" type="text" style="width:3vw;" value="xxx"></div>
+                        <div class="con-62residues-pc3-cotent" style="margin-top: 0.1vw"><span class="con-61-first-box-content-1-words1" style="margin-left:1vw">性别：</span> <input class="con-61-first-box-content-1-words2" type="text" style="width:3vw;" value="xxx"></div>
+                        <div class="con-62residues-pc3-cotent" style="margin-top: 0.1vw"><span class="con-61-first-box-content-1-words1" style="margin-left:1vw">工作单位：</span> <input class="con-61-first-box-content-1-words2" type="text" style="width:4vw;" value="xxx"></div>
+                    </div>
+                    <div class="con-62residues-pc4" ><!--右面框下面一个框-->
+                        <button id="open_btn" class="btn"><!--点击按钮触发弹窗说明事件-->
+                            <!--按钮里面的内容-->
+                            <div class="con-62residues-pc4-1"><p class="helping">帮助中心</p></div>
+                            <div class="con-62residues-pc4-2"><img src="image/6-2/human.png" style="width:10vw;height:15vh;margin-left: 1.5vw;margin-top:-2vw;"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="background-62" class="back"><!--弹窗事件-->
+            <div id="div1" class="content">
+                <div id="close">
+                </div>
+            </div>
+        </div>
+        <div class="content-body" id="show-content-part-2">
+             <div class="model-training">
+                <img src="./image/ALL/left-arrow.png"/>
+                <span>数据输入&nbsp&nbsp Data input</span>
+            </div>
+       <div class="con-all">
+                <div class="con-left-con">
+                        <div class="con-left-con-1">
+                            <div class="left">
+                                <div class="left-month">一月</div>
+                            </div>
+                            <div class="right">
+                                <div class="sjsr-block" id="1-1">
+                                    <script type="text/javascript">
+                                        var myChart = echarts.init(document.getElementById('1-1'));
+                                        option = {
+                                            grid:{
+                                                x:'10%',
+                                                y:'10%',
+                                                x2:'10%',
+                                                y2:'10%',
+                                                borderWidth:1
+                                            },
+                                            tooltip : {
+                                                trigger: 'axis',
+                                                axisPointer: {
+                                                    type: 'cross',
+                                                    label: {
+                                                        backgroundColor: '#6a7985'
+                                                    }
+                                                }
+                                            },
+                                            // legend: {
+                                            //       data:['1','2','3']
+                                            //   },
+                                            xAxis: {
+                                                type: 'category',
+                                                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                                                axisLabel : {
+                                                    show:false,
+                                                    formatter: '{value}'
+                                                },
+                                                axisLine:{
+                                                    lineStyle:{
+                                                        color: '#fff',
+                                                    }
+                                                }
+                                            },
+                                            yAxis: {
+                                                type: 'value',
+                                                splitLine:{
+                                                    show: true,
+                                                    lineStyle:{
+                                                        type: 'dashed',
+                                                    },
+                                                },
+                                                axisLabel : {
+                                                    show:false,
+                                                    formatter: '{value}'
+                                                },
+                                                axisLine:{
+                                                    lineStyle:{
+                                                        color: '#fff',
+                                                    }
+                                                }
+
+                                            },
+                                            series: [{
+                                                name:'1',
+                                                data: [220, 532, 801, 434, 790, 1030, 620],
+                                                type: 'line',
+                                                symbol: 'none',
+                                                smooth: true,
+                                                lineStyle:{
+                                                    color: '#f6b638',
+                                                }
+                                            },{
+                                                name:'2',
+                                                data: [520, 832, 501, 734, 490, 830, 320],
+                                                type: 'line',
+                                                smooth: true,
+                                                symbol: 'none',
+                                                lineStyle:{
+                                                    color: '#ee2f51',
+                                                }
+                                            },{
+                                                name:'3',
+                                                data: [320, 632, 501, 934, 590, 430, 1020],
+                                                type: 'line',
+                                                smooth: true,
+                                                symbol: 'none',
+                                                lineStyle:{
+                                                    color: '#38abd3',
+                                                }
+                                            }
+                                            ]
+                                        };
+                                        myChart.setOption(option);
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="con-left-con-1">
+                        <div class="left">
+                            <div class="left-month">二月</div>
+                        </div>
+                        <div class="right">
+                            <div class="sjsr-block" id="1-2">
+                                <script type="text/javascript">
+                                    var myChart = echarts.init(document.getElementById('1-2'));
+                                    option = {
+                                        tooltip:{
+                                            trigger: 'axis',
+                                            axisPointer: {
+                                                type: 'cross',
+                                                label: {
+                                                    backgroundColor: '#6a7985'
+                                                }
+                                            }
+                                        },
+                                        grid:{
+                                            x:'10%',
+                                            y:'10%',
+                                            x2:'10%',
+                                            y2:'10%',
+                                        },
+                                        xAxis: {
+                                            type: 'category',
+                                            data: ['1', '2', '3', '4', '5', '6', '7','8','9','10'],
+                                            axisLabel:{
+                                                show:false,
+                                            },
+                                            axisLine:{
+                                                lineStyle:{
+                                                    color: '#293366',
+                                                }
+                                            },
+                                            splitLine:{
+                                                show: true,
+                                                interval: 0,
+                                                lineStyle:{
+                                                    color: "#293366",
+                                                }
+                                            }
+                                        },
+                                        yAxis: {
+                                            type: 'value',
+                                            show: false,
+                                            axisLabel:{
+                                                show:false,
+                                            },
+                                            axisLine:{
+                                                lineStyle:{
+                                                    color: '#fff',
+                                                }
+                                            },
+                                            splitLine:{
+                                                show: false,
+                                            }
+                                        },
+                                        series: [{
+                                            data: [1, 9, 8, 1, 6, 8, 4,6,7,2],
+                                            type: 'line',
+                                            smooth: true,
+                                            symbol: 'none',
+                                            lineStyle:{
+                                                color: "#083877",
+                                            }
+                                        },{
+                                            data: [1, 4, 6, 2, 5, 4, 7,4,3,8],
+                                            type: 'line',
+                                            smooth: true,
+                                            symbol: 'none',
+                                            lineStyle:{
+                                                color: "#082877",
+                                            }
+                                        },{
+                                            data: [1, 2, 3, 4, 5, 6, 7,8,2,5],
+                                            type: 'line',
+                                            smooth: true,
+                                            symbol: 'none',
+                                            lineStyle:{
+                                                color: "#0d1066",
+                                            }
+                                        }]
+                                    };
+                                    myChart.setOption(option);
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="con-left-con-1">
+                        <div class="left">
+                            <div class="left-month">三月</div>
+                        </div>
+                        <div class="right">
+                            <div class="sjsr-block" id="1-3">
+                                <script type="text/javascript">
+                                    var myChart = echarts.init(document.getElementById('1-3'));
+                                    option = {
+                                        tooltip : {
+                                            trigger: 'axis',
+                                            axisPointer: {
+                                                type: 'cross',
+                                                label: {
+                                                    backgroundColor: '#6a7985'
+                                                }
+                                            }
+                                        },
+                                        grid: {
+                                            x:'10%',
+                                            y:'10%',
+                                            x2:'10%',
+                                            y2:'10%',
+                                        },
+                                        xAxis : [
+                                            {
+                                                type : 'category',
+                                                boundaryGap : false,
+                                                data : ['周一','周二','周三','周四','周五','周六','周日'],
+                                                axisLabel:{
+                                                    show:false,
+                                                },
+                                                axisLine:{
+                                                    lineStyle:{
+                                                        color: '#fff',
+                                                    }
+                                                }
+
+                                            }
+                                        ],
+                                        yAxis : [
+                                            {
+                                                type : 'value',
+                                                splitLine:{show: false},//去除网格线
+                                                axisLabel:{
+                                                    show:true,
+                                                    fontSize: 6,
+                                                },
+                                                axisLine:{
+                                                    lineStyle:{
+                                                        color: '#fff',
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        series : [
+                                            {
+                                                name:'邮件营销',
+                                                type:'line',
+                                                stack: '总量',
+                                                areaStyle: {
+                                                    color: {
+                                                        type: 'linear',
+                                                        x: 0,
+                                                        y: 0,
+                                                        x2: 0,
+                                                        y2: 1,
+                                                        colorStops: [{
+                                                            offset: 0, color: '#f49a2c' // 0% 处的颜色
+                                                        }, {
+                                                            offset: 1, color: '#fd5b5e' // 100% 处的颜色
+                                                        }],
+                                                        global: false // 缺省为 false
+                                                    },
+                                                },
+                                                data:[12, 132, 101, 134, 90, 230, 0],
+                                                smooth:true,
+                                                symbol: 'none',
+                                            },
+                                            {
+                                                name:'联盟广告',
+                                                type:'line',
+                                                stack: '总量',
+                                                areaStyle: {
+                                                    color: {
+                                                        type: 'linear',
+                                                        x: 0,
+                                                        y: 0,
+                                                        x2: 0,
+                                                        y2: 1,
+                                                        colorStops: [{
+                                                            offset: 0, color: '#2f849f' // 0% 处的颜色
+                                                        }, {
+                                                            offset: 1, color: '#5d889e' // 100% 处的颜色
+                                                        }],
+                                                        global: false // 缺省为 false
+                                                    },
+                                                },
+                                                data:[20, 182, 191, 234, 290, 230, 0],
+                                                smooth:true,
+                                                symbol: 'none',
+
+                                            },
+                                            {
+                                                name:'视频广告',
+                                                type:'line',
+                                                stack: '总量',
+                                                areaStyle: {
+                                                    color: {
+                                                        type: 'linear',
+                                                        x: 0,
+                                                        y: 0,
+                                                        x2: 0,
+                                                        y2: 1,
+                                                        colorStops: [{
+                                                            offset: 0, color: '#619f8d' // 0% 处的颜色
+                                                        }, {
+                                                            offset: 1, color: '#b5ae56' // 100% 处的颜色
+                                                        }],
+                                                        global: false // 缺省为 false
+                                                    },
+                                                },
+                                                data:[10, 232, 201, 154, 390, 30, 10],
+                                                smooth:true,
+                                                symbol: 'none',
+
+                                            },
+                                            {
+                                                name:'直接访问',
+                                                type:'line',
+                                                stack: '总量',
+                                                areaStyle: {normal: {},
+                                                    color:{
+                                                        type: 'linear',
+                                                        x: 0,
+                                                        y: 0,
+                                                        x2: 0,
+                                                        y2: 1,
+                                                        colorStops: [{
+                                                            offset: 0, color: '#787e95' // 0% 处的颜色
+                                                        }, {
+                                                            offset: 1, color: '#b5ae56' // 100% 处的颜色
+                                                        }],
+                                                        global: false // 缺省为 false
+                                                    },
+                                                },
+                                                data:[0, 332, 301, 334, 390, 230, 120],
+                                                smooth:true,
+                                                symbol: 'none',
+
+                                            },
+                                            {
+                                                name:'搜索引擎',
+                                                type:'line',
+                                                stack: '总量',
+                                                label: {
+                                                    normal: {
+                                                        show: false,
+                                                        position: 'top'
+                                                    }
+                                                },
+                                                areaStyle: {normal: {},
+                                                    color: '#b7ae54',
+                                                },
+                                                data:[20, 432, 901, 934, 390, 130, 20],
+                                                smooth:true,
+                                                symbol: 'none',
+
+                                            }
+                                        ]
+                                    };
+                                    myChart.setOption(option);
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="con-left-con-1">
+                        <div class="left">
+                            <div class="left-month">四月</div>
+                        </div>
+                        <div class="right">
+                            <div class="sjsr-block" id="1-4">
+                                <script type="text/javascript">
+                                    var myChart = echarts.init(document.getElementById('1-4'));
+                                    option = {
+                                        title : {
+                                            show: false,
+                                            text: '南丁格尔玫瑰图',
+                                            subtext: '纯属虚构',
+                                            x:'center'
+                                        },
+                                        tooltip : {
+                                            trigger: 'item',
+                                            formatter: "{a}<br/>{b}:{c}({d}%)"
+                                        },
+                                        legend: {
+                                            show: false,
+                                            x : 'center',
+                                            y : 'bottom',
+                                            data:['rose1','rose2','rose3','rose4','rose5','rose6']
+                                        },
+                                        calculable : true,
+                                        series : [
+                                            {
+                                                name:'半径模式',
+                                                type:'pie',
+                                                radius : ['10%', '66%'],
+                                                center : ['50%', '55%'],
+                                                roseType : 'radius',
+                                                label: {
+                                                    normal: {
+                                                        show: false,
+                                                        fontSize: 10,
+                                                    },
+                                                    emphasis: {
+                                                        show: true
+                                                    }
+                                                },
+                                                lableLine: {
+                                                    normal: {
+                                                        length: 10,
+                                                        length2: 40,
+                                                    },
+                                                    emphasis: {
+                                                        show: true
+                                                    }
+                                                },
+                                                data:[
+                                                    {value:10, name:'rose1',},
+                                                    {value: 5,  name:'rose2'},
+                                                    {value: 15, name:'rose3'},
+                                                    {value: 25, name:'rose4'},
+                                                    {value: 20, name:'rose5'},
+                                                    {value: 35, name:'rose6'},
+                                                    {value: 30, name:'rose7'},
+                                                    {value: 40, name:'rose8'}
+                                                ]
+                                            },
+                                        ]
+                                    };
+                                    myChart.setOption(option);
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="con-left-con-1">
+                        <div class="left">
+                            <div class="left-month">五月</div>
+                        </div>
+                        <div class="right">
+                            <div class="sjsr-block" id="1-5">
+                                <script type="text/javascript">
+                                    var myChart = echarts.init(document.getElementById('1-5'));
+                                    option = {
+                                        grid:{
+                                            x:'10%',
+                                            y:'10%',
+                                            x2:'10%',
+                                            y2:'10%',
+                                            borderWidth:1
+                                        },
+                                        tooltip : {
+                                            trigger: 'axis',
+                                            axisPointer: {
+                                                type: 'cross',
+                                                label: {
+                                                    backgroundColor: '#6a7985'
+                                                }
+                                            }
+                                        },
+                                        // legend: {
+                                        //       data:['1','2','3']
+                                        //   },
+                                        xAxis: {
+                                            type: 'category',
+                                            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                                            axisLabel : {
+                                                show:false,
+                                                formatter: '{value}'
+                                            },
+                                            axisLine:{
+                                                lineStyle:{
+                                                    color: '#fff',
+                                                }
+                                            }
+                                        },
+                                        yAxis: {
+                                            type: 'value',
+                                            splitLine:{
+                                                show: true,
+                                                lineStyle:{
+                                                    type: 'dashed',
+                                                },
+                                            },
+                                            axisLabel : {
+                                                show:false,
+                                                formatter: '{value}'
+                                            },
+                                            axisLine:{
+                                                lineStyle:{
+                                                    color: '#fff',
+                                                }
+                                            }
+
+                                        },
+                                        series: [{
+                                            name:'1',
+                                            data: [220, 532, 801, 434, 790, 1030, 620],
+                                            type: 'line',
+                                            symbol: 'none',
+                                            smooth: true,
+                                            lineStyle:{
+                                                color: '#f6b638',
+                                            }
+                                        },{
+                                            name:'2',
+                                            data: [520, 832, 501, 734, 490, 830, 320],
+                                            type: 'line',
+                                            smooth: true,
+                                            symbol: 'none',
+                                            lineStyle:{
+                                                color: '#ee2f51',
+                                            }
+                                        },{
+                                            name:'3',
+                                            data: [320, 632, 501, 934, 590, 430, 1020],
+                                            type: 'line',
+                                            smooth: true,
+                                            symbol: 'none',
+                                            lineStyle:{
+                                                color: '#38abd3',
+                                            }
+                                        }
+                                        ]
+                                    };
+                                    myChart.setOption(option);
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="con-left-con-1">
+                        <div class="left">
+                            <div class="left-month">六月</div>
+                        </div>
+                        <div class="right">
+                            <div class="sjsr-block" id="1-6">
+                                <script type="text/javascript">
+                                    var myChart = echarts.init(document.getElementById('1-6'));
+                                    option = {
+                                        tooltip:{
+                                            trigger: 'axis',
+                                            axisPointer: {
+                                                type: 'cross',
+                                                label: {
+                                                    backgroundColor: '#6a7985'
+                                                }
+                                            }
+                                        },
+                                        grid:{
+                                            x:'10%',
+                                            y:'10%',
+                                            x2:'10%',
+                                            y2:'10%',
+                                        },
+                                        xAxis: {
+                                            type: 'category',
+                                            data: ['1', '2', '3', '4', '5', '6', '7','8','9','10'],
+                                            axisLabel:{
+                                                show:false,
+                                            },
+                                            axisLine:{
+                                                lineStyle:{
+                                                    color: '#293366',
+                                                }
+                                            },
+                                            splitLine:{
+                                                show: true,
+                                                interval: 0,
+                                                lineStyle:{
+                                                    color: "#293366",
+                                                }
+                                            }
+                                        },
+                                        yAxis: {
+                                            type: 'value',
+                                            show: false,
+                                            axisLabel:{
+                                                show:false,
+                                            },
+                                            axisLine:{
+                                                lineStyle:{
+                                                    color: '#fff',
+                                                }
+                                            },
+                                            splitLine:{
+                                                show: false,
+                                            }
+                                        },
+                                        series: [{
+                                            data: [1, 9, 8, 1, 6, 8, 4,6,7,2],
+                                            type: 'line',
+                                            smooth: true,
+                                            symbol: 'none',
+                                            lineStyle:{
+                                                color: "#083877",
+                                            }
+                                        },{
+                                            data: [1, 4, 6, 2, 5, 4, 7,4,3,8],
+                                            type: 'line',
+                                            smooth: true,
+                                            symbol: 'none',
+                                            lineStyle:{
+                                                color: "#082877",
+                                            }
+                                        },{
+                                            data: [1, 2, 3, 4, 5, 6, 7,8,2,5],
+                                            type: 'line',
+                                            smooth: true,
+                                            symbol: 'none',
+                                            lineStyle:{
+                                                color: "#0d1066",
+                                            }
+                                        }]
+                                    };
+                                    myChart.setOption(option);
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="con-left-con-1">
+                        <div class="left">
+                            <div class="left-month">七月</div>
+                        </div>
+                        <div class="right">
+                            <div class="sjsr-block" id="1-7">
+                                <script type="text/javascript">
+                                    var myChart = echarts.init(document.getElementById('1-7'));
+
+                                    option = {
+                                        tooltip : {
+                                            trigger: 'axis',
+                                            axisPointer: {
+                                                type: 'cross',
+                                                label: {
+                                                    backgroundColor: '#6a7985'
+                                                }
+                                            }
+                                        },
+                                        grid: {
+                                            x:'10%',
+                                            y:'10%',
+                                            x2:'10%',
+                                            y2:'10%',
+                                        },
+                                        xAxis : [
+                                            {
+                                                type : 'category',
+                                                boundaryGap : false,
+                                                data : ['周一','周二','周三','周四','周五','周六','周日'],
+                                                axisLabel:{
+                                                    show:false,
+                                                },
+                                                axisLine:{
+                                                    lineStyle:{
+                                                        color: '#fff',
+                                                    }
+                                                }
+
+                                            }
+                                        ],
+                                        yAxis : [
+                                            {
+                                                type : 'value',
+                                                splitLine:{show: false},//去除网格线
+                                                axisLabel:{
+                                                    show:true,
+                                                    fontSize: 6,
+                                                },
+                                                axisLine:{
+                                                    lineStyle:{
+                                                        color: '#fff',
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        series : [
+                                            {
+                                                name:'邮件营销',
+                                                type:'line',
+                                                stack: '总量',
+                                                areaStyle: {
+                                                    color: {
+                                                        type: 'linear',
+                                                        x: 0,
+                                                        y: 0,
+                                                        x2: 0,
+                                                        y2: 1,
+                                                        colorStops: [{
+                                                            offset: 0, color: '#f49a2c' // 0% 处的颜色
+                                                        }, {
+                                                            offset: 1, color: '#fd5b5e' // 100% 处的颜色
+                                                        }],
+                                                        global: false // 缺省为 false
+                                                    },
+                                                },
+                                                data:[12, 132, 101, 134, 90, 230, 0],
+                                                smooth:true,
+                                                symbol: 'none',
+                                            },
+                                            {
+                                                name:'联盟广告',
+                                                type:'line',
+                                                stack: '总量',
+                                                areaStyle: {
+                                                    color: {
+                                                        type: 'linear',
+                                                        x: 0,
+                                                        y: 0,
+                                                        x2: 0,
+                                                        y2: 1,
+                                                        colorStops: [{
+                                                            offset: 0, color: '#2f849f' // 0% 处的颜色
+                                                        }, {
+                                                            offset: 1, color: '#5d889e' // 100% 处的颜色
+                                                        }],
+                                                        global: false // 缺省为 false
+                                                    },
+                                                },
+                                                data:[20, 182, 191, 234, 290, 230, 0],
+                                                smooth:true,
+                                                symbol: 'none',
+
+                                            },
+                                            {
+                                                name:'视频广告',
+                                                type:'line',
+                                                stack: '总量',
+                                                areaStyle: {
+                                                    color: {
+                                                        type: 'linear',
+                                                        x: 0,
+                                                        y: 0,
+                                                        x2: 0,
+                                                        y2: 1,
+                                                        colorStops: [{
+                                                            offset: 0, color: '#619f8d' // 0% 处的颜色
+                                                        }, {
+                                                            offset: 1, color: '#b5ae56' // 100% 处的颜色
+                                                        }],
+                                                        global: false // 缺省为 false
+                                                    },
+                                                },
+                                                data:[10, 232, 201, 154, 390, 30, 10],
+                                                smooth:true,
+                                                symbol: 'none',
+
+                                            },
+                                            {
+                                                name:'直接访问',
+                                                type:'line',
+                                                stack: '总量',
+                                                areaStyle: {normal: {},
+                                                    color:{
+                                                        type: 'linear',
+                                                        x: 0,
+                                                        y: 0,
+                                                        x2: 0,
+                                                        y2: 1,
+                                                        colorStops: [{
+                                                            offset: 0, color: '#787e95' // 0% 处的颜色
+                                                        }, {
+                                                            offset: 1, color: '#b5ae56' // 100% 处的颜色
+                                                        }],
+                                                        global: false // 缺省为 false
+                                                    },
+                                                },
+                                                data:[0, 332, 301, 334, 390, 230, 120],
+                                                smooth:true,
+                                                symbol: 'none',
+
+                                            },
+                                            {
+                                                name:'搜索引擎',
+                                                type:'line',
+                                                stack: '总量',
+                                                label: {
+                                                    normal: {
+                                                        show: false,
+                                                        position: 'top'
+                                                    }
+                                                },
+                                                areaStyle: {normal: {},
+                                                    color: '#b7ae54',
+                                                },
+                                                data:[20, 432, 901, 934, 390, 130, 20],
+                                                smooth:true,
+                                                symbol: 'none',
+
+                                            }
+                                        ]
+                                    };
+                                    myChart.setOption(option);
+
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="con-left-con-1">
+                        <div class="left">
+                            <div class="left-month">八月</div>
+                        </div>
+                        <div class="right">
+                            <div class="sjsr-block" id="1-8">
+                                <script type="text/javascript">
+                                    var myChart = echarts.init(document.getElementById('1-8'));
+                                    option = {
+                                        title : {
+                                            show: false,
+                                            text: '南丁格尔玫瑰图',
+                                            subtext: '纯属虚构',
+                                            x:'center'
+                                        },
+                                        tooltip : {
+                                            trigger: 'item',
+                                            formatter: "{a}<br/>{b}:{c}({d}%)"
+                                        },
+                                        legend: {
+                                            show: false,
+                                            x : 'center',
+                                            y : 'bottom',
+                                            data:['rose1','rose2','rose3','rose4','rose5','rose6']
+                                        },
+                                        calculable : true,
+                                        series : [
+                                            {
+                                                name:'半径模式',
+                                                type:'pie',
+                                                radius : ['10%', '66%'],
+                                                center : ['50%', '55%'],
+                                                roseType : 'radius',
+                                                label: {
+                                                    normal: {
+                                                        show: false,
+                                                        fontSize: 10,
+                                                    },
+                                                    emphasis: {
+                                                        show: true
+                                                    }
+                                                },
+                                                lableLine: {
+                                                    normal: {
+                                                        length: 10,
+                                                        length2: 40,
+                                                    },
+                                                    emphasis: {
+                                                        show: true
+                                                    }
+                                                },
+                                                data:[
+                                                    {value:10, name:'rose1',},
+                                                    {value: 5,  name:'rose2'},
+                                                    {value: 15, name:'rose3'},
+                                                    {value: 25, name:'rose4'},
+                                                    {value: 20, name:'rose5'},
+                                                    {value: 35, name:'rose6'},
+                                                    {value: 30, name:'rose7'},
+                                                    {value: 40, name:'rose8'}
+                                                ]
+                                            },
+                                        ]
+                                    };
+                                    myChart.setOption(option);
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="con-left-con-1">
+                        <div class="left">
+                            <div class="left-month">九月</div>
+                        </div>
+                        <div class="right">
+                            <div class="sjsr-block" id="1-9">
+                                <script type="text/javascript">
+                                    var myChart = echarts.init(document.getElementById('1-9'));
+                                    option = {
+                                        grid:{
+                                            x:'10%',
+                                            y:'10%',
+                                            x2:'10%',
+                                            y2:'10%',
+                                            borderWidth:1
+                                        },
+                                        tooltip : {
+                                            trigger: 'axis',
+                                            axisPointer: {
+                                                type: 'cross',
+                                                label: {
+                                                    backgroundColor: '#6a7985'
+                                                }
+                                            }
+                                        },
+                                        // legend: {
+                                        //       data:['1','2','3']
+                                        //   },
+                                        xAxis: {
+                                            type: 'category',
+                                            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                                            axisLabel : {
+                                                show:false,
+                                                formatter: '{value}'
+                                            },
+                                            axisLine:{
+                                                lineStyle:{
+                                                    color: '#fff',
+                                                }
+                                            }
+                                        },
+                                        yAxis: {
+                                            type: 'value',
+                                            splitLine:{
+                                                show: true,
+                                                lineStyle:{
+                                                    type: 'dashed',
+                                                },
+                                            },
+                                            axisLabel : {
+                                                show:false,
+                                                formatter: '{value}'
+                                            },
+                                            axisLine:{
+                                                lineStyle:{
+                                                    color: '#fff',
+                                                }
+                                            }
+
+                                        },
+                                        series: [{
+                                            name:'1',
+                                            data: [220, 532, 801, 434, 790, 1030, 620],
+                                            type: 'line',
+                                            symbol: 'none',
+                                            smooth: true,
+                                            lineStyle:{
+                                                color: '#f6b638',
+                                            }
+                                        },{
+                                            name:'2',
+                                            data: [520, 832, 501, 734, 490, 830, 320],
+                                            type: 'line',
+                                            smooth: true,
+                                            symbol: 'none',
+                                            lineStyle:{
+                                                color: '#ee2f51',
+                                            }
+                                        },{
+                                            name:'3',
+                                            data: [320, 632, 501, 934, 590, 430, 1020],
+                                            type: 'line',
+                                            smooth: true,
+                                            symbol: 'none',
+                                            lineStyle:{
+                                                color: '#38abd3',
+                                            }
+                                        }
+                                        ]
+                                    };
+                                    myChart.setOption(option);
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="con-left-con-1">
+                        <div class="left">
+                            <div class="left-month">十月</div>
+                        </div>
+                        <div class="right">
+                            <div class="sjsr-block" id="1-10">
+                                <script type="text/javascript">
+                                    var myChart = echarts.init(document.getElementById('1-10'));
+                                    option = {
+                                        tooltip:{
+                                            trigger: 'axis',
+                                            axisPointer: {
+                                                type: 'cross',
+                                                label: {
+                                                    backgroundColor: '#6a7985'
+                                                }
+                                            }
+                                        },
+                                        grid:{
+                                            x:'10%',
+                                            y:'10%',
+                                            x2:'10%',
+                                            y2:'10%',
+                                        },
+                                        xAxis: {
+                                            type: 'category',
+                                            data: ['1', '2', '3', '4', '5', '6', '7','8','9','10'],
+                                            axisLabel:{
+                                                show:false,
+                                            },
+                                            axisLine:{
+                                                lineStyle:{
+                                                    color: '#293366',
+                                                }
+                                            },
+                                            splitLine:{
+                                                show: true,
+                                                interval: 0,
+                                                lineStyle:{
+                                                    color: "#293366",
+                                                }
+                                            }
+                                        },
+                                        yAxis: {
+                                            type: 'value',
+                                            show: false,
+                                            axisLabel:{
+                                                show:false,
+                                            },
+                                            axisLine:{
+                                                lineStyle:{
+                                                    color: '#fff',
+                                                }
+                                            },
+                                            splitLine:{
+                                                show: false,
+                                            }
+                                        },
+                                        series: [{
+                                            data: [1, 9, 8, 1, 6, 8, 4,6,7,2],
+                                            type: 'line',
+                                            smooth: true,
+                                            symbol: 'none',
+                                            lineStyle:{
+                                                color: "#083877",
+                                            }
+                                        },{
+                                            data: [1, 4, 6, 2, 5, 4, 7,4,3,8],
+                                            type: 'line',
+                                            smooth: true,
+                                            symbol: 'none',
+                                            lineStyle:{
+                                                color: "#082877",
+                                            }
+                                        },{
+                                            data: [1, 2, 3, 4, 5, 6, 7,8,2,5],
+                                            type: 'line',
+                                            smooth: true,
+                                            symbol: 'none',
+                                            lineStyle:{
+                                                color: "#0d1066",
+                                            }
+                                        }]
+                                    };
+                                    myChart.setOption(option);
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="conRight">
+                <!-- 内容区： 右边顶部 -->
+                <div class="con-right-top">
+                <div class="p">
+                 <p>
+                    数据输入帮助说明
+                 </p> 
+                 <div class="left">
+                    <span>1、请选择想要数据展现的图表形式</span>
+                    <span>2、请依次输入开始时间和结束时间</span>
+                    <span>3、点确定</span>
+                 </div>
+                 <div class="right">
+                    <span>说明：不能选择重复的数据，不能同时选择多个图表生成等等</span>
+                 </div>
+                </div>
+                <input type="datetime-local" name="Stime" class="btn-left" />
+                <input type="datetime-local" name="Etime" class="btn-right"  />
+                </div>
+                <p class="try"></p>
+                <!-- 内容区： 右边底部 -->
+                <div class="con-right-con">
+                    <!-- 内容区： 右边底部左边 -->
+                    <div class="crc-left">
+                        <div class="crc-left-top" id="crc-lt-chart" ></div>
+                        <div class="crc-left-bottom" id="crc-lb-chart"></div>
+                    </div>
+                    <!-- 内容区： 右边底部中间 -->
+                    <div class="crc-middle">
+                        <div id="crcMiddle">
+                        <img src="image/2/loading.png">
+                        </div>
+                        <button>确定</button>  
+                    </div> 
+                    <!-- 内容区： 右边底部右边 -->
+                    <div class="crc-right">
+                       <div class="crc-right-top" id="crc-rt-chart">
+                           
+                       </div>
+                        <div class="crc-right-bottom" id="crc-rb-chart">
+                        
+                        </div>
+                    </div>              
+                </div>    
+            </div>
+        </div>
+        </div> 
+        <div class="content-body" id="show-content-part-3-1">
+            <div class="model-training">
+                <img src="./image/ALL/left-arrow.png"/>
+                <span>模型训练   Model training</span>
+            </div>
+            <div class="model-training-menu">
+                <span class="show-content-part-3-1-box mainActive">
+                    选择数据
+                </span>
+                <img src="./image/ALL/left-arrow.png"/>
+                <span class="show-content-part-3-2-box">
+                    选择方法
+                </span>
+                <img src="./image/ALL/left-arrow.png"/>
+                <span class="show-content-part-3-3-box">
+                    可视化展示
+                </span>
+            </div>
+            <div id="data-first-box">
+                <span>请选择你需要的数据</span>
+                <span class="data-choose-box data-choose-box-active">1月</span>
+                <span class="data-choose-box">2月</span>
+                <span class="data-choose-box">3月</span>
+                <span class="data-choose-box">4月</span>
+                <span class="data-choose-box">5月</span>
+                <span class="data-choose-box">6月</span>
+                <span class="data-choose-box">7月</span>
+                <span class="data-choose-box">8月</span>
+                <span class="data-choose-box">9月</span>
+                <span class="data-choose-box">10月</span>
+            </div>
+            <div id="data-second-box">
+                <span id="span">1月数据展示</span>
+                <div id="data-show-content">
+                    <div class="data-show-box">
+                        <p></p>
+                         <div>
+                             <img src="image/ALL/first1.png" style="margin-top: 1vw">
+                             <img src="image/ALL/first2.png" style="margin-top: 1vw">
+                         </div>
+                    </div>
+                    <div class="data-show-box">
+                        <p></p>
+                        <div>
+                            <img src="image/ALL/second1.png" style="margin-top: 1vw">
+                            <img src="image/ALL/second2.png" style="margin-top: 1vw">
+                        </div>
+                    </div>
+                    
+                </div>
+                <div id="data-show-description">
+                   <div class="data-show-box">
+                       <p>样本验证集</p>
+                       <div>
+                           <img src="image/ALL/third1.png">
+                           <img src="image/ALL/third2.png">
+                       </div>
+                    </div>
+                    <div class="data-show-box">
+                        <p>样本测试集</p>
+                        <div>
+                            <img src="image/ALL/four1.png">
+                            <img src="image/ALL/four2.png">
+                        </div>
+                    </div>
+                </div>
+                <span id="sure">确定</span>
+            </div>
+        </div>
+        <div class="content-body" id="show-content-part-3-2">
+            <div class="model-training">
+                <img src="./image/ALL/left-arrow.png"/>
+                <span>模型训练   Model training</span>
+            </div>
+            <div class="model-training-menu">
+                <span class="show-content-part-3-1-box">
+                    选择数据
+                </span>
+                <img src="./image/ALL/left-arrow.png"/>
+                <span class="show-content-part-3-2-box mainActive">
+                    选择方法
+                </span>
+                <img src="./image/ALL/left-arrow.png"/>
+                <span class="show-content-part-3-3-box">
+                    可视化展示
+                </span>
+            </div>
+            <div class="method-line"></div>
+            <div class="method-box">
+                <div id="buquan-title" class="method-choose-box">补全方法选择</div>
+                <div class="arrow"><img src="./image/3-3/left-arrow.png" alt="left-arrow"/></div>
+                <div class="method-show">
+                    <div class="method-show-box-1 method-show-box">
+                        <img src="./image/3-3/model-1.png" alt="method" />
+                        <span>方法一</span>
+                    </div>
+                    <div class="method-show-box-1 method-show-box">
+                        <img src="./image/3-3/model-2.png" alt="method" />
+                        <span>方法二</span>
+                    </div>
+                    <div class="method-show-box-1 method-show-box">
+                        <img src="./image/3-3/model-3.png" alt="method" />
+                        <span>方法三</span>
+                    </div>
+                    <div class="method-show-box-1 method-show-box">
+                        <img src="./image/3-3/model-4.png" alt="method" />
+                        <span>方法四</span>
+                    </div>
+                    <div class="method-show-box-1 method-show-box">
+                        <img src="./image/3-3/model-5.png" alt="method" />
+                        <span>方法五</span>
+                    </div>
+                </div>
+                <div class="arrow"><img src="./image/3-3/right-arrow.png" alt="right-arrow"/></div>
+            </div>
+            <div class="method-box">
+                <div id="caiyang-title" class="method-choose-box">采样方法选择</div>
+                <div class="arrow"><img src="./image/3-3/left-arrow.png" alt="left-arrow"/></div>
+                <div class="method-show">
+                    <div class="method-show-box-2 method-show-box">
+                        <img src="./image/3-3/model-1.png" alt="method" />
+                        <span>方法一</span>
+                    </div>
+                    <div class="method-show-box-2 method-show-box">
+                        <img src="./image/3-3/model-2.png" alt="method" />
+                        <span>方法二</span>
+                    </div>
+                    <div class="method-show-box-2 method-show-box">
+                        <img src="./image/3-3/model-3.png" alt="method" />
+                        <span>方法三</span>
+                    </div>
+                    <div class="method-show-box-2 method-show-box">
+                        <img src="./image/3-3/model-4.png" alt="method" />
+                        <span>方法四</span>
+                    </div>
+                    <div class="method-show-box-2 method-show-box">
+                        <img src="./image/3-3/model-5.png" alt="method" />
+                        <span>方法五</span>
+                    </div>
+                </div>
+                <div class="arrow"><img src="./image/3-3/right-arrow.png" alt="right-arrow"/></div>
+            </div>
+            <div class="method-box">
+                <div id="suanfa-title" class="method-choose-box">算法选择</div>
+                <div class="arrow"><img src="./image/3-3/left-arrow.png" alt="left-arrow"/></div>
+                <div class="method-show">
+                    <div class="method-show-box-3 method-show-box">
+                        <img src="./image/3-3/model-1.png" alt="method" />
+                        <span>方法一</span>
+                    </div>
+                    <div class="method-show-box-3 method-show-box">
+                        <img src="./image/3-3/model-2.png" alt="method" />
+                        <span>方法二</span>
+                    </div>
+                    <div class="method-show-box-3 method-show-box">
+                        <img src="./image/3-3/model-3.png" alt="method" />
+                        <span>方法三</span>
+                    </div>
+                    <div class="method-show-box-3 method-show-box">
+                        <img src="./image/3-3/model-4.png" alt="method" />
+                        <span>方法四</span>
+                    </div>
+                    <div class="method-show-box-3 method-show-box">
+                        <img src="./image/3-3/model-5.png" alt="method" />
+                        <span>方法五</span>
+                    </div>
+                </div>
+                <div class="arrow"><img src="./image/3-3/right-arrow.png" alt="right-arrow"/></div>
+            </div>
+            <span id="method-sure">
+                确定
+            </span>
+            <div class="method-line"></div>
+        </div>
+        <div class="content-body" id="show-content-part-3-3">
+            <div class="model-training">
+                <img src="./image/ALL/left-arrow.png"/>
+                <span>模型训练   Model training</span>
+            </div>
+            <div class="model-training-menu">
+                <span class="show-content-part-3-1-box">
+                    选择数据
+                </span>
+                <img src="./image/ALL/left-arrow.png"/>
+                <span class="show-content-part-3-2-box">
+                    选择方法
+                </span>
+                <img src="./image/ALL/left-arrow.png"/>
+                <span class="show-content-part-3-3-box mainActive">
+                    可视化展示
+                </span>
+            </div>
+            <div id="show-first-box">
+                <div class="show-box">
+                   <div id="show1">
+                       <script type="text/javascript">
+                           var myChart = echarts.init(document.getElementById('show1'));
+                           option = {
+                               title : {
+                                   show: false,
+                                   text: '南丁格尔玫瑰图',
+                                   subtext: '纯属虚构',
+                                   x:'center'
+                               },
+                               tooltip : {
+                                   trigger: 'item',
+                                   formatter: "{a}<br/>{b}:{c}({d}%)"
+                               },
+                               legend: {
+                                   show: false,
+                                   x : 'center',
+                                   y : 'bottom',
+                                   data:['rose1','rose2','rose3','rose4','rose5','rose6']
+                               },
+                               calculable : true,
+                               series : [
+                                   {
+                                       name:'半径模式',
+                                       type:'pie',
+                                       radius : ['10%', '66%'],
+                                       center : ['50%', '55%'],
+                                       roseType : 'radius',
+                                       label: {
+                                           normal: {
+                                               show: false,
+                                               fontSize: 10,
+                                           },
+                                           emphasis: {
+                                               show: true
+                                           }
+                                       },
+                                       lableLine: {
+                                           normal: {
+                                               length: 10,
+                                               length2: 40,
+                                           },
+                                           emphasis: {
+                                               show: true
+                                           }
+                                       },
+                                       data:[
+                                           {value:10, name:'rose1',},
+                                           {value: 5,  name:'rose2'},
+                                           {value: 15, name:'rose3'},
+                                           {value: 25, name:'rose4'},
+                                           {value: 20, name:'rose5'},
+                                           {value: 35, name:'rose6'},
+                                           {value: 30, name:'rose7'},
+                                           {value: 40, name:'rose8'}
+                                       ]
+                                   },
+                               ]
+                           };
+                           myChart.setOption(option);
+                       </script>
+                   </div>
+                   <div class="show-box-words">
+                        <p>数据类型:</p>
+                        <p>加载所用时间:</p>
+                        <p>图表类型:饼状图</p>
+                    </div>
+                </div>
+                <div class="show-box" id="show2">
+                    <div>
+                        <p>过采样方法</p>
+                        <img src="image/3-3/model-1.png">
+                        <img src="image/3-3/model-6.png">
+                    </div>
+                    <div>
+                        <p>补齐方法</p>
+                        <img src="image/3-3/model-2.png">
+                        <img src="image/3-3/model-3.png">
+                    </div>
+                    <div>
+                        <p>算法</p>
+                        <img src="image/3-3/model-4.png">
+                        <img src="image/3-3/model-5.png">
+                    </div>
+                </div>
+            </div>
+            <div id="show-second">
+                <div id="show-second-box"></div>
+                <button>完成训练</button>
+            </div>
+            <div id="show-three-box">
+                <p>数据采集内容</p>
+                <div>
+                    <img src="image/ALL/first1.png" style="margin-left: 2vw">
+                    <img src="image/ALL/first2.png">
+                </div>
+                <p>样本训练集</p>
+                <div>
+                    <img src="image/ALL/second1.png" style="margin-left: 2vw">
+                    <img src="image/ALL/second2.png">
+                </div>
+                <p>样本验证集</p>
+                <div>
+                    <img src="image/ALL/third1.png" style="margin-left: 2vw">
+                    <img src="image/ALL/third2.png">
+                </div>
+                <p>样本测试集</p>
+                <div>
+                    <img src="image/ALL/four1.png" style="margin-left: 2vw">
+                    <img src="image/ALL/four2.png">
+                </div>
+            </div>
+        </div>
+        <div class="content-body" id="show-content-part-3-4">
+            <div class="model-training">
+                <img src="./image/ALL/left-arrow.png"/>
+                <span>查看已有模型   View existing models </span>
+            </div>
+            <div id="model-first-box">
+                <div class="model-show-box">
+                    <img src="./image/3-3/model-1.png" />
+                    <p>
+                        数据选择：xxxx年x月<br/>方法选择：xx <br/> 算法选择：xx<br/> 数据详细信息： xxxxxxxxxxxxxxx
+                    </p>
+                    <span>
+                        完成时间：xxxx年xx月xx日
+                    </span>
+                </div>
+                <div class="model-show-box">
+                    <img src="./image/3-3/model-2.png" />
+                    <p>
+                        数据选择：xxxx年x月<br/>方法选择：xx <br/> 算法选择：xx<br/> 数据详细信息： xxxxxxxxxxxxxxx
+                    </p>
+                    <span>
+                        完成时间：xxxx年xx月xx日
+                    </span>
+                </div>
+                <div class="model-show-box">
+                    <img src="./image/3-3/model-3.png" />
+                    <p>
+                        数据选择：xxxx年x月<br/>方法选择：xx <br/> 算法选择：xx<br/> 数据详细信息： xxxxxxxxxxxxxxx
+                    </p>
+                    <span>
+                        完成时间：xxxx年xx月xx日
+                    </span>
+                </div>
+                <div class="model-show-box">
+                    <img src="./image/3-3/model-4.png" />
+                    <p>
+                        数据选择：xxxx年x月<br/>方法选择：xx <br/> 算法选择：xx<br/> 数据详细信息： xxxxxxxxxxxxxxx
+                    </p>
+                    <span>
+                        完成时间：xxxx年xx月xx日
+                    </span>
+                </div>
+                <div class="model-show-box">
+                    <img src="./image/3-3/model-5.png" />
+                    <p>
+                        数据选择：xxxx年x月<br/>方法选择：xx <br/> 算法选择：xx<br/> 数据详细信息： xxxxxxxxxxxxxxx
+                    </p>
+                    <span>
+                        完成时间：xxxx年xx月xx日
+                    </span>
+                </div>
+                <div class="model-show-box">
+                    <img src="./image/3-3/model-1.png"/>
+                    <p>
+                        数据选择：xxxx年x月<br/>方法选择：xx <br/> 算法选择：xx<br/> 数据详细信息： xxxxxxxxxxxxxxx
+                    </p>
+                    <span>
+                        完成时间：xxxx年xx月xx日
+                    </span>
+                </div>
+            </div>
+            <div id="page-choose-box">
+                <select id="page-select">
+                    <option>1/5页</option>
+                    <option>2/5页</option>
+                    <option>3/5页</option>
+                    <option>4/5页</option>
+                    <option>5/5页</option>
+                </select>
+                <span id="page-go">
+                    go
+                </span>
+                <span id="last-page">
+                    上一页
+                </span>
+                <span id="next-page">
+                    下一页
+                </span>
+            </div>
+        </div>
+        <!-- <div class="content-body" id="show-content-part-3-5">
+            <div class="model-training">
+                <img src="./image/ALL/left-arrow.png"/>
+                <span>树形展示  Tree display </span>
+            </div>
+            <div id="tree-choose">
+                <span>
+                    树型选择
+                </span>
+            </div>
+            <img id="model-tree" src="./image/3-5/tree.png" alt="树型展示"/>
+            <div id="tree-information">
+                <div class="tree-information-box">详细信息</div>
+                <div class="tree-information-box">详细信息</div>
+                <div class="tree-information-box">详细信息</div>
+            </div>
+        </div>   -->
+        <div class="content-body" id="show-content-part-3-6">
+            <div class="model-training">
+                <img src="./image/ALL/left-arrow.png" />
+                <span>数据综合 Data synthesis </span>
+            </div>
+            <div class="con-all">
+                <div class="con-left">
+                    <div class="cl-1 cl">
+                        <span>数据</span>
+                        <ul>
+                            <li>xx号楼x号房间x号设备</li>
+                            <li>xxxx年x月x日</li>
+                        </ul>
+                    </div>
+                    <!-- 剩余部分 左侧顶部 第二个图 -->
+                    <div class="cl-2 cl">
+                        <span>方法</span>
+                        <div class="left-right">
+                            <div id="left">
+
+                            </div>
+
+                            <div id="right">
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 剩余部分 左侧顶部 第三个图 -->
+                    <div class="cl-3 cl">
+                        <span>算法</span>
+                        <p>x号算法</p>
+                    </div>
+                    <!-- 剩余部分 左侧顶部 第四个图 -->
+                    <div class="cl-4 cl">
+                        <span>可视化</span>
+                        <div id="cl-4" class="cl">
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- 剩余部分 中间区域 -->
+                <div class="con-middle">
+                    <!-- 剩余部分 中间区域 顶部 -->
+                    <div class="cm-top cm">
+                        <span>工厂展示图</span>
+                        <img src="image/3-6/house-1.png">
+                    </div>
+                    <!--剩余部分 中间区域 底部  -->
+                    <div class="cm-bottom cm">
+                         <span class="bottom-button">电解槽的运行状况</span>
+                        <div class="condition">
+                            <div>
+                                <p >电解槽的编号：001</p><br>
+                                <p>日期：2017/01/01</p><br>
+                                <p>设备运行状况：良好</p><br>
+                                <p>是否经过模型训练：是</p><br>
+                                <p>电解槽负责人员：张三</p>
+                            </div>
+                            <div>
+                                <p >电解槽的编号：001</p><br>
+                                <p>日期：2017/01/01</p><br>
+                                <p>设备运行状况：良好</p><br>
+                                <p>是否经过模型训练：是</p><br>
+                                <p>电解槽负责人员：张三</p>
+                            </div>
+                            <div>
+                                <p >电解槽的编号：001</p><br>
+                                <p>日期：2017/01/01</p><br>
+                                <p>设备运行状况：良好</p><br>
+                                <p>是否经过模型训练：是</p><br>
+                                <p>电解槽负责人员：张三</p>
+                            </div>
+                            <div>
+                                <p >电解槽的编号：001</p><br>
+                                <p>日期：2017/01/01</p><br>
+                                <p>设备运行状况：良好</p><br>
+                                <p>是否经过模型训练：是</p><br>
+                                <p>电解槽负责人员：张三</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 剩余部分 右边区域 -->
+                <div class="con-right">
+                    <!-- 剩余部分 右边区域 顶部 -->
+                    <div class="cr-top cr">
+                        <span>树状图</span>
+                        <img src="image/3-6/tree.png">
+                    </div>
+                    <!-- 剩余部分 右边区域 底部 -->
+                    <div class="cr-bottom cr">
+                        <span>xxxx</span>
+                        <div id="cr-bottom">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body" id="show-content-main">
+            <div id="Con">
+                <div class="con-middleM">
+
+                    <span>工厂展示</span>
+                    <!--中间内容区：  顶部部分 -->
+                    <div class="mid-top">
+                        <span>
+                            选项：
+                        </span>
+                        <select class="menu">
+                            <option>1号楼</option>
+                            <option>2号楼</option>
+                            <option>3号楼</option>
+                            <option>4号楼</option>
+                        </select>
+                        <select class="menu">
+                            <option>第1层</option>
+                            <option>第2层</option>
+                            <option>第3层</option>
+                            <option>第4层</option>
+                        </select>
+                        <select class="menu">
+                            <option>1号房间</option>
+                            <option>2号房间</option>
+                            <option>3号房间</option>
+                            <option>4号房间</option>
+                        </select>
+                    </div>
+
+                    <!-- 中间内容区：  中间部分 -->
+                    <div class="mid-con">
+                        <img src="image/1/factory-1.png">
+                    </div>
+                    <!--中间内容区：   底部部分 -->
+                    <div class="mid-bot">
+                        <div class="box">
+                            <i class="left box-left"></i>
+                            <div class="small-box" style="left: 2vw;">
+                                <div class="box-con">
+                                    <span>空调</span>
+                                    <img src="image/1/snow.png" style="  width: 40%;height: 31.8%;margin-left: 30%">
+                                    <ul>
+                                        <li>数量： 125</li>
+                                        <li>离线： 5</li>
+                                        <li>正常： 119</li>
+                                        <li>报警： 1</li>
+                                    </ul>
+                                </div>
+                                <div class="box-con">
+                                    <span>电池</span>
+                                    <img src="image/1/battery.png" style="width: 56%;height: 22%; margin-left: 24%">
+                                    <ul>
+                                        <li>数量： 125</li>
+                                        <li>离线： 5</li>
+                                        <li>正常： 119</li>
+                                        <li>报警： 1</li>
+                                    </ul>
+                                </div>
+                                <div class="box-con">
+                                    <span>漏水</span>
+                                    <img src="image/1/water.png" style="width: 56%;height: 22%;margin-left: 22%">
+                                    <ul>
+                                        <li>数量： 125</li>
+                                        <li>离线： 5</li>
+                                        <li>正常： 119</li>
+                                        <li>报警： 1</li>
+                                    </ul>
+                                </div>
+                                <div class="box-con">
+                                    <span>湿度</span>
+                                    <img src="image/1/temperature.png" style="width: 20%;height: 34%;margin-left: 40%">
+                                    <ul>
+                                        <li>数量： 125</li>
+                                        <li>离线： 5</li>
+                                        <li>正常： 119</li>
+                                        <li>报警： 1</li>
+                                    </ul>
+                                </div>
+                                <div class="box-con">
+                                    <span>电量仪</span>
+                                    <img src="image/1/electricity.png" style="width: 35%;margin-left: 32%">
+                                    <ul>
+                                        <li>数量： 125</li>
+                                        <li>离线： 5</li>
+                                        <li>正常： 119</li>
+                                        <li>报警： 1</li>
+                                    </ul>
+                                </div>
+                                <div class="box-con">
+                                    <span>空调</span>
+                                    <img src="image/1/snow.png" style="width: 40%;height: 31.8%;margin-left: 30%">
+                                    <ul>
+                                        <li>数量： 125</li>
+                                        <li>离线： 5</li>
+                                        <li>正常： 119</li>
+                                        <li>报警： 1</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <i class="right box-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <!--右边内容区 ：-->
+                <div class="con-rightM">
+                    <div class="right-top">
+                        <span>温度控制</span>
+
+                        <div id="chart-1" class="chart"></div>
+
+                        <div id="chart-2" class="chart"> </div>
+
+                    </div>
+                    <div class="right-bottom">
+                        <span>电量消耗</span>
+
+                        <div id="chart-3" class="chart"></div>
+
+                        <div id="chart-4" class="chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body" id="show-content-part-4-1">
+            <div class="model-training">
+                <img src="./image/ALL/left-arrow.png"/>
+                <span>数据综合  Data synthesis </span>
+            </div>
+            
+        </div>
+        <div class="content-body" id="show-content-part-5-1">
+            <div class="model-training">
+                <img src="./image/ALL/left-arrow.png"/>
+                <span>过热度预测  Superheat prediction </span>
+            </div>
+            <div class="mubu">
+                <div class="cksftj bk1">
+                    <ul >
+                        <li>日期：2019/1/25</li>
+                        <li>电解槽编号：DH01</li>
+                        <li>槽电压：5</li>
+                        <li>槽电流：5</li>
+                        <li>槽电阻：5</li>
+                        <li>平滑电阻：6</li>
+                        <li>过滤电阻：7</li>
+                        <li>总电阻：13</li>
+                    </ul>
+                </div>
+                <div class="ckxgyj bk1">
+                    <ul>
+                        <li>日期：2019/1/25</li>
+                        <li>电解槽编号：DH01</li>
+                        <li>效应等待间隔：7</li>
+                        <li>基准下料间隔：7</li>
+                    </ul>
+                    <ul>
+                        <li>电解槽编号：DH02</li>
+                        <li>效应等待间隔：8</li>
+                        <li>基准下料间隔：8</li>
+                    </ul>
+                </div>
+                <div class="ycjgzs">
+                    <div class="ycjgzs-left">
+                        <video autoplay muted loop class="ycjgzs-left-video">
+                            <source src="image/5-1/video.mp4">
+                        </video>
+                    </div>
+                    <div class="ycjgzs-right">
+                        <div class="ycjgzs-right-top">
+                            <p class="ycjgzs-right-top-words1">过热度预测</p>
+                            <img src="image/5-1/percent.png" class="ycjgzs-right-top-pc">
+                            <p class="ycjgzs-right-top-words2">安全系数</p>
+                        </div>
+                        <div class="ycjgzs-right-bottom">
+                            <img src="image/5-1/star1.png" id="star1" class="star" style="margin-left: 3.1vw">
+                            <img src="image/5-1/star1.png" id="star2" class="star">
+                            <img src="image/5-1/star1.png" id="star3" class="star">
+                            <img src="image/5-1/star1.png" id="star4" class="star">
+                            <img src="image/5-1/star1.png" id="star5" class="star">
+                        </div>
+                    </div>
+                </div>
+                <button class="ksycbutton">开始预测</button>
+                <div class="csxg1 bk1">
+                    <ul>日期：</ul>
+                    <ul>电解槽编号：</ul>
+                    <ul>设定电压
+                        <li>最高电压：</li>
+                        <li>最低电压：</li>
+                    </ul>
+                    <ul>设定电阻
+                        <li>平滑电阻：</li>
+                        <li>过滤电阻：</li>
+                        <li>总电阻：</li>
+                    </ul>
+                </div>
+                <div class="csxg2 bk1">
+                    <ul>日期：</ul>
+                    <ul>电解槽编号：</ul>
+                    <ul>设定间隔
+                        <li>效应等待间隔：</li>
+                        <li>基准下料间隔：</li>
+                    </ul>
+                    <ul>设定针振
+                        <li>针振：</li>
+                    </ul>
+                    <ul>设定摆动
+                        <li>摆动：</li>
+                    </ul>
+                </div>
+                <div class="sjxzjl bk2">
+                    <table border="0">
+                        <tr>
+                            <th class="table-rq">日期</th>
+                            <th class="table-djcbh">电解槽编号</th>
+                            <th class="table-zz">针振</th>
+                            <th class="table-bd">摆动</th>
+                            <th class="table-zdzbhl">总电阻变化率</th>
+                        </tr>
+                        <tr>
+                            <td>1/25</td>
+                            <td>DH01</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>30%</td>
+                        </tr>
+                        <tr>
+                            <td>1/25</td>
+                            <td>DH02</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>30%</td>
+                        </tr>
+                        <tr>
+                            <td>1/25</td>
+                            <td>DH03</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>30%</td>
+                        </tr>
+                        <tr>
+                            <td>1/25</td>
+                            <td>DH04</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>30%</td>
+                        </tr>
+                        <tr>
+                            <td>1/25</td>
+                            <td>DH05</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>30%</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="content-body" id="show-content-part-5-2">
+            <div class="model-training">
+                <img src="./image/ALL/left-arrow.png"/>
+                <span>过热度预测  Superheat prediction </span>
+            </div>
+            <div class="mubu">
+                <div class="djc">
+                    <div class="choose-djc"><div class="djc-name">2051</div></div>
+                    <div class="choose-djc"><div class="djc-name">2052</div></div>
+                    <div class="choose-djc"><div class="djc-name">2053</div></div>
+                    <div class="choose-djc"><div class="djc-name">2054</div></div>
+                    <div class="choose-djc"><div class="djc-name">2055</div></div>
+                    <div class="choose-djc"><div class="djc-name">2056</div></div>
+                    <div class="choose-djc"><div class="djc-name">2057</div></div>
+                    <div class="choose-djc"><div class="djc-name">2058</div></div>
+                </div>
+                <div class="sftj">
+                    <ul>
+                        <li>模型选择推荐</li>
+                        <img class="modelImg" src="image/5-3/p1.png" width="90"/>
+                        <img class="modelImg" src="image/5-3/p2.png" width="90"/>
+                        <img class="modelImg" src="image/5-3/p3.png" width="90"/>
+                        <img class="modelImg" src="image/5-3/p4.png" width="90"/>
+                        <div class="modelNum">你还未选择模型</div>
+                    </ul>
+                </div>
+                <button class="ksycbutton" id="kaishiyuce">开始预测</button>
+            </div>
+        </div>
+        <div class="content-body" id="show-content-part-5-3">
+            <div class="model-training">
+                <img src="./image/ALL/left-arrow.png"/>
+                <span>过热度预测  Superheat prediction </span>
+            </div>
+                <div class="mubu">
+                    <div class="djc">
+                        <div class="djc-tiaozhuan"><div class="djc-name">2051</div></div>
+                        <div class="djc-tiaozhuan"><div class="djc-name">2052</div></div>
+                        <div class="djc-tiaozhuan"><div class="djc-name">2053</div></div>
+                        <div class="djc-tiaozhuan"><div class="djc-name">2054</div></div>
+                        <div class="djc-tiaozhuan"><div class="djc-name">2055</div></div>
+                        <div class="djc-tiaozhuan"><div class="djc-name">2056</div></div>
+                        <div class="djc-tiaozhuan"><div class="djc-name">2057</div></div>
+                        <div class="djc-tiaozhuan"><div class="djc-name">2058</div></div>
+                        <div class="sftj">
+                            <ul>
+                                <li>模型选择推荐</li>
+                                <img class="modelImg" src="image/5-3/p1.png" width="90"/>
+                                <img class="modelImg" src="image/5-3/p2.png" width="90"/>
+                                <img class="modelImg" src="image/5-3/p3.png" width="90"/>
+                                <img class="modelImg" src="image/5-3/p4.png" width="90"/>
+                                <div class="modelNum">还未选择模型</div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <!--这里添加js文件--> 
+    <script defer="defer" src="js/chart.js" type="text/javascript"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/echarts-gl.min.js"></script>
+    <script type="text/javascript" src="js/chart-z.js"></script>
+    <script type="text/javascript" src="js/part2/2.js"></script>
+    <!-- 康 -->
+    <script type="text/javascript" src="js/part1/1.js"></script>
+    <!--这里添加js文件--> 
+    <!-- 朱 -->
+    <script src="js/part6-1.js"></script>
+    <script src="js/part6-2.js"></script>
+    <script src="js/zxjc.js"></script>
+    <script type="text/javascript" src="js/part3/3-1.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,458 @@
+* { margin:0; padding:0;}
+/*日志管理界面内容两层中上面一层css*/
+#con-61residues-middle-one{
+    height:55%;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/*Number one*/
+/*上面一层左边第一个框*/
+.con-61residues-middle-pc1{
+    width:35%;/*570px;*/
+    height: 90%; /*380px;*/
+    /*margin-top: 2vw;*/ /*20px*/
+    border-image: url(../image/6-1/box3.png) 1 1 1 stretch;
+    -o-border-image: url(../image/6-1/box3.png) 1 1 1 stretch;
+    -webkit-border-image: url(../image/6-1/box3.png) 1 1 1 stretch;
+    font-size: 1vw;
+    margin-top: 3vh;
+    margin-left: 0.5vw;
+    margin-right: -5vw;
+
+}
+/*6-1上面一层左边及中间框标题及6-2用户信息修改标题的通用*/
+.con-61-first-box-top{
+    margin: 0 auto;
+    height: 10%;
+    width:100%;
+    text-align:center;
+    margin-left: 0.5vw;
+    margin-right: -5vw;
+    font-size: 1.2vw;
+    color:white;
+    margin-top: 6%;
+   }
+/*上面一层左边及中间框的共用样式*/
+.con-61-first-box-content{
+    height: 70%;
+    width: 95%;
+    overflow: auto;
+    margin-left: 0.5vw;
+    margin-right: -5vw;
+}
+/*6-1上面一层左边及中间框内容的通用样式*/
+.con-61-first-box-content-1{
+    width:95%;
+    height:90%;
+    margin-left: 0.5vw;
+    margin-right: -5vw;
+}
+/*6-1及6-2输入框或显示相关信息前面的文字内容的通用样式及显示当前时间的样式*/
+.con-61-first-box-content-1-words1{
+    color:white;
+    margin-left: 2vw;
+    margin-top:2vw;
+    font-size: 1vw;
+}
+/*6-1及6-2输入框或显示相关信息的通用样式*/
+.con-61-first-box-content-1-words2{
+    color:white;
+    font-size: 1vw;
+    width:10vw;
+    background:none;
+    outline:none;
+    border: none;
+}
+/*6-1上面一层左边框内容的第二三部分样式*/
+#con-61-first-box-content-2{
+    margin-top: 4vh;
+}
+#con-61-first-box-content-3{
+    margin-top: 4vh;
+}
+/*三个echarts图的容器样式*/
+#con-61-first-box-pic1{
+    width: 15vw;
+    height:22vh;
+    margin-top: -9vh;
+    margin-left: 10vh;
+}
+#con-61-first-box-pic2{
+    width: 15vw;
+    height:22vh;
+    margin-top: -9vh;
+    margin-left: 10vh;
+}
+#con-61-first-box-pic3{
+    width: 15vw;
+    height:22vh;
+    margin-top: -9vh;
+    margin-left: 10vh;
+}
+/*6-1上面一层中间框内容的第二三部分样式*/
+#con-61-second-box-content-2{
+    margin-top: 4vh;
+}
+#con-61-second-box-content-3{
+    margin-top: 4vh;
+}
+/*6-1登陆历史两个框标题*/
+.con-61-third-box-top{
+    margin: 0 auto;
+    height: 10%;
+    width:100%;
+    text-align:center;
+    margin-left: 0.5vw;
+    margin-right: -5vw;
+    font-size: 1vw;
+    color:white;
+    margin-top: 6%;
+}
+/*6-1登陆历史内容框架*/
+.con-61-third-box-content{
+    height: 70%;
+    width:95%;
+    overflow: auto;
+    margin-top: 0.5vw;
+}
+/*6-1登陆历史内容样式*/
+.con-61-third-box-content-1-words1{
+    color:white;
+    margin-left: 2vw;
+    font-size: 0.6vw;
+    margin-top: 0.3vw;
+    text-align: center;
+}
+/*6-1登陆历史*/
+.con-61residues-middle-pc2{
+    width:20.8%; /*335px*/
+    height:58%; /*280px*/
+    border-image: url(../image/6-1/box2.png) 1 1 1 stretch;
+    -o-border-image: url(../image/6-1/box2.png) 1 1 1 stretch;
+    -webkit-border-image: url(../image/6-1/box2.png) 1 1 1 stretch;
+    font-size: 1vw;
+    margin-top: -9vh;
+    margin-left: 0.5vh;
+}
+/*6-1下面一层*/
+/*6-1第二层大框架*/
+#con-61residues-middle-two{
+    height: 35%;
+    width: 99%;
+    display: flex;
+    align-items: center;
+}
+/*6-1过热度预测记录大框架*/
+.con-61residues-bottom-pc1{
+    width: 72%; /*1200px*/
+    height:90%; /*220px*/
+    border-image: url(../image/6-1/box1.png) 1 1 1 stretch;
+    -o-border-image: url(../image/6-1/box1.png) 1 1 1 stretch;
+    -webkit-border-image: url(../image/6-1/box1.png) 1 1 1 stretch;
+    font-size: 1vw;
+    margin-left: 0.5vw;
+}
+/*6-1过热度预测记录标题*/
+.con-61-fourth-box-top{
+    margin: 0 auto;
+    height: 10%;
+    width:100%;
+    text-align:center;
+    margin-left: 0.5vw;
+    margin-right: -5vw;
+    font-size: 1.2vw;
+    color:white;
+    margin-top: 4%;
+}
+/*6-1过热度预测记录内容框架*/
+.con-61-fourth-box-content{
+   display: flex;
+    height:80%;
+    width: 100%;
+    margin-top: 1vw;
+}
+/*过热度预测记录每一部分内容框架*/
+.con-61-fourth-box-content-1{
+    height:95%;
+    width:25%;
+}
+/*6-1下面一个登陆历史框架*/
+.con-61residues-bottom-pc2{
+    width:20.5%; /*335px*/
+    height:92%; /*280px*/
+    border-image: url(../image/6-1/box2.png) 1 1 1 stretch;
+    -o-border-image: url(../image/6-1/box2.png) 1 1 1 stretch;
+    -webkit-border-image: url(../image/6-1/box2.png) 1 1 1 stretch;
+    font-size: 1vw;
+    margin-left: 3%;
+}
+/*6-2*/
+/*6-2整个框架*/
+#con-62residues-middle{
+    width:100%;
+    height:85%;
+    display: flex;
+}
+/*6-2左边的框*/
+.con-62residues-pc1
+{
+    display: flex;
+    flex-direction: column;
+    width:23%;
+    height:85%;
+    border-image: url(../image/6-2/box2.png) 1 1 1 stretch;
+    -o-border-image: url(../image/6-2/box2.png) 1 1 1 stretch;
+    -webkit-border-image: url(../image/6-2/box2.png) 1 1 1 stretch;
+    margin-top: 3vh;
+    margin-left: 1.5vh;
+    margin-right: 5vh;
+    font-size:1vw;
+}
+/*6-2左边的框内容1及内容2的整体框架*/
+.con-62residues-pc1-content{
+    width:90%;
+    height:46%;
+}
+/*6-2中间的框*/
+.con-62residues-pc2
+{
+    justify-content: space-around;
+    width:43%;
+    height:90%;
+    border-image: url(../image/6-2/box4.png) 1 1 1 stretch;
+    -o-border-image: url(../image/6-2/box4.png) 1 1 1 stretch;
+    -webkit-border-image: url(../image/6-2/box4.png) 1 1 1 stretch;
+    margin-top: 2vh;
+    font-size:1vw;
+}
+/*表单内容div*/
+.con-62residues-pc2-content{
+      width:100%;
+    height:85%;
+}
+/*表单每一层内容的框架*/
+.con-62residues-pc2-content-form{
+    width:95%;
+    height:15%;
+    display: flex;
+    margin-top: 1vw;
+}
+/*表单每一层内容的每一部分内容的框架*/
+.con-62residues-pc2-content-form-content{
+    width:50%;
+    height:100%;
+}
+/*表单内容每一层内容的每一部分内容的文字内容*/
+.con-62residues-pc2-content-form-words{
+    font-size:0.8vw;
+    color:white;
+    margin-left:1vw;
+}
+/*表单每一层内容的每一部分内容的输入框内容*/
+.con-62residues-pc2-content-form-input {
+    background:none;
+    outline:none;
+    color:white;
+    height:2vh;
+    border:0.1vw solid white;
+    border-left:none;
+    border-right: none;
+    border-top: none;
+}
+/*option样式*/
+.option-62{
+    color:white;
+    width:7vw;
+    height:2vh;
+    font-size: 0.5vw;
+}
+/*select样式*/
+select{
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    font-size: 0.5vw;
+    background: url("../image/6-1/aow.png") no-repeat scroll 6vw center transparent;;
+    background-size: 0.8vw;
+    padding-right: 1vw;
+}
+/*提交按钮样式*/
+#submit-62{
+    background-color: royalblue;
+    border-radius: 0.3vw;
+    margin: 0 auto;
+    width:4vw;
+    height:2vw;
+    font-size: 1vw;
+    color:white;
+    border: none;
+}
+/*表单验证后提交按钮显示的内容样式*/
+#yanzheng{
+    color:red;
+    font-size:0.5vw;
+    margin: 0 auto;
+}
+/*6-2右边框的总体框架*/
+#con-62residues-middle-bottom{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height:105%;
+    margin-left: 8vh;
+}
+/*6-2右面框的上面一个框的框架*/
+.con-62residues-pc3{
+    width:70%;
+    height:62%;
+    border-image: url(../image/6-2/box3.png) 1 1 1 stretch;
+    -o-border-image: url(../image/6-2/box3.png) 1 1 1 stretch;
+    -webkit-border-image: url(../image/6-2/box3.png) 1 1 1 stretch;
+    margin-left:3vh ;
+    margin-top: -3vh;
+    font-size:1vw;
+}
+/*6-2右面框的上面一个框每一层内容*/
+.con-62residues-pc3-cotent{
+    width:100%;
+    height:21%;
+    justify-content:left;
+    align-itemsL:center;
+    margin-top: 2vw;
+}
+/*6-2右面框的下面一个框*/
+.con-62residues-pc4{
+    width:70%;
+    height:30%;
+    border-image: url(../image/6-2/box1.png) 1 1 1 stretch;
+    -o-border-image: url(../image/6-2/box1.png) 1 1 1 stretch;
+    -webkit-border-image: url(../image/6-2/box1.png) 1 1 1 stretch;
+    font-size:1vw;
+    margin-top: 1vh;
+    margin-left: 1.6vw;
+}
+/*帮助中心的字体内容*/
+.helping{
+    color:#19B9DA;
+    font-size: 1vw;
+    margin-left: 1.5vw;
+    margin-top: 3vw;
+}
+/*弹窗内容*/
+#background-62{
+    width:80vw;
+    height:80vh;
+    margin-top: 5vw;
+    margin-left:-5vw;
+    display: none;
+    background-image: url(../image/6-2/btn.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*触发弹窗事件按钮样式*/
+.btn{
+    background: none;
+    border: none;
+    outline:none;
+}
+/*表格*/
+#formone{
+    margin-top: 5vw;
+}
+/*滚动条*/
+/*6-1*/
+/*数据记录滚动条*/
+#style-1::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #18316D;
+}
+#style-1::-webkit-scrollbar-track-piece{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #19265A;
+    border-radius: 1vh;
+}
+#style-1::-webkit-scrollbar
+{
+    width: 1vh;
+    background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    border-radius: 1vh;
+    background-color:#344E7F;
+}
+/*模型记录滚动条*/
+#style-2::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #18316D;
+}
+#style-2::-webkit-scrollbar-track-piece{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #19265A;
+    border-radius: 1vh;
+}
+#style-2::-webkit-scrollbar
+{
+    width: 1vh;
+    background-color: #F5F5F5;
+}
+
+#style-2::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    border-radius: 1vh;
+    background-color:#354C7F;
+}
+/*上面一个登陆历史滚动条*/
+#style-3::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #18316D;
+}
+#style-3::-webkit-scrollbar-track-piece{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #19265A;
+    border-radius: 1vh;
+}
+#style-3::-webkit-scrollbar
+{
+    width: 1vh;
+    background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    border-radius: 1vh;
+    background-color:#354C7F;
+}
+/*下面一个登陆历史滚动条*/
+#style-4::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #18316D;
+}
+#style-4::-webkit-scrollbar-track-piece{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #19265A;
+    border-radius: 1vh;
+}
+#style-4::-webkit-scrollbar
+{
+    width: 1vh;
+    background-color: #F5F5F5;
+}
+
+#style-4::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    border-radius: 1vh;
+    background-color:#354C7F;
+}

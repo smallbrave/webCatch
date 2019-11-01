@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title> LOCATION </title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Comaptible" content="IE=edge">
+    </head>
+    <body>
+        <button id="a">A</button>
+        <button id="b">B</button>
+        <button id="c">C</button>
+        <div id="cont"></div>
+        <script>
+            var btns = document.getElementsByTagName("button");
+            var btnA = a.innerText;
+            var btnB = b.innerText;
+            var btnC = c.innerText;
+            //解析hash
+            function checkHash(){
+                return window.location.hash.substr(1);
+                
+            } 
+            //渲染页面
+            function show(){
+                cont.innerText = checkHash();
+            }
+            //按钮监控
+            for(var val of btns){
+                val.onclick = function(e){
+                    window.location.hash = "#"+ e.target.innerText; 
+                }
+            }
+            window.onhashchange = function(){
+                show();
+            };
+            show();
+        
+        
+        
+        </script>
+    </body>
+</html>

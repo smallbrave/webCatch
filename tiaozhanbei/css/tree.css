@@ -1,0 +1,498 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: #fff;
+}
+ul li{
+    list-style: none;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    font-size: 0;
+    background-image:url("../image/ALL/backgroundNext.png");
+    background-repeat:no-repeat;
+    background-size: 100% 102%; 
+    justify-content: center;
+    letter-spacing: .1vw;
+
+}
+.Ztop{
+    height: 8vh;
+    width: 100vw;
+}
+.ZtopL{
+    float: left;
+    height: 8vh;
+    margin-left:2vw; 
+}
+.ZtopL img{
+    width: 3vw;
+    height: 3vw; 
+    margin: 1vh;
+}
+.ZtopL span{
+    float: right;
+    font-size: .2vw;
+    color: #ffffff;
+    line-height: 8vh;
+}
+.ZtopR{
+    height: 8vh;
+    float: right;
+    margin-right: 5vw;  
+}
+.ZtopR img{
+    width: 2.4vw;
+    height: 2.4vw;
+    margin: 1.6vh 1vw;
+}
+.ZtopR span{
+    float: right;
+    width: 4.8vw;
+    font-size: .2vw;
+    color: #ffffff;
+    line-height: 8vh;
+}
+.Zmiddle{
+   height: 52vh; 
+   position: relative;
+}
+.someInputs{
+    margin-left: 2vw;
+    display: flex;
+    flex-direction: column;
+}
+.someInputs div{
+        width: 11vw;
+        height: 9vh;
+        background-color: #fff;
+        margin-top: 2vh;
+        border-radius: .6vw;
+        position: relative;
+        overflow: hidden;
+}
+.someInputs .describe{
+    width: 6vw;
+    height: 4vh;
+    border-radius: 0;
+    border-top-right-radius: .6vw;
+    border-bottom-right-radius: .6vw;
+}
+.describe span{
+    font-size: .2vw;
+    position: absolute;
+    top: .9vh;
+    left:2.4vw;
+    white-space: nowrap;
+    color: #007eff;
+}
+#help{
+    display: none; 
+    width: 30vw;
+    height: 25vh;
+    position: absolute;
+    top: 0;
+    left: 35%;
+    background-color: hsl(207, 95%, 60%);
+    z-index: 100;
+    border-radius: 1vw;
+}
+#help h1{
+   font-size: 2vw;
+   text-align: center;
+   color: #fff;
+}
+#help p{
+    margin: 2vh 2vw;
+    font-size: 1vw;
+    line-height: 2vh;
+    color: #fff;
+}
+#help button{
+   width: 5vw;
+    border: none;
+    background-color: #007eff;
+    color: #fff;
+    font-size: 1vw;
+    position: absolute;
+    bottom: 2vh;
+    right: 2vw;
+    border-radius: 1vh;
+    outline: none;
+}
+.someInputs .describe::before{
+    content: "";
+    background-image: url(../image/ALL/menu.png);
+    background-repeat: no-repeat;
+    background-position: 50% 10%;
+    background-size: 80%;
+}
+.someInputs div::before{
+    content:"";
+    font-size: 1.2vw;
+    width: 2vw;
+    height: 9vh;
+    background-color: #007eff;
+    display: block;
+    text-align: center;
+    padding-top: 2vh;
+
+}
+.someInputs div input{
+    position: absolute;
+    top: 3vh;
+    left: 3vw;
+    width: 70%;
+    font-size: 1vw;
+    color: #007eff;
+    outline: none;
+    border:none;
+}
+.someInputs div:nth-child(2)::before{
+    content: "V";
+}
+.someInputs div:nth-child(3)::before{
+    content: "V";
+}
+.someInputs div:nth-child(4)::before{
+    content: "V";
+}
+.text:after{
+    text-shadow: 0.08vw 0 1vw #FFFF66;
+}
+.middleInputsL div{
+    overflow: hidden;
+}
+.middleInputsL div:first-child{
+    width: 9vw;
+    height:17vh;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 20vh;
+    left: 18.6vw;
+    border-radius: .4vw;
+}
+.middleInputsL div:nth-child(2){
+    width: 10.2vw;
+    height: 11.6vh;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 14vh;
+    left: 32vw;
+    border-radius: .4vw;
+} 
+.middleInputsL div:nth-child(3){
+    width: 10.2vw;
+    height: 11.6vh;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 30vh;
+    left: 32vw;
+    border-radius: .4vw;
+} 
+.middleInputsR{
+    position: absolute;
+    top: 8vh;
+    left: 45.6vw;
+}
+.middleInputsR div{
+   width: 9vw;
+   height: 7.6vh;
+   background-color: rgba(255, 255, 255, 0.1);
+   border-radius: .4vw;
+   overflow: hidden;
+}
+.middleInputsR div:first-child{
+    position: absolute;
+    top: 0;
+}
+.middleInputsR div:nth-child(2){
+    position: absolute;
+    top: 10vh;
+}
+.middleInputsR div:nth-child(3){
+    position: absolute;
+    top: 22vh;
+}
+.middleInputsR div:nth-child(4){
+    position: absolute;
+    top: 34vh;
+}
+.charts {
+    position: absolute;
+    top: 8vh;
+    left: 58vw;
+}
+.charts #chart--one {
+    position: absolute;
+    top: -2vh;
+    left: 2vw;
+    width: 14vw;
+    height: 28vh;
+}
+.charts #chart--two {
+    position: absolute;
+    top: 26vh;
+    left: 2vw;
+    width: 14vw;
+    height: 28vh;
+}
+.charts #chart--three {
+    position: absolute;
+    top: 29vh;
+    left: 20vw;
+    width: 14vw;
+    margin-left: 1vw;
+    height: 25.5vh;
+}
+.charts #chart--four {
+    position: absolute;
+    top: 55.5vh;
+    left: 21vw;
+    width: 14vw;
+    height: 21vh;
+}
+.report{
+    width: 14vw;
+    height: 16vh;
+    position: absolute;
+    top: 15vh;
+    right: 4vw;
+    display: none;
+}
+.report .report1{
+    width: 6vw;
+    position: absolute;
+    top: -2vh;
+    color: #fff;
+    font-size: 1vw;
+}
+.report p:nth-child(2){
+   font-size: 1vw;
+   position: absolute;
+   top: 5vh;
+   right: 13vw;
+   white-space: nowrap;   
+}
+.report p:nth-child(3){
+    position: relative;
+    display: inline-block;
+    width: 10vw;
+    height: 10vw;
+    font-size: 1vw;
+    background: url(../image/ALL/circle.png) no-repeat;
+    background-size: 70% 70%;
+    background-position: 40% 50%;
+}
+
+.report p span{
+    font-size: 1.6vw;
+    position: absolute;
+    top: 40%;
+    left: 30%;
+}
+.Zbottom{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+}
+.Zbottom .Zbottom_begin{
+   width: 33vw;
+   height: 40vh;
+   position: relative;
+   font-size: .2vw;
+   text-align: center;
+}
+.Zbottom .Zbottom_begin div:first-child{
+    position: absolute;
+    width: 8vw;
+    height: 8vh;
+    background-color: #4179ec;
+    top: 4vh;
+    left: 2vw;
+}
+.Zbottom .Zbottom_begin div:first-child:before{
+   content: "电解槽编号";
+    display:block;
+    margin-top: 2vh;
+}
+.Zbottom .Zbottom_begin div:nth-child(2){
+    position: absolute;
+    width: 8vw;
+    height: 8vh;
+    background-color: #4179ec;
+    top: 24vh;
+    left: 4vw;
+}
+.Zbottom .Zbottom_begin div:nth-child(2):before{
+   content: "日期";
+    display:block;
+    margin-top: 2vh;
+}
+.Zbottom .Zbottom_begin div:nth-child(3){
+    position: absolute;
+    width: 8vw;
+    height: 8vh;
+    background-color: #4179ec;
+    top: 10vh;
+    left: 23vw;
+}
+.Zbottom .Zbottom_begin div:nth-child(3):before{
+    content: "车间号";
+    display:block;
+     margin-top: 2vh;
+}
+
+.Zbottom_begin img{
+    width: 11vw;
+    position: absolute;
+    bottom: 9vh;
+    left: 11vw;
+}
+.Zbottom_middle{
+    width: 26vw;
+    height: 40vh;
+    position: relative;
+    font-size: .2vw;
+}
+.Zbottom_middle div:first-child img{ 
+    width: 4.2vw;
+    height: 9vh;
+    position: absolute;
+    top: 2vh;
+    left: 3vw;
+}
+.Zbottom_middle div:first-child:after{
+   content: "空气净化处理";
+   position: absolute;
+   top: 12vh;
+   left: 3vw;
+}
+.Zbottom_middle div:nth-child(2) img{
+    width: 4.2vw;
+    height: 8vh;
+    position: absolute;
+    top: 14vh;
+    left: 3vw;
+}
+.Zbottom_middle div:nth-child(2):after{
+    content: "电化学反应";
+   position: absolute;
+   top: 22vh;
+   left: 3.6vw;   
+}
+.Zbottom_middle div:nth-child(3) img{
+    width: 4.2vw;
+    height: 6vh;
+    position: absolute;
+    top: 24vh;
+    left: 3vw;
+}
+.Zbottom_middle div:nth-child(3):after{
+  content: "原材料处理";
+   position: absolute;
+   top: 30vh;
+   left: 3.4vw;
+}
+.Zbottom_middle div:nth-child(4) img{
+    width: 2.6vw;
+    height: 8vh;
+    position: absolute;
+    top: 3vh;
+    left: 18vw;
+}
+.Zbottom_middle div:nth-child(4):after{
+   content: "铝液冷却";
+   position: absolute;
+   top: 12vh;
+   left: 18vw;
+}
+.Zbottom_middle div:nth-child(5) img{
+    width: 3vw;
+    height: 6vh;
+    position: absolute;
+    top: 16vh;
+    left: 18vw;
+}
+.Zbottom_middle div:nth-child(5):after{
+   content: "净化澄澈";
+   position: absolute;
+   top: 22vh;
+   left: 18vw;
+}
+.Zbottom_middle div:nth-child(6) img{
+    width: 4.6vw;
+    height: 6vh;
+    position: absolute;
+    top: 24vh;
+    left: 18vw;
+}
+.Zbottom_middle div:nth-child(6):after{
+       content: "浇铸铝锭";
+   position: absolute;
+   top: 30vh;
+   left: 18vw;
+}
+.Zbottom_right{
+    font-size: .2vw;
+    height: 40vh;
+    width: 33vw;
+    position: relative;   
+}
+.Zbottom_right ul li{
+    margin-top: 1vh;
+    margin-left: -1vw;
+}
+.Zbottom_right ul li input{
+    display: inline-block;
+   width: 1.7vw;
+   height: 1vw;
+   color: #4179ec;
+   border: none;
+   font-size: .2vw;
+}
+.Zbottom_right ul:first-child{
+    position: absolute;
+    top: 15vh;
+    left: 2vw;
+}
+.Zbottom_right ul:nth-child(2){
+    position: absolute;
+    top: 16vh;
+    left: 10vw;
+}
+.third-box,.second-box,#first-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#first-box p{
+    font-size: 1vw;
+    color: #ffffff;
+    text-align: center;
+    display: none;
+}
+.second-box p{
+    font-size: 0.8vw;
+    color: #ffffff;
+    text-align: center;
+    display: none;
+}
+.third-box p {
+    font-size: 0.5vw;
+    color: #ffffff;
+    text-align: center;
+    display: none;
+}
+#return {
+    position: absolute;
+    top: 10vh;
+    font-size: 0.8vw;
+    right: 3vw;
+    color: #fff;
+    text-decoration: none;
+    z-index: 9999;
+}

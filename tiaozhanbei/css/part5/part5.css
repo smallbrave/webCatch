@@ -1,0 +1,358 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.logo{
+    width: 11vmax;
+    height: 3vmax;
+    margin: 3vmin 0 0 5vmax;
+}
+.dltx{
+    margin: 0 0 0 50vmax;
+    width: 2vmax;
+    height: 2vmin;
+}
+.dltx img{
+    position: absolute;
+    left: 83vmax;
+    top: 3vmin;
+    width: 2vmax;
+    height: auto;
+}
+.dltx-name{
+    font-size:2vmin;
+    position: absolute;
+    left: 85.5vmax;
+    top: 3.7vmin;
+    height: 5vmin;
+}
+.tongz{
+    position: absolute;
+    top: 4vmin;
+    left: 93vmax;
+}
+.tongz img{
+    width: 1vmax;
+    height: 1vmax;
+}
+.fenx{
+    position: absolute;
+    top: 4vmin;
+    left: 95vmax;
+}
+.fenx img {
+    width: 1vmax;
+    height: 1vmax;
+}
+.yingygl{
+    position: absolute;
+    top: 4vmin;
+    left: 97vmax;
+}
+.yingygl img {
+    width: 1vmax;
+    height: 1vmax;
+}
+.bk1{
+    position: absolute;
+    -webkit-border-image:url("../../image/5-1/biankuang.png") 1 1 stretch;	/* Safari and Chrome */
+    -moz-border-image:url("../../image/5-1/biankuang.png") 1 1 round;	/* Old Firefox */
+    -o-border-image:url("../../image/5-1/biankuang.png") 1 1 round;		/* Opera */
+}
+.bk2{
+    position: absolute;
+    -webkit-border-image:url("../../image/5-1/biankuang2.png") 1 1 stretch;	/* Safari and Chrome */
+    -moz-border-image:url("../../image/5-1/biankuang2.png") 1 1 round;	/* Old Firefox */
+    -o-border-image:url("../../image/5-1/biankuang2.png") 1 1 round;		/* Opera */
+}
+/*侧边栏*/
+.cbl{
+    height: 76vmin;
+    width: 11.5vmax;
+    margin: 2vmax 0 0 2vmax;
+}
+/*框内*/
+/*过热度预测*/
+.superheat-prediction img{
+    top: 4vmin;
+    left: 5vmax;
+    position: absolute;
+}
+/*参考算法推荐*/
+.cksftj{
+    padding-top: 1vmin;
+    letter-spacing: 2px;
+    font-size: .9vmax;
+    color: #fff;
+    top: 11vmin;
+    left: 5vmax;
+    width: 12.5vmax;
+    height: 30vmin;
+}
+.cksftj ul li{
+    margin: 1vmin 0 0 2.5vmin ;
+}
+/*参考修改意见*/
+.ckxgyj{
+    padding-top: 1vmin;
+    letter-spacing: 2px;
+    font-size: .9vmax;
+    color: #fff;
+    top: 43vmin;
+    left: 5vmax;
+    width: 12.5vmax;
+    height: 33vmin;
+}
+.ckxgyj ul{
+    margin-top:3vmin;
+}
+.ckxgyj ul li{
+    margin: 1vmin 0 0 2.5vmin ;
+}
+/*预测结果展示*/
+.ycjgzs{
+    display: flex;
+    border-radius: .5vmax;
+    position: absolute;
+    top: 11vmin;
+    left: 17.5vmax;
+    background-color: rgba(83,83,83,0.3);
+    width: 35vmax;
+    height: 55vmin;
+    font-size: 1vmax;
+    text-align:center;
+}
+.ycjgzs-left{
+    height:100%;
+    width:60%;
+}
+.ycjgzs-right{
+    height:100%;
+    width:40%;
+    display:flex;
+    flex-direction: column;
+}
+.ycjgzs-left-video{
+    display: block;
+    margin-top: 33%;
+    height:50%;
+    width: 100%;
+}
+.ycjgzs-right-top{
+    height:80%;
+    width:100%;
+}
+.ycjgzs-right-top-words1{
+    width: 100%;
+    text-align: center;
+    font-size: 1.5vw;
+    margin-top: 7vw;
+    text-shadow: 0 0 1vw #13c4f0;
+}
+.ycjgzs-right-top-pc{
+    height: 35%;
+    margin: 0 auto;
+    margin-top: 1vw;
+}
+.ycjgzs-right-top-words2{
+    width: 100%;
+    text-align: center;
+    font-size: 1vw;
+    margin-top: 1vw;
+    text-shadow: 0 0 1vw #13c4f0;
+}
+.ycjgzs-right-bottom{
+    height:20%;
+    width:100%;
+    display: flex;
+}
+.star{
+    width:1.1vw;
+    height:1.1vw;
+    margin-left: 0.5vw;
+}
+/*开始预测按钮*/
+.ksycbutton{
+    font-size: 1vmax;
+    outline: none;
+    border: 0;
+    color: #fff;
+    background: #00A3F0;
+    border-radius: 0.3vw;
+    width: 6.5vmax;
+    height: 3vmin;
+    position: absolute;
+    top: 70vmin;
+    left: 30vmax;
+}
+/*按钮点击效果*/
+.ksycbutton:active{
+    box-shadow: 1px 1px 1px 1px #111;
+}
+/*参数修改*/
+.csxg1{
+    letter-spacing: 2px;
+    color: #fff;
+    top: 11vmin;
+    left: 53.5vmax;
+    width: 12vmax;
+    height: 43vmin;
+}
+.csxg1 ul{
+    font-size: 1vmax;
+    margin: 3vmin 0 0 .9vw;
+}
+.csxg1 ul li{
+    font-size: 90%;
+    margin: 1vmin 0 0 1vw ;
+}
+.csxg2{
+    letter-spacing: 2px;
+    color: #fff;
+    top: 11vmin;
+    left: 67vmax;
+    width: 12vmax;
+    height: 43vmin;
+}
+.csxg2 ul{
+    font-size: 1vmax;
+    margin: 3vmin 0 0 .9vw;
+}
+.csxg2 ul li{
+    font-size: 90%;
+    margin: 1vmin 0 0 1vw ;
+}
+/*数据选择记录*/
+.sjxzjl{
+    font-size: 1vmax;
+    color: #fff;
+    top: 56vmin;
+    left: 53.5vmax;
+    width: 25.5vmax;
+    height: 20vmin;
+}
+.sjxzjl table{
+    margin: 2vh 0 0 1vw;
+    letter-spacing: 2px;
+    font-size: .9vw;
+}
+.sjxzjl th{
+    text-align: center;
+}
+.sjxzjl td{
+    text-align: center;
+}
+.table-rq
+{
+    width: 3vw;
+}
+.table-djcbh{
+    width: 6.5vw;
+}
+.table-zz{
+    width: 3vw;
+}
+.table-bd{
+    width: 3vw;
+}
+.table-zdzbhl{
+    width: 6.5vw;
+}
+/*幕布*/
+.mubu{
+    position: absolute;
+    top: 13.5vmin;
+    left: 15.5vmax;
+    width: 82.5vmax;
+    height: 77vmin;
+}
+/*电解槽模块*/
+.djc{
+    width: 68vmax;
+    height: 75vmin;
+}
+/*单个电解槽*/
+.choose-djc{
+    padding:6vw 0 0 0;
+    width: 6vw;
+    background: url("../../image/5-2/dianjiecao.png") no-repeat top center;
+    background-size: 100%;
+    margin: 10vh 0 0 8vw;
+    display: inline-block;
+}
+/*电解槽序号*/
+.djc-name{
+    font-size: 1vh;
+    letter-spacing:2px;
+    color: #fff;
+    text-align:center;
+    line-height: 5vw;
+    -webkit-border-image:url("../../image/5-2/xiankuang.png") 1 1 stretch;	/* Safari and Chrome */
+    -moz-border-image:url("../../image/5-2/xiankuang.png") 1 1 round;	/* Old Firefox */
+    -o-border-image:url("../../image/5-2/xiankuang.png") 1 1 round;		/* Opera */
+    width: 5vw;
+    height: 5vw;
+    margin-left: 1vw;
+}
+/*电解槽点击效果*/
+.choose-djc:active{
+    background: url("../../image/5-2/dianjiecao-active.png") no-repeat top center;
+    background-size: 100%;
+}
+.choose-djc-active {
+    background: url("../../image/5-2/dianjiecao-active.png") no-repeat top center;
+    background-size: 100%;
+}
+.modelNum {
+    margin-top: 20px;
+    text-align: center;
+}
+/*算法推荐*/
+.sftj{
+    color: #fff;
+    font-size: .9vmax;
+    position: absolute;
+    top: 8vmin;
+    left: 63.5vmax;
+    width: 15vmax;
+    height: 52vmin;
+    border: solid 0 #fff;
+    border-radius: 1vmin;
+    -webkit-border-image:url("../../image/5-2/sftjbk.png") 1 1 stretch;	/* Safari and Chrome */
+    -moz-border-image:url("../../image/5-2/sftjbk.png") 1 1 round;	/* Old Firefox */
+    -o-border-image:url("../../image/5-2/sftjbk.png") 1 1 round;		/* Opera */
+}
+.sftj img{
+    width: 5vw;
+    height: 4vw;
+    margin: 3vh 0 0 2vw;
+}
+.sftj li{
+    margin: 3vh 0 0 1vw;
+    color:#fff;
+    letter-spacing: 2px;
+}
+.djc-tiaozhuan {
+    padding:6vw 0 0 0;
+    width: 6vw;
+    margin: 10vh 0 0 8vw;
+    display: inline-block;
+    background: url("../../image/5-2/dianjiecao.png") no-repeat top center;
+    background-size: 100%;
+}
+/*电解槽正常*/
+.djc-normal{
+    background: url("../../image/5-3/djc-normal.png") no-repeat top center;
+    background-size: 100%;
+}
+/*电解槽过热1*/
+.djc-superheat1{
+    background: url("../../image/5-3/djc-superheat1.png") no-repeat top center;
+    background-size: 100%;
+}
+/*电解槽过热2*/
+.djc-superheat2{
+    background: url("../../image/5-3/djc-superheat2.png") no-repeat top center;
+    background-size: 100%;
+}

@@ -1,0 +1,288 @@
+html,body,div{
+    padding: 0;
+    margin: 0;
+    color: #fff
+}
+ul li{
+    list-style: none;
+}
+body{
+    background: url("../image/ALL/toppage.png");
+    background-repeat: no-repeat;
+    background-size: 70% 97%;
+    background-position-x: center;
+    background-color: #22195E;
+    justify-content: center;
+    letter-spacing: .1vw;
+}
+/*头部*/
+.toppage-top{
+    display: flex;
+}
+/*头部的五个标签*/
+.toppage-top a{
+    width: 4vw;
+    height: 3vh;
+    font-size: 1vw;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 3.2vw;
+    text-decoration: none;
+    border-radius: 0.3vw;
+    margin-left: 1vw;
+}
+.toppage-top a:active{
+    background-color: white;
+    color:#231A5D;
+}
+.toppage-top a:hover{
+    color:deepskyblue;
+}
+/*特点部分*/
+.toppage-second{
+    height: 70vh;
+    display: flex;
+}
+/*特点部分文字*/
+.toppage-second-words{
+    font-size: 0.3vw;
+    color: white;
+    margin-top: 68vh;
+    margin-left: 2.5vw;
+    width: 10vw;
+    height: 2vh;
+}
+/*关于过热度*/
+.over-healing{
+    display: flex;
+    width: 70%;
+    height: 40vh;
+    margin: 0 auto;
+    margin-top: 5vh;
+}
+.over-healing-left{
+    width: 50%;
+    height:100%;
+    margin-top: 4vh;
+}
+.over-healing-left video{
+    width: 23vw;
+    height: 16vh;
+    margin-left: 8vw;
+}
+.over-healing-left h1{
+    color: white;
+    height: 25%;
+    width: 60%;
+    font-size: 1.3vw;
+    margin-left: 12vw;
+}
+.over-healing-left p{
+    height: 25%;
+    width: 45%;
+    color: white;
+    font-size: 0.5vw;
+    margin-top: -6vh;
+    margin-left: 12vw;
+}
+.over-healing-right{
+    width: 35%;
+    height:100%;
+    margin-top: 4vh;
+}
+.over-healing-right h1{
+    color: #ffffff;
+    font-size: 1.3vw;
+    height: 10%;
+    width: 100%;
+}
+.over-healing-right div{
+    width: 100%;
+    height: 30%;
+    display: flex;
+}
+.over-healing-rightTop{
+    margin-left: 3vw;
+    margin-top: -1.6vh;
+}
+.over-healing-right span{
+    display: inline-block;
+    width: 14vw;
+    margin-left: -3vw;  
+}
+.over-healing-rightTop div,.over-healing-rightBottom div{
+    display: flex;
+    flex-direction: column;
+}
+.over-healing-rightTop div p,.over-healing-rightBottom div p{
+   font-size: 1vw;
+   font-weight: bold;
+   margin-bottom: 2vh;
+}
+.over-healing-rightTop div:first-child span{
+    width: 12vw;
+}
+.over-healing-rightBottom div:first-child span{
+    width: 12vw;
+}
+.over-healing-rightTop div span, .over-healing-rightBottom div span{
+   font-size: .2vw;
+}
+.over-healing-rightBottom{
+  margin-left: 3vw;
+  margin-top: 3vh;  
+}
+.process{
+    width:50%;
+    height:35vh;
+    margin: 0 auto;
+    margin-top: 20vh;
+}
+.process-words{
+    height:10vh;
+    width: 100%;
+    display: flex;
+    margin-left: 9.3vw;
+}
+.process-words2{
+      margin-left: 2.4vw;
+}
+.process-words div{
+    width:8vw;
+    height:10vh;
+    margin-top: 2vh;
+    margin-right: 7vw;
+}
+.process-words2 div{
+    margin-top: 4vh;
+}
+.process-words2 div:nth-child(3){
+    margin-left: -.8vw;
+}
+.process-words div p{
+    color:white;
+    text-align: center;
+    font-size: 0.5vw;
+}
+.process-circle{
+    width: 100%;
+    height: 2vh;
+    display: flex;
+    margin-left: 6vw;
+}
+.process-circle .process-content{
+    margin-right: 7vw;
+}
+.process-circle .process-content:nth-child(2){
+  margin-left: -.2vw;
+}
+.process-circle .process-content:nth-child(3){
+  margin-left: .4vw;
+}
+.process-circle .process-content:nth-child(4){
+  margin-left: -.2vw;
+    }
+.process-circle .process-content:nth-child(5){
+  margin-left: -.2vw;
+
+}
+.process-circle .process-content:nth-child(6){
+  margin-left: .2vw;
+
+}
+.process-content{
+    width: 0.2vw;
+    height: 0.2vw;
+    border: 0.1vw solid #ffffff;
+    background-color: white;
+    border-radius: 0.5vw;
+    margin-top: 2.6vh;
+}
+.process-bottom{
+    width: 14%;
+    height:4vh;
+    margin: 0 auto;
+    margin-top: 3vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.process-bottom div{
+    width: 0.8vw;
+    height: 1.5vh;
+    border: 0.5vw solid #3B2D5F;
+    background-color: #3B2D5F;
+    border-radius: 5vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.process-bottom div img
+{
+    width:2vw;
+    height:2vh;
+}
+.toppage-buttom{
+    margin:0 auto;
+    width: 70%;
+    height:30vh;
+    margin-top: 6vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.toppage-buttom-left{
+    display: flex;
+}
+ul{
+  font-size: 1vw;
+}
+ul li{
+  font-size: .2vw;
+  margin-top: 1vh;
+
+}
+.toppage-buttom-left ul{
+    color: white;
+}
+.toppage-buttom-left span{
+    position: relative;
+    top: 5vh;
+    left: -1vw;
+   
+}
+.toppage-buttom-right{
+    margin-left: -2vw;
+}
+.toppage-buttom-left .contact{
+    margin-top: 5vh;
+}
+.toppage-buttom-left .contact li{
+    font-size: .2vw;
+    height: 3vh;
+    margin-top: 0;
+    position: relative;
+}
+.contact li:before{
+    content: "";
+    position: absolute;
+    margin-top: -.6vh;
+    left: -3vw;
+    width: 2.4vw;
+    height: 3vh;
+    background-image: url(../image/ALL/contact.png);
+    background-repeat: no-repeat;
+    background-size: 80% 420%;
+}
+.toppage-buttom-left .contact li:nth-child(1):before{
+    background-position: 100% 0%;
+}
+.toppage-buttom-left .contact li:nth-child(2):before{
+    background-position: 100% 32%;
+}
+.toppage-buttom-left .contact li:nth-child(3):before{
+  background-position: 100% 64%;
+}
+.toppage-buttom-left .contact li:nth-child(4):before{
+  background-position: 100% 97%;
+}

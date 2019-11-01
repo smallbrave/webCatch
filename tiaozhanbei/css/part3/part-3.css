@@ -1,0 +1,396 @@
+/* 可视化展示页面css */
+#show-content-part-3-1{
+    display: none;
+}
+#show-first-box,#show-three-box{
+    width: 30%;
+    height: 65vh;
+    color: #fff;
+    font-size: 3vh;
+    float: left;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.show-box{
+    height: 40%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-image: url(../../image/3-1/show-border.png) 1 1 1 stretch;
+    -o-border-image: url(../../image/3-1/show-border.png) 1 1 1 stretch;
+    -webkit-border-image: url(../../image/3-1/show-border.png) 1 1 1 stretch;
+    margin-top: 5vh;
+}
+#show1{
+    height: 10vw;
+    width: 10vw;
+}
+
+#show2 div{
+    margin-left: 0.8vw;
+    width: 30%;
+    height:100%;
+}
+#show2 div p{
+    letter-spacing:0;
+    margin-top: 1vw;
+    text-align: center;
+    color:white;
+    font-size:0.7vw;
+}
+#show2 div img{
+    width: 4.5vw;
+    height: 5.5vh;
+    margin-top: 1.5vw;
+    margin-left: 0.2vw;
+}
+/*.show-box img{
+    width:13vw;
+    height: 16vh;
+}*/
+#show-second{
+    width: 30vw;
+    height: 65vh;
+    float: left;
+}
+#show-second-box{
+    width: 28vw;
+    height: 55vh;
+    float: left;
+    border-image: url(../../image/3-1/showpc.png) 1 1 1 stretch;
+    -o-border-image: url(../../image/3-1/showpc.png) 1 1 1 stretch;
+    -webkit-border-image: url(../../image/3-1/showpc.png) 1 1 1 stretch;
+}
+#show-second button{
+    width:6vw;
+    height:4vh;
+    font-size:1vw;
+    color:white;
+    background-color: #00A3F0;
+    margin-left: 11.5vw;
+    margin-top: 1vw;
+    outline: none;
+    border:none;
+    border-radius: 0.3vw;
+}
+#show-three-box{
+    width: 24%;
+    margin: 3%;
+    height: 55vh;
+    float: left;
+    border-image: url(../../image/3-1/border-box.png) 1 1 1 stretch;
+    -o-border-image: url(../../image/3-1/border-box.png) 1 1 1 stretch;
+    -webkit-border-image: url(../../image/3-1/border-box.png) 1 1 1 stretch;
+}
+#show-three-box p{
+    letter-spacing: 0;
+    margin-top: 1vw;
+    font-size: 0.8vw;
+    color: white;
+    text-align: center;
+}
+#show-three-box div{
+    display: flex;
+}
+#show-three-box div img{
+    width:7vw;
+    height:9vh;
+    margin-left: 1vw;
+}
+/* 选择方法页面 */
+#show-content-part-3-2{
+    color: #fff;
+}
+.method-line{
+    width: 98%;
+    height: .3vh;
+    margin: 0 auto;
+    background: #13c4f0;
+}
+.method-box{
+    width: 98%;
+    height: 19vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#method-sure{
+    height: 4vh;
+    width: 10%;
+    font-size: 2vh;
+    line-height: 4vh;
+    text-align: center;
+    border-radius: 1vh;
+    display: block;
+    background: #00A3F0;
+    margin: 3vh auto;
+}
+.method-choose-box{
+    width: 16%;
+    height: 80%;
+    font-size: 1.4vh;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-image: url(../../image/3-3/content-box.png) 1 1 1 stretch;
+    -o-border-image: url(../../image/3-3/content-box.png) 1 1 1 stretch;
+    -webkit-border-image: url(../../image/3-3/content-box.png) 1 1 1 stretch;
+}
+.arrow{
+    width: 1.2vw;
+    height: 80%;
+    background: #4f637f;
+    border-radius: 1.2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.arrow img{
+    width: 50%;
+    height: auto;
+}
+.method-show{
+    width: 70%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.method-show-box{
+    width: 16%;
+    height: 100%;
+    border-radius: 8%;
+    font-size: 1vw;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-image: url(../../image/3-2/show-box.png) 1 1 1 stretch;
+    -o-border-image: url(../../image/3-2/show-box.png) 1 1 1 stretch;
+    -webkit-border-image: url(../../image/3-2/show-box.png) 1 1 1 stretch;
+}
+.method-show-box img{
+    height: 50%;
+    width: 80%;
+}
+.show-box-words{
+    width: 40%;
+    height:100%;
+}
+.show-box-words p{
+    letter-spacing: 0;
+    font-size: 0.7vw;
+    margin: 0 auto;
+    margin-top: 1.5vw;
+}
+/* 选择数据页面css */
+#data-first-box,
+#data-second-box{
+    width: 25%;
+    float: left;
+    margin: 0 2%;
+    height: 68vh;
+    color: #fff;
+    font-size: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-image: url(../../image/3-1/aside-border-box.png) 1 1 1 stretch;
+    -o-border-image: url(../../image/3-1/aside-border-box.png) 1 1 1 stretch;
+    -webkit-border-image: url(../../image/3-1/aside-border-box.png) 1 1 1 stretch;
+}
+#data-second-box{
+    border-image: url(../../image/3-1/content-border-box.png) 1 1 1 stretch;
+    -o-border-image: url(../../image/3-1/content-border-box.png) 1 1 1 stretch;
+    -webkit-border-image: url(../../image/3-1/content-border-box.png) 1 1 1 stretch;
+}
+.data-choose-box{
+    display: block;
+    width: 40%;
+    height: 3vh;
+    margin: 1.4vh;
+    line-height: 3vh;
+    font-size: 1.6vh;
+    border-radius: 1vh;
+    text-align: center;
+    background: #00A3F0;
+}
+.data-choose-box-active {
+    text-shadow: 0 0 1vw greenyellow
+}
+#data-second-box{
+    width: 65%;
+}
+#data-show-content{
+    height: 40%;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.data-show-box{
+    width: 40%;
+    height: 80%;
+    text-align: center;
+    line-height: 2.5;
+    border-image: url(../../image/3-2/content-box.png) 1 1 1 stretch;
+    -o-border-image: url(../../image/3-2/content-box.png) 1 1 1 stretch;
+    -webkit-border-image: url(../../image/3-2/content-box.png) 1 1 1 stretch;
+}
+.data-show-box p{
+    text-align: center;
+    color: white;
+    font-size: 0.8vw;
+    margin-top: 0.8vw;
+}
+.data-show-box div{
+    display: flex;
+}
+.data-show-box div img{
+    width: 8vw;
+    height: 14vh;
+    margin-left: 0.7vw;
+}
+#data-show-description{
+    width: 90%;
+    height: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+#data-show-description span{
+    width: 90%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.342);
+}
+#sure{
+    width: 10%;
+    height: 4vh;
+    text-align: center;
+    border-radius: 1vh;
+    line-height: 4vh;
+    background: #00A3F0;
+}
+
+/* 查看已有界面模型 */
+#model-first-box{
+    width: 100%;
+    height: 62vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
+}
+.model-show-box{
+    width: 32%;
+    height: 48%;
+    border-image: url(../../image/3-4/show-model.png) 1 1 1 stretch;
+    -o-border-image: url(../../image/3-4/show-model.png) 1 1 1 stretch;
+    -webkit-border-image: url(../../image/3-4/show-model.png) 1 1 1 stretch;
+}
+.model-show-box img{
+    width: 30%;
+    height: auto;
+    margin: 3%;
+    margin-left: 1.5vw;
+    margin-top: 1.5vw;
+}
+.model-show-box p{
+    width: 50%;
+    height: 40%;
+    margin-top: 2vh;
+    margin-right: 2vw;
+    float: right;
+    letter-spacing: 0;
+    font-size: 1vw;
+    color: white;
+}
+.model-show-box span{
+    display: block;
+    width:50%;
+    height: 40%;
+    float: right;
+    letter-spacing: 0;
+    font-size: 0.8vw;
+    margin-top: 1vw;
+    color: white;
+}
+#page-choose-box{
+    width: 30%;
+    float: right;
+    height: 5vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#page-select{
+    width: 20%;
+    height: 60%;
+    border-radius: .4vw;
+    background: #fff;
+}
+#last-page,
+#next-page,
+#page-go{
+    width: 15%;
+    height: 60%;
+    letter-spacing: 0;
+    line-height: 3vh;
+    text-align: center;
+    border-radius: .4vw;
+    font-size: .4vw;
+    color: #fff;
+    background: #00A3F0;
+}
+
+/* 树型分析展示界面 */
+#tree-choose{
+    width: 16%;
+    height: 40vh;
+    margin: 2%;
+    margin-right: 8%;
+    font-size: 1vw;
+    text-align: center;
+    line-height: 40vh;
+    color: #fff;
+    display: inline-block;
+    vertical-align: top;
+    border-image: url(../../image/3-5/content-box.png) 1 1 1 stretch;
+    -o-border-image: url(../../image/3-5/content-box.png) 1 1 1 stretch;
+    -webkit-border-image: url(../../image/3-5/content-box.png) 1 1 1 stretch;
+}
+#model-tree{
+    width: 30%;
+    height: auto;
+    vertical-align: top;
+    margin-top: 15vh;
+}
+#tree-information{
+    width: 40%;
+    height: 65vh;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.tree-information-box{
+    height: 20vh;
+    width: 90%; 
+    font-size: 1vw;
+    text-align: center;
+    line-height: 20vh;
+    color: #fff;
+    border-image: url(../../image/3-5/text-box.png) 1 1 1 stretch;
+    -o-border-image: url(../../image/3-5/text-box.png) 1 1 1 stretch;
+    -webkit-border-image: url(../../image/3-5/text-box.png) 1 1 1 stretch;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>注册页面</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/register.css">
+</head>
+<body>
+<div class="login-top">
+    <a  href="toppage.html" style="margin-left: 65vw">首页</a>
+    <a href="aboutUs.html" >关于</a>
+    <a href="#" style="background-color: white; color:#231A5D;">注册</a>
+    <a href="login.html" >登陆</a>
+</div>
+<div class="login-content">
+    <div class="login-content-top"></div>
+    <p>welcome</p>
+    <form>
+        <input  class="hm-name" type="text" value='请输入用户名' onfocus="javascript:if(this.value=='请输入用户名')this.value='';" onblur="javascript:if(this.value=='')this.value='请输入用户名';">
+        <input class="password"  type="text" value='请输入密码' onfocus="javascript:if(this.value=='请输入密码')this.value='';" onblur="javascript:if(this.value=='')this.value='请输入密码';">
+        <img class="eye" src="image/login/eyetwo.jpg" onclick="chan()">
+        <input class="hm-name"  style="margin-top: 0.5vw" type="text" value='请输入授权码' onfocus="javascript:if(this.value=='请输入授权码')this.value='';" onblur="javascript:if(this.value=='')this.value='请输入授权码';">
+        <div >
+            <label><input type="checkbox" value="" style="width: 0.7vw;height: 0.7vw"><span class="one">同意</span><a href="#" class="two">《注册服务协议》</a></label>
+        </div>
+        <button class="clicked" type="button" >注册</button>
+    </form>
+</div>
+<script src="js/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+/*css 2 数据输入*/
+
+ .con-all{
+  height: 75vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-left:0; 
+ }
+ .con-left-con{
+  width: 16vw;
+  height: 62vh;
+  border: 2vh solid transparent;
+  border-image:url(../../image/2/2-border.png) 30;
+  margin:0 1vh;
+  position: relative;
+  text-align: center;
+  font-size: 1vh;
+  letter-spacing: 0;
+     overflow: auto;
+ }
+ .con-left-con-1{
+     height:22%;
+     width:100%;
+     display: flex;
+ }
+.con-left-con .left-month{
+    width: 1vw;
+    height: 4vh;
+    background-color: deepskyblue;
+    border-radius: 0.5vw;
+    margin: 0 auto;
+    margin-top: 2.5vw;
+ }
+.con-left-con .left{
+   width: 20%;
+   height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.con-left-con .right{
+   width: 80%;
+   height: 100%;
+    color:white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+ /*剩余内容区域的右边部分*/
+ .conRight{
+  width: 56vw;
+  height: 67.5vh; 
+  }
+  /*剩余内容区域的右边部分 的顶部区域*/
+  .conRight .con-right-top{
+    position: relative;
+    color: #fff;
+  }
+  .con-right-top .p{    
+   width: 96%;
+    height: 11vh;
+    font-size: 1vh;
+    text-align: center;
+    margin: 2vh auto;
+    background-color: #00A3F0;
+  }
+  .p span{
+    display: inline-block;
+  }
+  .con-right-top .p p{
+    font-size: 2vh;
+    margin-top: 0;
+  }
+  .con-right-top .p .left{
+    float: left;
+    width: 50%;
+    height: 80%;
+    text-align: left;
+  }
+  .p .left span{
+    width: 100%;
+    letter-spacing: 0;
+    margin-top: 0.5vw;
+      margin-left: 4vw;
+  }
+  .con-right-top .p .right{
+    float: left;
+    width: 50%;
+        text-align: left;
+  }
+  .p .right span{
+       width: 100%;
+       letter-spacing: 0;
+        margin-top: 0.5vw;
+  }
+  .con-right-top input{
+   display: inline-block;
+    width: 10vw;
+    height: 3vh;
+    font-size: 1.4vh;
+    color: #fff;
+    background-color: #00A3F0;
+    border-radius: 1vh;
+    text-align: center;
+    border: none;
+    margin-top: 1vw;
+  }
+  .btn-left{
+   position: absolute;
+   top: 12vh;
+   left: 6vh;
+   overflow: hidden;
+  }
+  .btn-right{
+   position: absolute;
+   top: 12vh;
+   right: 6vh;
+   overflow: hidden;
+  }
+/*用于撑起因absolute布局造成的文档流空洞*/
+.try{
+  height: 9vh;
+}
+/*最右边部分的内容区域，即除了头部的所有*/
+.con-right-con{
+  width: 52vw;
+    height: 40vh;
+  margin: 0 auto;  
+  border-radius: 1.5vh;
+  background: #3c439145;
+  display: flex;
+  flex-direction: row;
+}
+/*右下角区域中的左 边部分*/
+.crc-left{
+  width: 12vw;
+  height: 37vh;
+  margin-left: 2vh;
+  position: relative;
+   letter-spacing: 0;
+}
+/*右下角区域中的左边部分的顶部*/
+.crc-left .crc-left-top{
+  height: 15.7vh;
+  width: 12vw;
+  position: absolute;
+  top: 1.8vh;
+}
+/*右下角区域中的左边部分的底部*/
+.crc-left .crc-left-bottom{
+  position: absolute;
+  bottom: 0;
+  width: 12vw;
+  height: 17.6vh;
+}
+/*右下角区域中的中间部分*/
+.crc-middle{
+  width: 26vw;
+  margin-top: 2vw;
+  height: 31vh; 
+  background-color: #3c439145;
+  text-align: center;
+}
+.crc-middle div{
+  height: 28vh;
+  width: 26vw;
+}
+.crc-middle img{
+  width: 8vw;
+  height: 16vh;
+  margin-top: 5vh;
+/*  animation: rotate 3s infinite;*/
+}
+/*右下角区域中的右边部分*/
+.crc-right{
+  width: 12vw;
+  height:36vh;
+ position: relative;
+  letter-spacing: 0;
+}
+/*右下角区域中的右边部分的顶部*/
+.crc-right .crc-right-top{
+  position: absolute;
+  top: 2vh;
+  height: 15.6vh;
+  width: 12vw;
+  
+}
+/*右下角区域中的右边部分的底部*/
+.crc-right .crc-right-bottom{
+  position: absolute;
+  bottom: 0;
+  height: 17.6vh;
+  width: 12vw;
+}
+button{
+  display: block;
+  width: 4vw;
+  height: 3vh;
+  font-size: 1vh;
+  line-height: 3vh;
+  border: none;
+  border-radius: 1vh;
+  text-align: center;
+  background: #00A3F0;
+  margin-left: 11vw;
+    margin-top: 1vh;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+}
+/*滚动条*/
+.con-left-con::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #18316D;
+}
+.con-left-con::-webkit-scrollbar-track-piece{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #19265A;
+    border-radius: 1vh;
+}
+.con-left-con::-webkit-scrollbar
+{
+    width: 1vh;
+    background-color: #F5F5F5;
+}
+
+.con-left-con::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    border-radius: 1vh;
+    background-color:#354C7F;
+}
+input[type=datetime-local]::-webkit-inner-spin-button { visibility: hidden; }

@@ -1,0 +1,183 @@
+/*css 3-6 数据综合*/
+ul{
+  list-style: none;
+  padding: 0;
+}
+.con-all{
+	margin-left: .6vw;
+	display: flex;
+	flex-direction: row;
+}
+ .con-left{
+ 	width: 20%;
+ 	display: flex;
+ 	flex-direction: column;
+ }
+.con-left .cl{
+	width: 98%;
+	margin-top: .1vh;
+  border-radius: 1vh;
+	margin-left: 0.2vw;
+	font-size: 0.8vw;
+  position: relative;
+  text-align: center;
+}
+.cl span,.cm span,.cr span{
+  display: inline-block;
+  letter-spacing: 0;
+	width: 6.25vw;
+	height: 2.8vh;
+	background-color: #19597f;
+	border-radius: 2vh;
+	line-height: 2.8vh;
+	margin-top: -1vh;
+  color: #bcc9d3;
+}
+/*剩余部分 左侧顶部 第一个图*/
+.con-left .cl-1{
+	height: 9vh;
+  border: .8vh solid transparent;
+  border-image: url(../../image/3-6/3-6-border-2.png) 12;
+}
+/*剩余部分 左侧顶部 第二个图*/
+.con-left .cl-2{
+	height: 20vh;
+  border: .8vh solid transparent;
+  border-image: url(../../image/3-6/3-6-border.png) 12;
+}
+.cl-2 .left-right{
+  width: 16vw;
+  height: 18vh;
+   display: flex;
+   flex-direction: row;
+}
+.left-right #left{
+  width: 6.4vw;
+  height: 10vh;
+  margin-top: 10%;
+  margin-left: 5%;
+}
+.left-right #right{
+  margin-left: 5%;
+  width: 8vw;
+  height: 10.8vh;
+  margin-top: 10%;
+}
+/*剩余部分 左侧顶部 第三个图*/
+.con-left .cl-3{
+	height: 7.6vh;
+  border:.8vh solid transparent;
+  border-image: url(../../image/3-6/3-6-border-2.png) 12;
+
+}
+/*剩余部分 左侧顶部 第四个图*/
+.con-left .cl-4{
+	height: 21vh;
+  border:.8vh solid transparent;
+  border-image: url(../../image/3-6/3-6-border.png) 12;
+}
+#cl-4{
+  width: 13vw;
+  height: 15vh;
+  margin-left: 1vw;
+  margin-top: 1vh;
+}
+/*剩余部分 中间区域*/
+.con-middle{
+	width: 43vw;
+}
+/*剩余部分 中间区域 */
+.con-middle .cm{
+	width: 100%;
+	border-radius: 1.5vh;
+	margin-left: 1.6vw;
+	font-size: 0.8vh;
+  text-align: center;
+
+}
+/*剩余部分 中间区域 顶部区域*/
+.con-middle .cm-top{
+	height: 46vh;
+    position: relative;
+    border: .2vh solid #08b5d5;
+}
+.cm-top img{
+  width: 60%;
+  height: 26vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -30%;
+  margin-top: -13vh;
+
+}
+/*剩余部分 中间区域 底部区域*/
+.con-middle .cm-bottom{
+	height: 16.7vh;
+  margin-top: 1vh;
+  position: relative;
+  border: .2vh solid #08b5d5;
+}
+.condition{
+    width:100%;
+    height:90%;
+    display: flex;
+}
+.condition div{
+    width: 25%;
+    height: 100%;
+}
+.condition div p{
+    font-size: 0.85vw;
+    float: left;
+    color: white;
+    letter-spacing: 0;
+    margin-left: 0.6vw;
+}
+.bottom-button{
+    display: inline-block;
+    letter-spacing: 0;
+    width: 8vw;
+    height: 2.8vh;
+    background-color: #19597f;
+    border-radius: 2vh;
+    line-height: 2.8vh;
+    margin-top: -1vh;
+    color: #bcc9d3;
+}
+/*剩余部分 右边区域*/
+.con-right{
+	width: 17%;
+}
+.con-right .cr{
+	width: 100%;
+	border-radius: 1.5vh;
+	margin-left: 3vw;
+  margin-top: .1vh;
+	font-size: 0.8vw;
+  text-align: center;
+}
+/*剩余部分 右边区域 顶部区域*/
+.con-right .cr-top{
+	height: 27.8vh;
+  border:.8vh solid transparent;
+  border-image: url(../../image/3-6/3-6-border.png) 12;
+
+}
+/*剩余部分 右边区域 底部区域*/
+.con-right .cr-bottom{
+	height: 32.2vh;
+  border:.8vh solid transparent;
+  border-image: url(../../image/3-6/3-6-border-3.png) 12;
+}
+.cr-top img{
+	margin-top: 0;
+  width: 100%;
+  height: 24vh;
+}
+.cr-bottom #cr-bottom{
+  width: 12vw;
+  height: 24vh;
+  margin-left: 0.5vw;
+  margin-top: 1vh;
+}

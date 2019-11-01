@@ -1,0 +1,190 @@
+/*aboutUS.css*/
+*{
+	margin: 0;
+	padding: 0;
+}
+ul{
+	list-style: none;
+}
+body{
+/*	width: 80vw;*/
+	margin:0 10vw;
+	height: 240vh;
+	position: relative;
+   background-image: url(../image/ALL/aboutUs.png);
+   background-size: 100% 100%;
+   background-repeat: no-repeat;
+   background-position: 50% 0%; 
+   background-color: #ccc;
+}
+.Atop{
+   position: absolute;
+   float: right;
+   top: 8vh;
+   right: 14vw;
+}
+.Atop ul li{
+	float: left;
+	font-size: 1vw;
+	margin-left: 3vw;
+	color: #fff;
+}
+a{
+	text-decoration: none;
+	color: #fff;
+}
+a:hover{
+	color: lightblue;
+}
+.Atop ul .active{
+	width: 4.6vw;
+	color: black;
+	text-align: center;
+	background-color: #fff;
+	border-radius: .2vw;
+}
+.Amiddle{
+   position: absolute;
+   top: 20vh;
+   left: 4vw;
+}
+.Amiddle p{
+	font-size: 1.6vw;
+	margin-top: .8vh;
+	color: #fff;
+}
+.Amiddle p:nth-child(4){
+	margin-top: 2vh;
+	width: 16vw;
+	font-size: 1vw;
+}
+.Acontent{
+	width: 80vw;
+	text-align: center;
+	position: absolute;
+	font-size: 2vw;
+	font-weight: bold;
+	top: 85vh;
+}
+.main_content{ 
+	width: 50vw;
+	margin:8vh 14vw;
+	font-size: 1vw;
+	font-weight: lighter;
+	border: .2vh solid #f7f7f7;
+	border-radius: 2vh;
+}
+.main_content p{
+	width: 40vw;
+	margin-left: 6vw;
+	line-height: 4vh;
+       text-align: left;
+}
+.main_content p:first-child{
+   margin-top: 10vh;
+   text-indent: 2em;
+}
+.main_content p:nth-child(2){
+	margin-top: 5vh;
+	text-align: center;
+}
+.main_content p:nth-child(3){
+     width: 41vw;
+	font-size: .8vw; 
+	margin-bottom: 10vh;
+}
+.aboutP{
+	width: 50vw;
+	margin-left: 14vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.aboutP {
+	font-size: .2vw;
+}
+.aboutP div{
+	width: 15vw;
+	height: 40vh;
+	border: .1vw solid #f7f7f7;
+	position: relative;
+   
+}
+.aboutP icon{
+	display: block;
+	width: 100%;
+	height: 40%;
+	background-image: url(../image/ALL/aboutP.png);
+	background-size: 15vw 48vh;
+	background-repeat: no-repeat;
+}
+.aboutP .title{
+	font-size: 2vw;
+}
+.aboutP .Pcontent{
+	width: 12vw;
+	margin-left: 1.5vw;
+	margin-top: 3vh;
+	font-size: .8vw;
+	line-height: 3vh;
+	text-align: left;
+	text-indent: 2em;
+}
+.aboutP div span{
+	position: absolute;
+	bottom: 1vh;
+	right: 1vw;
+	font-size: .6vw;
+	color: #dcdcf7;
+}
+.aboutP div:first-child icon{
+	background-position: 100% 0;
+}
+.aboutP div:nth-child(2) icon{
+   background-position: 100% 52%;
+}
+.aboutP div:nth-child(3) icon{
+   background-position: 100% 104%;
+}
+.Afooter{
+	width: 50vw;
+	margin-left: 15vw;
+	position: absolute;
+	bottom: 4vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	color: #fff;
+}
+.Afooter ul li{
+	font-size: .2vw;
+	height: 2vh;
+	margin-top: 1vh;
+	position: relative;
+}
+.contact{
+	margin-left: -6vw;
+}
+.contact li:before{
+	content: "";
+    position: absolute;
+    margin-top: -.6vh;
+    left: -3vw;
+	width: 2.4vw;
+	height: 3vh;
+	background-image: url(../image/ALL/contact.png);
+	background-repeat: no-repeat;
+	background-size: 80% 420%;
+}
+.Afooter .contact li:nth-child(1):before{
+    background-position: 100% 1%;
+}
+.Afooter .contact li:nth-child(2):before{
+    background-position: 100% 32%;
+}
+.Afooter .contact li:nth-child(3):before{
+  background-position: 100% 66%;
+}
+.Afooter .contact li:nth-child(4):before{
+  background-position: 100% 96%;
+}

@@ -1,0 +1,116 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: url("../image/login/background.png") no-repeat;
+    background-size: cover;
+}
+/*头部*/
+.login-top{
+    display: flex;
+    width: 100%;
+    height:4vh;
+    margin-top: 5vw;
+}
+/*头部的五个标签*/
+.login-top a{
+    width: 4vw;
+    height: 1.5vw;
+    font-size: 1vw;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.3vw;
+    margin-left: 1vw;
+}
+.login-top a:active{
+    background-color: white;
+    color:#231A5D;
+}
+.login-top a:hover{
+    color:deepskyblue;
+}
+/*登陆部分内容*/
+.login-content{
+    width: 18%;
+    height:50vh;
+    float: right;
+    margin-right: 15%;
+    margin-top: 7vw;
+    background: -moz-linear-gradient(top, #5a35fa 0%, #0b379b 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5a35fa), color-stop(100%,#0b379b));
+    background: -webkit-linear-gradient(top, #5a35fa 0%,#0b379b 100%);
+    background: -o-linear-gradient(top, #5a35fa 0%,#0b379b 100%);
+    background: -ms-linear-gradient(top, #5a35fa 0%,#0b379b 100%);
+    background: linear-gradient(to bottom, #5a35fa 0%,#0b379b 100%);
+    box-shadow: 0 0 1vw #3C3C3C;
+    border-radius: 0.7vw;
+    border: 0.1vw solid #4A38BD;
+}
+.login-content div{
+     width:4vw;
+     height:4vw;
+     border: 0.1vw solid #ffffff;
+     border-radius: 50%;
+     margin: 0 auto;
+     margin-top: 2vw;
+     background-color: white;
+ }
+.login-content p{
+    width:100%;
+    height:5%;
+    margin-top: 0.5vw;
+    color: #ffffff;
+    font-size: 0.5vw;
+    text-align: center;
+}
+.password{
+    width:60%;
+    margin-left: 3vw;
+    text-align:center;
+    border: #96a1b6 solid;
+    border-width: 0 0 0.15vw 0;
+    background-color: rgb(238,244,253,0);
+    outline:none;
+    height:15%;
+    font-size: 1vw;
+    color: white;
+}
+.hm-name{
+    width:60%;
+    margin-top: 3vw;
+    margin-left: 3vw;
+    text-align:center;
+    border: #96a1b6 solid;
+    border-width: 0 0 0.15vw 0;
+    background-color: rgb(238,244,253,0);
+    outline:none;
+    height:15%;
+    font-size: 1vw;
+    color: white;
+}
+.eye{
+    width: 1.5vw;
+    height:1.5vw;
+    margin-top: 1vw;
+    position: absolute;
+}
+.login-content form{
+    width: 100%;
+    height: 60%;
+}
+.clicked{
+   color: #fff;
+    background-color: #a8b1da;
+    border-radius: 0.8vw;
+    border: none;
+    outline: none;
+    margin: 2vw 0 0 5vw;
+    width: 40%;
+    height: 8%;
+    letter-spacing: 0.5vw;
+    font-size: 0.9vw;
+    box-shadow: 0 0 0 0 #a8b1da;
+}
+.clicked:active{ box-shadow: 0 0 1vw 0 #a8b1da;}

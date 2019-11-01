@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>智慧树</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/tree.css" />
+    <script src="./js/jquery-2.2.4.min.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/echarts-stat/dist/ecStat.min.js"></script>
+</head>
+<body>
+    <div class="Ztop">
+        <div class="ZtopL">
+            <img src="image/ALL/Zlogo.png">
+            <span id="top-time"></span>
+        </div>
+        <div class="ZtopR">
+            <img src="image/ALL/userZ.png">
+            <span>Alex在线</span>
+        </div>
+        <a href="./index.html" id="return">点击以此返回首页</a>
+    </div>
+    <div class="Zmiddle">
+      <div id="help">
+        <h1>使用说明</h1>
+        <p>1、在屏幕左方输入<b>电压</b>，<b>电流</b>以及<b>电阻值</b></p>
+          <p>2、在屏幕右下方输入<b>原铝质量</b>，<b>铁</b>、<b>硅</b>、<b>铜</b>含量的值</p>
+        <p>3、点击屏幕左下方 <b>开始</b> 按钮即可</p>
+        <p>4、点击右下方 <b>明白了</b> 关闭当前窗口</p>
+        <button>明白了</button>
+      </div>
+        <div class="someInputs">
+            <div class="describe" id="describe">
+              <span> 使用说明  </span>
+            </div>
+            
+            <div id="fute1">
+                <input type="text" name="V" value="输入设定电压"  id="fute" onfocus="javascript:if(this.value=='输入设定电压')this.value='';" onblur="javascript:if(this.value=='')this.value='输入设定电压';">
+            </div>
+            <div id="anbei1">
+                <input type="text" name="V" value="输入最高电压"  id="anbei" onfocus="javascript:if(this.value=='输入最高电压')this.value='';" onblur="javascript:if(this.value=='')this.value='输入最高电压';">
+            </div>
+            <div id="dianzu1">
+                <input type="text" name="V" value="输入最低电压"  id="dianzu" onfocus="javascript:if(this.value=='输入最低电压')this.value='';" onblur="javascript:if(this.value=='')this.value='输入最低电压';">
+            </div>
+        </div>
+        <div class="middleInputsL">
+            <div id="first-box">
+                <p id="first-box-top"></p>
+                <p id="first-box-bottom">最高电压是否小于3950?</p>
+            </div>
+            <div id="second-box-1" class="second-box">
+                <p id="second-box-1-top">电流:5A 电压:10v</p>
+                <p id="second-box-1-bottom">最低电压是否大于4050?</p>
+            </div>
+            <div id="second-box-2" class="second-box">
+                <p id="second-box-2-top">电流:5A 电压:10v</p>
+                <p id="second-box-2-bottom">最低电压是否大于4050?</p>
+            </div>
+        </div>
+    <div class="middleInputsR">
+            <div id="third-box-1" class="third-box">
+                <p id="third-box-1-top"></p>
+                <p id="third-box-1-bottom"></p>
+            </div>
+            <div id="third-box-2" class="third-box">
+                <p id="third-box-2-top"></p>
+                <p id="third-box-2-bottom"></p>
+            </div>
+            <div id="third-box-3" class="third-box">
+                <p id="third-box-3-top"></p>
+                <p id="third-box-3-bottom"></p>
+            </div>
+            <div id="third-box-4" class="third-box">
+                <p id="third-box-4-top"></p>
+                <p id="third-box-4-bottom"></p>
+            </div>
+    </div>
+    <div class="charts">
+        <div id="chart--one"></div>
+        <div id="chart--two"></div>
+        <div id="chart--three"></div>
+        <div id="chart--four"></div>
+    </div>
+        <div class="report" id="report">
+            <p class="report1">报告结果</p>
+                        <p> 过热度：</p>
+           <p> <span id="overheating">50%</span></p>
+        </div>
+    </div>
+    <div class="Zbottom">
+        <div class="Zbottom_begin">
+           <div>  
+           <span id="equipment-code"></span>
+           </div>
+           <div>
+           <span  id="bottom-time"></span>
+           </div>
+           <div>
+           <span id="equipment-address"></span> 
+           </div>
+          <img src="image/ALL/begin.png" id="begin" onclick="f1()">
+        </div>
+      <div class="Zbottom_middle">
+        <div id="weilei">
+            <img src="image/ALL/buildingO.png" id="pc1">
+        </div>
+        <div >   
+            <img src="image/ALL/buildingT.png" id="pc2">
+        </div>    
+        <div>  
+            <img src="image/ALL/buildingTh.png" id="pc3">
+        </div>  
+        <div> 
+            <img src="image/ALL/buildingF.png" id="pc4">
+        </div>
+        <div>
+            <img src="image/ALL/buildingFif.png" id="pc5">
+        </div>
+         <div>
+            <img src="image/ALL/buildingS.png" id="pc6">
+         </div>
+      </div>
+      <div class="Zbottom_right">
+          <ul>
+              <li>原铝质量：<span class="quality"></span></li>
+              <li>铁含量：<span class="quality"></span></li>
+              <li>硅含量：<span class="quality"></span></li>
+              <li>铜含量：<span class="quality"></span> </li>
+          </ul>
+          <ul>
+              <li style="margin-left: -0.2vw">电解质水平：<span class="quality"></span></li>
+              <li style="margin-left: -0.2vw">铝水平：<span class="quality"></span></li>
+              <li style="margin-left: -0.2vw">析出铝的质量：<span class="quality"></span></li>
+          </ul>
+      </div>
+    </div>
+    <script src="js/echarts-theme.js"></script>
+    <script src="js/treeCharts.js"></script>
+    <script src="js/tree.js"></script>
+    <script src="js/treetime.js"></script>
+</body>
+</html>
