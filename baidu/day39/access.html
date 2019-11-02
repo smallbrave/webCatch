@@ -20,21 +20,23 @@
         <div id="contDEF"></div>
         <script>
             var btns = document.getElementsByTagName("button");
+        //对hash值进行一定的处理
             function checkHash(){
                 var hashValue = window.location.hash;
                 if(hashValue.length > 2){
-                //当window.location.hash中有多条语句（因为后点击加在window.location.hash后面）
-                //所以，通过substr对window.location.hash进行截取。
+                    //当window.location.hash中有多条语句（因为后点击加在window.location.hash后面）
+                    //所以，通过substr对window.location.hash进行截取。
                     return [hashValue.substr(1,1),hashValue.substr(hashValue.length-1,1)];
                 }else{
                     return hashValue.substr(1.1);
                 }
             }
+        //页面渲染函数    
             function show(){
                 var value = checkHash();
                 console.log("length: "+value.length);
-            //对window.location.hash 内容进行一定处理
-            //当window.location.hash中只有一条语句（即只含有A,B,C）中的一个    
+                //对window.location.hash 内容进行一定处理
+                //当window.location.hash中只有一条语句（即只含有A,B,C）中的一个    
                 if(value.length < 1){
                     console.log("<1");
                     contABC.innerText = "";
@@ -48,8 +50,8 @@
                     }
                 }else{
                     console.log(">1");  
-            //当window.location.hash中有多条语句（即含有A/B/C,F,E,D）
-            //通过if将内容分发。
+                    //当window.location.hash中有多条语句（即含有A/B/C,F,E,D）
+                    //通过if将内容分发。
                     for(var val of value){
                         if(val >= "A" && val <= "C"){
                             contABC.innerText = val;
@@ -60,6 +62,7 @@
                 }
 
             }
+        //点击事件监控函数    
             for(var val of btns){
                 val.onclick = function(e){
                     if(e.target.innerText >= "A" && e.target.innerText <= "C"){
@@ -70,6 +73,7 @@
                     checkHash();
                 }
             }
+        //hash值变化监控函数    
             window.onhashchange = function(){
                 show();
             }    
