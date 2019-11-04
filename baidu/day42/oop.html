@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> 面向对象编程 </title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="X-UA-Comaptible" content="IE=edge">
+    </head>
+    <body>
+        <div class="container"></div>
+    </body>
+    <script>
+        Array.prototype.indexOf = function(val) {
+            for (var i = 0; i < this.length; i++) {
+            if (this[i] == val) return i;
+            }
+            return -1;
+        }
+        Array.prototype.remove = function(val) { 
+            var index = this.indexOf(val);
+            if (index > -1) {
+            this.splice(index, 1);
+            }
+        }
+        //餐厅
+        function Restaurant(cash,seats,staff){
+            this.cash = cash;
+            this.seats = seats;
+            this.staff = staff;
+            this.hire = function(obj){
+                this.staff.push(obj) 
+            }
+            this.fire = function(obj){
+               this.staff.remove(obj);
+            }
+        }
+        //职工
+        function Employee(id,name,salary){
+            this.id = id;
+            this.name = name;
+            this.salary = salary;
+            this.doing = function(){
+                console.log("doing");
+            }
+        }
+        //服务员
+        function Waiter(id,name,salary,job){
+           Waiter.prototype = new Employee(id,name,salary)
+           this.doing = function(job){
+               if(job instanceof Array){
+                   console.log("order it");
+               }else{
+                   console.log("push dishes");
+               }   
+           } 
+        }
+        //厨师
+        function Cook(id,name,salary,job){
+            Waiter.prototype = new Employee(id,name,salary)
+            this.doing = function(job){
+                console.log("cook is over");  
+            }
+        }
+        //顾客
+        function Customer(){
+            this.eat = function(){
+                console.log("eat it");
+            }
+            this.order = function(){
+                console.log("order it");
+            }
+        }
+        //菜品
+        function Dish(name,price,cost){
+            this.name = name;
+            this.price = price;
+            this.cost = cost;   
+        }
+        var ifeRestaurant = new Restaurant(1000000,20,[]);
+        var newCook = new Cook("Tony", 10000);
+        ifeRestaurant.hire(newCook);
+        console.log(ifeRestaurant.staff);
+
+        ifeRestaurant.fire(newCook);
+        console.log(ifeRestaurant.staff);
+    </script>
+</html>
