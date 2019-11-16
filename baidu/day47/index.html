@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> 设计模式 </title>
+        <meta name="viewport" content="width=device-width,initial-scale = 1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    </head>
+    <body>
+        <div class="container">
+
+        </div>
+        <script>
+        //简单工厂模式实现
+        /*function Cooker(id,salary,message){
+            this.id = id;
+            this.salary = salary;
+            this.doing = function(message){
+                console.log("i am " + message);
+            }
+        }
+        function Waiter(id,salary,message){
+            this.id = id;
+            this.salary = salary;
+            this.doing = function(message){
+                console.log("i am " + message);
+            }
+        }
+        function Customer(name,message){
+            this.name = name;
+            this.doing = function(message){
+                console.log("i am " + message);
+            }
+        }
+
+        function Restaurant(type){
+            switch(type){
+                case 'cooker':
+                    return new Cooker();
+               case 'waiter':
+                    return new Waiter();
+                case 'customer':
+                    return new Customer();  
+            }
+        }
+        按照这种方式无法为新建的对象传入参数，无法对类进行初始化
+        */
+
+    //    换一种方式
+    //    function restaurant(id,salary,message){
+    //        var o = new Object();
+    //        o.id = id;
+    //        o.salary = salary;
+    //        o.doing = function(){
+    //            console.log("i am " + message);
+    //        }
+    //        return o;
+    //    }
+    //    function Customer(name){
+    //         this.name = name;
+    //         this.doing = function(){
+    //             console.log("i am eating");
+    //         }
+    //     }
+        
+        // var waiter = restaurant(1,100,"端茶递水，上菜");
+        // waiter.doing();
+        // var cooker = restaurant(2,200,"炒菜，做饭");
+        // cooker.doing();
+        // var customer = new Customer("kangkang");
+        // customer.doing();
+        
+        
+        
+        //工厂方法模式
+        // function Restaurant(type,content){
+        //     if(this instanceof Restaurant){   //安全检查
+        //         return new this[type](content);
+        //     }else{
+        //         return new Restaurant(type,content);
+        //     }
+        // }
+        
+        // //在工厂类的原型中创建基类
+        // Restaurant.prototype = {
+        //     Cooker:function(content){
+        //         this.id = content[0];
+        //         this.salary = content[1];
+        //         this.doing = function(){
+        //             console.log("i am " + content[2]);  
+        //         }
+        //     },
+        //     Waiter:function(content){
+        //         this.id = content[0];
+        //         this.salary = content[1];
+        //         this.doing = function(){
+        //             console.log("i am " + content[2]);  
+        //         }
+        //     }
+        // }
+        
+        // var data = [
+        //     {type:"Cooker",content:[2,200,'烧饭']},
+        //     {type:"Waiter",content:[1,100,'搽桌子']}
+        //]
+        // for(var i = 0;i<data.length;i++){
+        //    Restaurant(data[i].type,data[i].content).doing();
+        // }
+
+
+        
+        //抽象工厂模式
+        //引入抽象方法：js中不存在抽象方法，但根据抽象方法特性：不能直接调用，必需重写过后在调用，
+        //否则会出错，所以，通过模拟一个手动抛出错误即可
+
+        var  Restaurants = function(subType,superType){
+            //检测抽象工厂中是否有抽象类
+            if(typeof Restaurants[superType] === 'function'){
+                function F(){};
+                F.prototype = new Restaurants[superType]();
+                //将子类的constructor属性指向自身
+                subType.constructor = subType;
+                subType.prototype = new F();
+            }else{
+                //否则，抛出错误
+                throw new Error('为创建该抽象类');
+            }
+        }    
+            //创建抽象类
+            Restaurants.Room = function(){
+                this.type = '餐馆';
+            };
+            Restaurants.Room.prototype = {
+                doing:function(){
+                    throw new Error('为创建该抽象类');
+                }
+            };
+                    //创建子类
+             var Cooker = function(id,salary,message){
+                this.id = id;
+                this.salary = salary;
+                this.message = message;
+            }
+            //在这里，往下面函数传的superType参数是 字符型。
+            Restaurants(Cooker,'Room');
+            Cooker.prototype.doing = function(){
+                console.log("i am " + this.message);
+            }
+            
+            var Waiter = function(id,salary,message){
+                this.id = id;
+                this.salary = salary;
+                this.message = message;
+            }
+            Restaurants(Waiter,'Room');
+            Waiter.prototype.doing = function(){
+                console.log("i am " + this.message);
+            }
+            
+            var serve = new Waiter(3,100,"端茶递水苦差事");
+            serve.doing();
+            var cook = new Cooker(4,400,"烧饭好累");
+            cook.doing();
+
+
+        </script>
+    </body>
+</html>
